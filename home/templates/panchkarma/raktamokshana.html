@@ -1,0 +1,75 @@
+{% extends "master.html"%}
+{% block title %}Home | Yogastic{% endblock %}
+{% block content %}
+<div class="sub-banner-section">
+    {% include 'header.html' %}
+    <!-- SUB BANNER SECTION -->
+    <section class="banner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="banner-section-content">
+                        <h1 data-aos="fade-up">RAKTAMOKSHANA</h1>
+                        <p data-aos="fade-right">
+                            Rakthamokshana or bloodletting is a surgical procedure included in panchakarma.</p>
+                        <div class="btn_wrapper">
+                            <span class="sub_home_span">Panchkarma</span><i class="fa-solid fa-angles-right" aria-hidden="true"></i><span class="sub_span"> Raktamokshana</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <figure class="banner_left_top_shape left_shape mb-0">
+                <img src="./assets/images/banner_left_top_shape.png" alt="" class="img-fluid">
+            </figure>
+            <figure class="banner_left_bottom_shape left_shape mb-0">
+                <img src="./assets/images/banner_left_bottom_shape.png" alt="" class="img-fluid">
+            </figure>
+            <figure class="banner_right_top_shape right_shape mb-0">
+                <img src="./assets/images/banner_right_top_shape.png" alt="" class="img-fluid">
+            </figure>
+            <figure class="banner_right_bottom_shape right_shape mb-0">
+                <img src="./assets/images/banner_right_bottom_shape.png" alt="" class="img-fluid">
+            </figure>
+        </div>
+    </section>
+</div>
+<!-- CONTENT SECTION -->
+<section class="services_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <figure class="mb-0"><img src="./assets/images/panchkarma/raktamokshana.png" alt="" class="img-fluid" style="border-radius:50px 0 50px 0;margin-top: 75px;"></figure>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12" data-aos="fade-right">
+                <div class="aboutpage_aboutus_content pt-4">
+                    <p>It is done using different methods like applying one or a few leeches on a specific part of your body, puncturing any of your veins or making several small punctures on a given part of your body in order to facilitate small quantities of blood to flow out of your body. This procedure is used to treat varicose veins, abscesses, skin diseases, alopecia, high blood pressure, various inflammations and conditions associated with spleen and liver.
+                    <br /><br />
+                    <h5>Benefits of Raktamokshana</h5>
+                    <div class="box_wrapper">
+                        <div class="box mr-0">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <span>Remove deep-seated circulating toxins from the blood.</span>
+                        </div>
+                        <div class="box mr-0">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <span>Relieves stagnation and congestion in varicose veins</span>
+                        </div>
+                        <div class="box mr-0">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <span>Improves circulation to a specific area,</span>
+                        </div>
+                        <div class="box mr-0">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <span>Reduces inflammation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FOOTER SECTION -->
+{% include 'blog.html' %}
+<!-- FOOTER SECTION -->
+{% include 'footer.html' %}
+{% endblock %}
