@@ -27,6 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['195.250.20.63']
 
+ALLOWED_HOSTS = [
+    'www.ayushmaanbhavah.com',
+    'ayushmaanbhavah.com',
+    '195.250.20.63', # Allow server IP
+    '127.0.0.1',  # Allows requests from the local machine (loopback address)
+    'localhost',  # Also useful for local development
+    # Add your production domain(s) here when deploying, e.g., 'yourdomain.com'
+]
+
 
 # Application definition
 
@@ -143,8 +152,3 @@ EMAIL_HOST_USER = 'rshaw@aecordigital.com'
 EMAIL_HOST_PASSWORD = 'paridulhan275'
 EMAIL_PORT = 587
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',  # Allows requests from the local machine (loopback address)
-    'localhost',  # Also useful for local development
-    # Add your production domain(s) here when deploying, e.g., 'yourdomain.com'
-]
