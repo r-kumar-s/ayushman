@@ -25,9 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(p#g%$2%3v%gw!6gvk1l+lhw-evoi3y#u_dnl8@@jw6fq8nyfr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['195.250.20.63']
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'www.ayushmaanbhavah.com',
@@ -133,13 +131,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
-
+STATIC_URL = '/assets/'
 STATIC_ROOT = BASE_DIR / 'productionfiles'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/rohit/ayushman/media/'
+
+#STATIC_URL = 'static/'
+
+#STATIC_ROOT = BASE_DIR / 'productionfiles'
 
 #Add this in your settings.py file:
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / 'assets'
 ]
 
 
@@ -154,4 +158,3 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'rshaw@aecordigital.com'
 EMAIL_HOST_PASSWORD = 'paridulhan275'
 EMAIL_PORT = 587
-
