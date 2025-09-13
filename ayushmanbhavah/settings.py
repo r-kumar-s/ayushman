@@ -131,13 +131,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/assets/'
 STATIC_ROOT = BASE_DIR / 'productionfiles'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/rohit/ayushman/media/'
+
+#STATIC_URL = 'static/'
+
+#STATIC_ROOT = BASE_DIR / 'productionfiles'
 
 #Add this in your settings.py file:
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / 'assets'
 ]
 
 
