@@ -20,6 +20,7 @@ urlpatterns = [
     path('virechana.html', views.virechana, name='virechana'),
     path('basti.html', views.basti, name='basti'),  
     path('nasya.html', views.nasya, name='nasya'),
-    path('raktamokshana.html', views.raktamokshana, name='raktamokshana')   
-    
+    path('raktamokshana.html', views.raktamokshana, name='raktamokshana'),
+    path('dr-sushma-tiwary.html', views.dr_sushma_tiwary, name='dr_sushma_tiwary'),
+    path('contact_us_email', views.contact_us_email, name='contact_us_email')    
 ]

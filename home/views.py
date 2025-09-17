@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.mail import EmailMessage
@@ -123,6 +123,36 @@ def nasya(request):
 def raktamokshana(request):
   template = loader.get_template('panchkarma/raktamokshana.html')
   return HttpResponse(template.render())
+
+def dr_sushma_tiwary(request):
+  template = loader.get_template('sushma-tiwary.html')
+  return HttpResponse(template.render())
+
+def contact_us_email(request):
+    if request.method == 'POST':
+        subject = "Ayushman Bhavah Website Inquiry" 
+        body = {
+          'first_name': request.POST.get('fname'), 
+          'last_name': request.POST.get('lname'), 
+          'email': request.POST.get('sender'), 
+          'phone': request.POST.get('phone'), 
+          'message':request.POST.get('message'), 
+        }
+        message = "\n".join(body.values())
+
+        try:
+          send_mail(subject, message, request.POST.get('sender'), ['contact@ayushmaanbhavah.com']) 
+          #email = EmailMessage(subject, message, to=['rshaw@aecordigital.com'])
+          #email.send()
+        except BadHeaderError:
+          #return HttpResponseRedirect("/thanks/")
+          return HttpResponse('Invalid header found.')
+          return redirect ("index.html")
+
+        #return render(request, "home/index.html")
+        return redirect ("./index.html#get_in_touch_section")
+    else:
+        return render(request, 'index.html')
 
   
 
