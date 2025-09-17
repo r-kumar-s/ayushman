@@ -136,7 +136,7 @@ def contact_us_email(request):
           'last_name': request.POST.get('lname'), 
           'email': request.POST.get('sender'), 
           'phone': request.POST.get('phone'), 
-          'message':request.POST.get('message'), 
+          'message':request.POST.get('message')
         }
         message = "\n".join(body.values())
 
