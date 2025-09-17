@@ -1,9 +1,10 @@
-from django.http import HttpResponse
+from django.core.mail import BadHeaderError, send_mail
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render, redirect
 from django.conf import settings
-from django.core.mail import send_mail
 from django.core.mail import EmailMessage
+from email.header import Header
 import pdb;
 import datetime;
 # pdb.set_trace()   
