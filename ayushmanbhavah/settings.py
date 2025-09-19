@@ -152,18 +152,32 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+# ==== Rohit Gmail Setting ==================
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = "rohit.rst15@gmail.com"   # your Gmail address
 # EMAIL_HOST_PASSWORD = "pgei ylxl xzdg kmhp"
+# ============================================
 
+# ====== SSL setting =========================
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = True
+# EMAIL_HOST = "mail.ayushmaanbhavah.com"
+# EMAIL_PORT = 465
+# EMAIL_HOST_USER = "contact@ayushmaanbhavah.com"
+# EMAIL_HOST_PASSWORD = "Sushma123#"
+# ============================================
+
+
+#======= TLS setting ===========
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 EMAIL_HOST = "mail.ayushmaanbhavah.com"
-EMAIL_PORT = 465
+EMAIL_PORT = 587
 EMAIL_HOST_USER = "contact@ayushmaanbhavah.com"
 EMAIL_HOST_PASSWORD = "Sushma123#"
+#=============================
