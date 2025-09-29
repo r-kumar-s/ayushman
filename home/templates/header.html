@@ -1,70 +1,71 @@
+{% load static %}
 <header>
-    <div class="main_header">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light p-0">
-                <a class="navbar-brand" href="./index.html">
-                    <figure class="mb-0">
-                        <img src="/assets/images/original_transparent_logo_white.png" alt="">
-                    </figure>
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about.html">About Us</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Treatments </a>
-                            <div class="dropdown-menu drop-down-content">
-                                <ul class="list-unstyled drop-down-pages">
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="thyroid.html">Thyroid</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="gastrointestinal.html">Gastrointestinal</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="lungs.html">Lung Diseases</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="hematological.html">Hematology Disorder</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="stone.html">Stone</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="tumor.html">Tumor</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="arthritis.html">Arthritis</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="skin.html">Skin Disorder (Tvakvikar)</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="male-genital-organ.html">MALE Genital Organ</a></li>
-                                    <li class="nav-item"><a class="dropdown-item nav-link" href="female-genital-organ.html">FEMALE Genital Organ</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Panchkarma </a>
-                            <div class="dropdown-menu drop-down-content">
-                                <ul class="list-unstyled drop-down-pages">
-                                    <li class="nav-item">
-                                        <a class="dropdown-item nav-link" href="basti.html">Basti</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item nav-link" href="nasya.html">Nasya</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item nav-link" href="raktamokshana.html">Raktamokshana</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item nav-link" href="vamana.html">Vamana</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item nav-link" href="virechana.html">Virechana</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link contact_us" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+  <div class="main_header">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <a class="navbar-brand" href="./index.html">
+          <figure class="mb-0">
+            <img src="{% static 'images/original_transparent_logo_white.png' %}" alt="Ayushman Bhavah Logo" />
+          </figure>
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Treatments </a>
+              <div class="dropdown-menu drop-down-content">
+                <ul class="list-unstyled drop-down-pages">
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="thyroid.html">Thyroid</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="gastrointestinal.html">Gastrointestinal</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="lungs.html">Lung Diseases</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="hematological.html">Hematology Disorder</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="stone.html">Stone</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="tumor.html">Tumor</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="arthritis.html">Arthritis</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="skin.html">Skin Disorder (Tvakvikar)</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="male-genital-organ.html">MALE Genital Organ</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="female-genital-organ.html">FEMALE Genital Organ</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Panchkarma </a>
+              <div class="dropdown-menu drop-down-content">
+                <ul class="list-unstyled drop-down-pages">
+                  <li class="nav-item">
+                    <a class="dropdown-item nav-link" href="basti.html">Basti</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item nav-link" href="nasya.html">Nasya</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item nav-link" href="raktamokshana.html">Raktamokshana</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item nav-link" href="vamana.html">Vamana</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item nav-link" href="virechana.html">Virechana</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link contact_us" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
         </div>
+      </nav>
     </div>
+  </div>
 </header>
