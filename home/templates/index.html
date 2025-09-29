@@ -1,6 +1,7 @@
 {% extends "master.html"%}
 {% block title %}Home | Yogastic{% endblock %}
 {% block content %}
+{% load static %}
 <div class="banner-section-outer">
   {% include 'header.html' %}
   <!-- SOCIAL ICONS -->
@@ -225,7 +226,7 @@
       </div>
       <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 d-md-block d-none">
         <figure class="specialties_image mb-0">
-          <img src="/assets/images/specialties_image.png" alt="" class="img-fluid">
+          <img src="{% static 'images/specialties_image.png' %}" alt="Ayurvedic Doctor" class="img-fluid" />
         </figure>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-aos="fade-right">
@@ -247,13 +248,13 @@
             <p class="specialties_paragraph">Neque orro quisquam est raui dolorem</p>
           </div>
           <figure class="specialties_right_line mb-0">
-            <img src="/assets/images/specialties_right_line.png" alt="" class="img-fluid">
+            <img src="{% static 'images/specialties_right_line.png' %}" alt="Ayurvedic treatment" class="img-fluid" />
           </figure>
         </div>
       </div>
     </div>
     <figure class="our_specialties_right_shape right_shape mb-0">
-      <img src="/assets/images/our_specialties_right_shape.png" alt="" class="img-fluid">
+      <img src="{% static 'images/our_specialties_right_shape.png' %}" alt="PCOD in Ayushman Bhavah" class="img-fluid" />
     </figure>
   </div>
 </section>
@@ -274,11 +275,12 @@
         <div class="pricing_plans_box_content">
           <div class="pricing_plans_box_upper_portion">
             <figure class="pricing_plans_image mb-0">
-              <img src="/assets/images/face_pack.jpg" alt="" class="img-fluid" style="border-radius:65px 0 0 0;">
+              <img src="{% static 'images/face_pack.jpg' %}" alt="Face Treatment" class="img-fluid" style="border-radius:65px 0 0 0;"/>
             </figure>
             <div class="pricing_plans_box_image_content">
               <figure class="mb-0">
                 <img src="/assets/images/pricing_plan_icon_1.png" alt="" class="img-fluid">
+                <img src="{% static 'images/pricing_plan_icon_1.png' %}" alt="Facial Treatment" class="img-fluid"/>
               </figure>
             </div>
           </div>
@@ -294,11 +296,11 @@
         <div class="pricing_plans_box_content">
           <div class="pricing_plans_box_upper_portion">
             <figure class="pricing_plans_image mb-0">
-              <img src="/assets/images/hair_treatment.jpg" alt="" class="img-fluid" style="border-radius:65px 0 0 0;">
+              <img src="{% static 'images/hair_treatment.jpg' %}" alt="Hair Treatment" class="img-fluid" style="border-radius:65px 0 0 0;"/>
             </figure>
             <div class="pricing_plans_box_image_content">
               <figure class="mb-0">
-                <img src="/assets/images/pricing_plan_icon_2.png" alt="" class="img-fluid">
+                <img src="{% static 'images/pricing_plan_icon_2.png' %}" alt="" class="img-fluid" style="border-radius:65px 0 0 0;"/>
               </figure>
             </div>
           </div>
@@ -314,11 +316,11 @@
         <div class="pricing_plans_box_content">
           <div class="pricing_plans_box_upper_portion">
             <figure class="pricing_plans_image mb-0">
-              <img src="/assets/images/shiro_lepam.jpg" alt="" class="img-fluid" style="border-radius:65px 0 0 0;">
+              <img src="{% static 'images/shiro_lepam.jpg' %}" alt="Shiro Lepam" class="img-fluid" style="border-radius:65px 0 0 0;">
             </figure>
             <div class="pricing_plans_box_image_content">
               <figure class="mb-0">
-                <img src="/assets/images/pricing_plan_icon_3.png" alt="" class="img-fluid">
+                <img src="{% static 'images/pricing_plan_icon_3.png' %}" alt="Shiro Lepam" class="img-fluid">
               </figure>
             </div>
           </div>
