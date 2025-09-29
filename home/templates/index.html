@@ -76,7 +76,9 @@
       <div class="col-lg col-md-6 col-sm-6 col-xs-12">
         <div class="services_box_content">
           <div class="services_box_upper_portion">
-            <figure class="mb-0"><img src="/assets/images/panchkarma/vamana.png" alt="" class="img-fluid" style="border-radius: 100px 0 100px 0;"></figure>
+            <figure class="mb-0">
+              <img src="{% static 'images/panchkarma/vamana.png' %}" alt="Vamana" class="img-fluid" style="border-radius: 100px 0 100px 0;" />
+            </figure>
           </div>
           <div class="services_box_lower_portion">
             <h3>Vamana</h3>
@@ -90,7 +92,9 @@
       <div class="col-lg col-md-6 col-sm-6 col-xs-12">
         <div class="services_box_content">
           <div class="services_box_upper_portion">
-            <figure class="mb-0"><img src="/assets/images/panchkarma/virechana.png" alt="" class="img-fluid" style="border-radius: 100px 0 100px 0;"></figure>
+            <figure class="mb-0">
+              <img src="{% static 'images/panchkarma/virechana.png' %}" alt="Virechana" class="img-fluid" style="border-radius: 100px 0 100px 0;" />
+            </figure>
           </div>
           <div class="services_box_lower_portion">
             <h3>Virechana</h3>
@@ -104,7 +108,9 @@
       <div class="col-lg col-md-6 col-sm-6 col-xs-12">
         <div class="services_box_content">
           <div class="services_box_upper_portion">
-            <figure class="mb-0"><img src="/assets/images/panchkarma/basti.png" alt="" class="img-fluid" style="border-radius: 100px 0 100px 0;"></figure>
+            <figure class="mb-0">
+              <img src="{% static 'images/panchkarma/basti.png' %}" alt="Basti" class="img-fluid" style="border-radius: 100px 0 100px 0;" />
+            </figure>
           </div>
           <div class="services_box_lower_portion">
             <h3>Basti</h3>
@@ -118,7 +124,9 @@
       <div class="col-lg col-md-6 col-sm-6 col-xs-12">
         <div class="services_box_content">
           <div class="services_box_upper_portion">
-            <figure class="mb-0"><img src="/assets/images/panchkarma/nasya.png" alt="" class="img-fluid" style="border-radius: 100px 0 100px 0;"></figure>
+            <figure class="mb-0">
+              <img src="{% static 'images/panchkarma/nasya.png' %}" alt="Nasya" class="img-fluid" style="border-radius: 100px 0 100px 0;" />
+            </figure>
           </div>
           <div class="services_box_lower_portion">
             <h3>Nasya</h3>
@@ -132,7 +140,9 @@
       <div class="col-lg col-md-6 col-sm-6 col-xs-12">
         <div class="services_box_content">
           <div class="services_box_upper_portion">
-            <figure class="mb-0"><img src="/assets/images/panchkarma/raktamokshana.png" alt="" class="img-fluid" style="border-radius: 100px 0 100px 0;"></figure>
+            <figure class="mb-0">
+              <img src="{% static 'images/panchkarma/raktamokshana.png' %}" alt="Raktamokshana" class="img-fluid" style="border-radius: 100px 0 100px 0;" />
+            </figure>
           </div>
           <div class="services_box_lower_portion">
             <h3>Raktamokchana</h3>
@@ -275,12 +285,12 @@
         <div class="pricing_plans_box_content">
           <div class="pricing_plans_box_upper_portion">
             <figure class="pricing_plans_image mb-0">
-              <img src="{% static 'images/face_pack.jpg' %}" alt="Face Treatment" class="img-fluid" style="border-radius:65px 0 0 0;"/>
+              <img src="{% static 'images/face_pack.jpg' %}" alt="Face Treatment" class="img-fluid" style="border-radius:65px 0 0 0;" />
             </figure>
             <div class="pricing_plans_box_image_content">
               <figure class="mb-0">
                 <img src="/assets/images/pricing_plan_icon_1.png" alt="" class="img-fluid">
-                <img src="{% static 'images/pricing_plan_icon_1.png' %}" alt="Facial Treatment" class="img-fluid"/>
+                <img src="{% static 'images/pricing_plan_icon_1.png' %}" alt="Facial Treatment" class="img-fluid" />
               </figure>
             </div>
           </div>
@@ -296,11 +306,11 @@
         <div class="pricing_plans_box_content">
           <div class="pricing_plans_box_upper_portion">
             <figure class="pricing_plans_image mb-0">
-              <img src="{% static 'images/hair_treatment.jpg' %}" alt="Hair Treatment" class="img-fluid" style="border-radius:65px 0 0 0;"/>
+              <img src="{% static 'images/hair_treatment.jpg' %}" alt="Hair Treatment" class="img-fluid" style="border-radius:65px 0 0 0;" />
             </figure>
             <div class="pricing_plans_box_image_content">
               <figure class="mb-0">
-                <img src="{% static 'images/pricing_plan_icon_2.png' %}" alt="" class="img-fluid" style="border-radius:65px 0 0 0;"/>
+                <img src="{% static 'images/pricing_plan_icon_2.png' %}" alt="" class="img-fluid" style="border-radius:65px 0 0 0;" />
               </figure>
             </div>
           </div>
@@ -399,68 +409,66 @@
 <!-- BLOG POSTS SECTION -->
 {% include 'blog.html' %}
 <!-- GET IN TOUCH SECTION -->
-
-  <section class="get_in_touch_section" id="get_in_touch_section">
-    <div class="container">
-      <div class="row" data-aos="fade-up">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="get_in_touch_content">
-            <h5>Get in touch</h5>
-            <h2>Get a Free Consultation Now</h2>
-            <form method="POST" action="{% url 'contact_us_email' %}">
-              {% csrf_token %}
-              <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <div class="form-group mb-0">
-                    <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required />
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <div class="form-group mb-0">
-                    <input type="text" name="lname" id="lname" class="form-control form_style" placeholder="Last Name">
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <div class="form-group mb-0">
-                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="9599719664" pattern="[0-9]{10}" maxlength="10" required />
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <div class="form-group mb-0">
-                    <input type="email" name="sender" id="sender" class="form-control form_style" placeholder="Email">
-                  </div>
+<section class="get_in_touch_section" id="get_in_touch_section">
+  <div class="container">
+    <div class="row" data-aos="fade-up">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="get_in_touch_content">
+          <h5>Get in touch</h5>
+          <h2>Get a Free Consultation Now</h2>
+          <form method="POST" action="{% url 'contact_us_email' %}">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group mb-0">
+                  <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required />
                 </div>
               </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class=" form-group mb-0">
-                    <textarea rows="3" name="message" id="message" class="form-control" placeholder="Message" required /></textarea>
-                  </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group mb-0">
+                  <input type="text" name="lname" id="lname" class="form-control form_style" placeholder="Last Name">
                 </div>
               </div>
-              <div class="btn_wrapper">
-                <button type="submit" name="get_started" id="started">Get Started</button>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group mb-0">
+                  <input type="tel" name="phone" id="phone" class="form-control" placeholder="9599719664" pattern="[0-9]{10}" maxlength="10" required />
+                </div>
               </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 d-md-block d-none"></div>
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-          <div class="get_in_touch_video position-relative">
-            <a class="popup-vimeo" href="/assets/videos/final_uric_acid_with_music.mp4">
-              <figure class="video_img mb-0">
-                <img class="thumb img-fluid" style="cursor: pointer" src="/assets/images/get_in_touch_video_icon.png" alt="">
-              </figure>
-            </a>
-          </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group mb-0">
+                  <input type="email" name="sender" id="sender" class="form-control form_style" placeholder="Email">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class=" form-group mb-0">
+                  <textarea rows="3" name="message" id="message" class="form-control" placeholder="Message" required /></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="btn_wrapper">
+              <button type="submit" name="get_started" id="started">Get Started</button>
+            </div>
+          </form>
         </div>
       </div>
-      <figure class="get_in_touch_shape left_shape mb-0">
-        <img src="/assets/images/get_in_touch_shape.png" alt="" class="img-fluid">
-      </figure>
+      <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 d-md-block d-none"></div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="get_in_touch_video position-relative">
+          <a class="popup-vimeo" href="/assets/videos/final_uric_acid_with_music.mp4">
+            <figure class="video_img mb-0">
+              <img class="thumb img-fluid" style="cursor: pointer" src="/assets/images/get_in_touch_video_icon.png" alt="">
+            </figure>
+          </a>
+        </div>
+      </div>
     </div>
-  </section>
-
+    <figure class="get_in_touch_shape left_shape mb-0">
+      <img src="/assets/images/get_in_touch_shape.png" alt="" class="img-fluid">
+    </figure>
+  </div>
+</section>
 <!-- FOOTER SECTION -->
 {% include 'footer.html' %}
 {% endblock %}
