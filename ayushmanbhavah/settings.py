@@ -27,14 +27,16 @@ SECRET_KEY = 'django-insecure-(p#g%$2%3v%gw!6gvk1l+lhw-evoi3y#u_dnl8@@jw6fq8nyfr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'www.ayushmaanbhavah.com',
-    'ayushmaanbhavah.com',
-    '195.250.20.63', # Allow server IP
-    '127.0.0.1',  # Allows requests from the local machine (loopback address)
-    'localhost',  # Also useful for local development
+#ALLOWED_HOSTS = [
+#    'www.ayushmaanbhavah.com',
+#    'ayushmaanbhavah.com',
+#    '195.250.20.63', # Allow server IP
+#    '127.0.0.1',  # Allows requests from the local machine (loopback address)
+#    'localhost',  # Also useful for local development
     # Add your production domain(s) here when deploying, e.g., 'yourdomain.com'
-]
+#]
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -131,8 +133,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/assets/'
-STATIC_ROOT = BASE_DIR / 'productionfiles'
+STATIC_URL = '/static/'
+#STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/home/rohit/ayushman/media/'
@@ -174,10 +176,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #======= TLS setting ===========
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-EMAIL_HOST = "mail.ayushmaanbhavah.com"
-EMAIL_PORT = 587
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 465
 EMAIL_HOST_USER = "contact@ayushmaanbhavah.com"
-EMAIL_HOST_PASSWORD = "Sushma123#"
+EMAIL_HOST_PASSWORD = "dpur uzmr ywur zros"
 #=============================
