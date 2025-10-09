@@ -1,3 +1,4 @@
+{% load static %}
 <!-- BLOG POSTS SECTION -->
 <section class="blog_posts_section">
     <div class="container">
@@ -13,7 +14,12 @@
         <div class="row" data-aos="fade-up">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="blog_posts_image position-relative">
-                    <figure class="mb-0"><img src="./assets/images/blog_infertility.jpg" alt="" class="img-fluid" style="border-radius:100px 0;"></figure>
+                    <figure class="mb-0">
+                   
+
+<img src="{% static 'images/blog_infertility.jpg' %}" alt="Infertility" class="img-fluid" style="border-radius:100px 0;" />
+
+                    </figure>
                     <div class="blog_posts_image_content">
                         <span>Infertility</span>
                         <h4> Can be defined as inability to conceive upto one year of marriage even after regular intercourse without use of any contraceptive.</h4>
@@ -25,7 +31,11 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="blog_posts_image position-relative">
-                    <figure class="mb-0"><img src="./assets/images/shirodhara_blog.jpg" alt="" class="img-fluid" style="border-radius:100px 0;"></figure>
+                    <figure class="mb-0">                       
+
+<img src="{% static 'images/shirodhara_blog.jpg' %}" alt="Shirodhara" class="img-fluid" style="border-radius:100px 0;" />
+
+                    </figure>
                     <div class="blog_posts_image_content">
                         <span>Shirodhara</span>
                         <h4>Two words ‘shir’ which is head and ‘dhara’ which is sprinkling or pouring in a stream unites to form shirodhara.</h4>
@@ -40,10 +50,10 @@
             <a href="https://ayushmanbhavahayurveda.blogspot.com/" target="_blank" class="text-decoration-none view_blog">View All Blogs</a>
         </div>
         <figure class="blog_posts_left_shape left_shape mb-0">
-            <img src="./assets/images/blog_posts_left_shape.png" alt="" class="img-fluid">
+            <img src="{% static 'images/blog_posts_left_shape.png' %}" alt="" class="img-fluid" />
         </figure>
         <figure class="blog_posts_right_shape right_shape mb-0">
-            <img src="./assets/images/blog_posts_right_shape.png" alt="" class="img-fluid">
+            <img src="{% static 'images/blog_posts_right_shape.png' %}" alt="" class="img-fluid" />
         </figure>
     </div>
 </section>
