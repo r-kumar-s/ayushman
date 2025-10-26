@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'home',
+    'payments',
 ]
 
 MIDDLEWARE = [
@@ -189,3 +190,9 @@ EMAIL_HOST_USER = "contact@ayushmaanbhavah.com"
 EMAIL_HOST_PASSWORD = "dpur uzmr ywur zros"
 #=============================
 
+# Cashfree credentials
+CASHFREE = {
+    'client_id': 'TEST108351404e3c02eb86348430a98904153801',
+    'client_secret': 'cfsk_ma_test_40dcfc5ba6fa82be2c2e73cdd746d152_f6e8a9eb',
+    'base_url': 'https://sandbox.cashfree.com/pg',  # use production URL later
+}

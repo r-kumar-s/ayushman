@@ -130,30 +130,35 @@ def dr_sushma_tiwary(request):
   return HttpResponse(template.render())
 
 def contact_us_email(request):
-    if request.method == 'POST':
-        subject = "Ayushman Bhavah Website Inquiry" 
-        body = {
-          'first_name': request.POST.get('fname'), 
-          'last_name': request.POST.get('lname'), 
-          'email': request.POST.get('sender'), 
-          'phone': request.POST.get('phone'), 
-          'message':request.POST.get('message')
-        }
-        message = "\n".join(body.values())
+  if request.method == 'POST':
+      subject = "Ayushman Bhavah Website Inquiry" 
+      body = {
+        'first_name': request.POST.get('fname'), 
+        'last_name': request.POST.get('lname'), 
+        'email': request.POST.get('sender'), 
+        'phone': request.POST.get('phone'), 
+        'message':request.POST.get('message')
+      }
+      message = "\n".join(body.values())
 
-        try:
-          send_mail(subject, message, request.POST.get('sender'), ['contact@ayushmaanbhavah.com']) 
-          #email = EmailMessage(subject, message, to=['rshaw@aecordigital.com'])
-          #email.send()
-        except BadHeaderError:
-          #return HttpResponseRedirect("/thanks/")
-          return HttpResponse('Invalid header found.')
-          return redirect ("index.html")
+      try:
+        send_mail(subject, message, request.POST.get('sender'), ['contact@ayushmaanbhavah.com']) 
+        #email = EmailMessage(subject, message, to=['rshaw@aecordigital.com'])
+        #email.send()
+      except BadHeaderError:
+        #return HttpResponseRedirect("/thanks/")
+        return HttpResponse('Invalid header found.')
+        return redirect ("index.html")
 
-        #return render(request, "home/index.html")
-        return redirect ("./index.html#get_in_touch_section")
-    else:
-        return render(request, 'index.html')
+      #return render(request, "home/index.html")
+      return redirect ("./index.html#get_in_touch_section")
+  else:
+      return render(request, 'index.html')
+
+def udarshodhak(request):
+  template = loader.get_template('udarshodhak.html')
+  return render(request, "udarshodhak.html")
+  #return HttpResponse(template.render())
 
   
 
