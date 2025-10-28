@@ -198,35 +198,36 @@ CASHFREE = {
 }
 
 # =========== Logging ==========
-LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'handlers': {
-            'file': {
-                'level': 'INFO',
-                'class': 'logging.handlers.RotatingFileHandler',
-                'filename': BASE_DIR / 'log/ayushmanbhavah.log', # Customize this path
-                'maxBytes': 1024 * 1024 * 5,  # 5 MB
-                'backupCount': 5,
-                'formatter': 'verbose',
-            },
-        },
-        'loggers': {
-            'django': {
-                'handlers': ['file'],
-                'level': 'INFO',
-                'propagate': True,
-            },
-            'ayushmanbhavah': { # For specific app logs
-                'handlers': ['file'],
-                'level': 'DEBUG',
-                'propagate': False,
-            },
-        },
-        'formatters': {
-            'verbose': {
-                'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
-                'style': '{',
-            },
-        },
-}
+# LOGGING = {
+#         'version': 1,
+#         'disable_existing_loggers': False,
+#         'handlers': {
+#             'file': {
+#                 'level': 'INFO',
+#                 'class': 'logging.handlers.RotatingFileHandler',
+#                 'filename': BASE_DIR / 'log/ayushmanbhavah.log', # Customize this path
+#                 'maxBytes': 1024 * 1024 * 5,  # 5 MB
+#                 'backupCount': 5,
+#                 'formatter': 'verbose',
+#             },
+#         },
+#         'loggers': {
+#             'django': {
+#                 'handlers': ['file'],
+#                 'level': 'INFO',
+#                 'propagate': True,
+#             },
+#             'ayushmanbhavah': { # For specific app logs
+#                 'handlers': ['file'],
+#                 'level': 'DEBUG',
+#                 'propagate': False,
+#             },
+#         },
+#         'formatters': {
+#             'verbose': {
+#                 'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+#                 'style': '{',
+#             },
+#         },
+# }
+# ============================================
