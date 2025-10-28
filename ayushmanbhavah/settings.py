@@ -196,3 +196,37 @@ CASHFREE = {
     'client_secret': 'cfsk_ma_test_40dcfc5ba6fa82be2c2e73cdd746d152_f6e8a9eb',
     'base_url': 'https://sandbox.cashfree.com/pg',  # use production URL later
 }
+
+# =========== Logging ==========
+LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'file': {
+                'level': 'INFO',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'filename': BASE_DIR / 'log/ayushmanbhavah.log', # Customize this path
+                'maxBytes': 1024 * 1024 * 5,  # 5 MB
+                'backupCount': 5,
+                'formatter': 'verbose',
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': True,
+            },
+            'ayushmanbhavah': { # For specific app logs
+                'handlers': ['file'],
+                'level': 'DEBUG',
+                'propagate': False,
+            },
+        },
+        'formatters': {
+            'verbose': {
+                'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+                'style': '{',
+            },
+        },
+    }
