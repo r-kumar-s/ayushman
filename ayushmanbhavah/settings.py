@@ -42,6 +42,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://ayushmaanbhavah.com",
     "http://ayushmaanbhavah.com",
     "http://localhost:8000",
+    "https://*.cashfree.com/",
 ]
 
 # Application definition
