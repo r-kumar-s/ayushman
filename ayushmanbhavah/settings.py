@@ -38,11 +38,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://ayushmaanbhavah.com",
-    "http://ayushmaanbhavah.com",
-    "http://localhost:8000",
-]
+CSRF_TRUSTED_ORIGINS = ["https://ayushmaanbhavah.com","http://ayushmaanbhavah.com",]
 
 # Application definition
 
