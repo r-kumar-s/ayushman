@@ -38,12 +38,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+
 CSRF_TRUSTED_ORIGINS = [
     "https://ayushmaanbhavah.com",
+    "https://www.ayushmaanbhavah.com",
     "http://ayushmaanbhavah.com",
     "http://localhost:8000",
-    "https://*.cashfree.com/",
-    
+    "https://sandbox.cashfree.com/",
 ]
 
 # Application definition
