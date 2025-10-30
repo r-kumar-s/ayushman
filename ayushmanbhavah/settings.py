@@ -47,6 +47,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://sandbox.cashfree.com/",
 ]
 
+
 # Application definition
 
 INSTALLED_APPS = [
