@@ -2731,9 +2731,21 @@
     .blog-posts {
         padding: 60px 0 35px;
     }
+
+    .get_in_touch_section::after {
+        height: 356px;
+        background-size: contain;
+    }
 }
 
+
  @media screen and (max-width: 575px){
+    
+    .get_in_touch_section::after {
+        height: 356px;
+        background-size: contain;
+    }
+
     .main_header {
         padding: 20px 15px 0;
     }
