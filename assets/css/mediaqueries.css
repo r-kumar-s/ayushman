@@ -1228,7 +1228,7 @@
         margin-bottom: 5px;
     }
     .services_section .services_box_content .services_box_upper_portion img {
-        width: 100%;
+        /*width: 100%;*/
     }
     .services_box_content .services_box_lower_portion p {
         padding-right: 70px;
