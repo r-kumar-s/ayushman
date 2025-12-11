@@ -160,6 +160,10 @@ def udarshodhak(request):
   return render(request, "udarshodhak.html")
   #return HttpResponse(template.render())
 
-  
-
+def robots_txt(request):
+  content = """User-agent: *
+Allow: /
+Sitemap: https://www.ayushmaanbhavah.com/sitemap.xml
+"""
+  return HttpResponse(content, content_type="text/plain")
             
