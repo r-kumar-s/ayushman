@@ -18,11 +18,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
+from django.contrib.sitemaps.views import sitemap
+from home.sitemaps import StaticViewSitemap
 
+
+sitemaps = {
+    'static': StaticViewSitemap(),
+}
 
 urlpatterns = [
     path('', include('home.urls')),
     path('users/', include('users.urls')),
     path('payments/', include('payments.urls')),
     path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 ]
