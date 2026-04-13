@@ -160,6 +160,14 @@ def udarshodhak(request):
   return render(request, "udarshodhak.html")
   #return HttpResponse(template.render())
 
+def shirodhara(request):
+  template = loader.get_template('treatments/shirodhara.html')
+  return HttpResponse(template.render())
+
+def abhyanga(request):
+  template = loader.get_template('treatments/abhyanga.html')
+  return HttpResponse(template.render())
+
 def robots_txt(request):
   content = """User-agent: *
 Allow: /

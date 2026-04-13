@@ -25,5 +25,7 @@ urlpatterns = [
     path('dr-sushma-tiwary.html', views.dr_sushma_tiwary, name='dr_sushma_tiwary'),
     path('contact_us_email', views.contact_us_email, name='contact_us_email'),
     path('udarshodhak.html', views.udarshodhak, name='udarshodhak'),
+    path('shirodhara.html', views.shirodhara, name='shirodhara'),
+    path('abhyanga.html', views.abhyanga, name='abhyanga'),
     path("robots.txt", robots_txt, name="robots_txt"), 
 ]
