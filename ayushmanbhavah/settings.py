@@ -36,7 +36,7 @@ DEBUG = True
     # Add your production domain(s) here when deploying, e.g., 'yourdomain.com'
 #]
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ayushmaanbhavah.com', 'www.ayushmaanbhavah.com','127.0.0.1']
 
 
 CSRF_TRUSTED_ORIGINS = [
