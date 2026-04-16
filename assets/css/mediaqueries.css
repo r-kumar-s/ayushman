@@ -1584,7 +1584,7 @@
         width: 40px;
     }
     .middle-portion .links_col {
-        padding-left: 40px;
+        padding-left: 0px;
     }
     .middle-portion h4 {
         margin-bottom: 12px;
@@ -3041,7 +3041,7 @@
     }
 
     .footer-section {
-        padding: 100px 0 0;
+        padding: 20px 0px;
         margin-top: -45px;
     }
     .middle-portion {
