@@ -1,0 +1,23 @@
+<h2>User List</h2>
+
+<a href="{% url 'create_with_followup' %}">Add User</a>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for user in users %}
+    <tr>
+        <td>{{ user.fname }} {{ user.lname }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+            <a href="{% url 'detail' user.id %}">View</a>
+            <a href="{% url 'edit' user.id %}">Edit</a>
+            <a href="{% url 'delete' user.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

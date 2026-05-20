@@ -1,0 +1,66 @@
+{% extends "master.html"%}
+{% block title %}Udarshodhak - A Real Body Detoxifier | Buy UdarShodhak Churna At Best Price in India | Ayurvedic Churna for Back Pain, Weight Loss, Headache | ayushmaanbhavah.com{% endblock %}
+{% block content %}
+{% block meta %}
+<meta name="description" content="Looking for a Skin Disorder Ayurvedic Clinic in Ahmedabad? Ayushmaan Bhavah provides 100% ayurvedic treatment for thyroid, shirodhara, panchakarma, etc, with no side effects." />
+<meta name="keywords" content="UdarShodhak Churna, UdarShodhak Churna At Best Price India, Ayurvedic UdarShodhak Churna, Ayurvedic Churna for Body Detoxifier, Ayurvedic Churna for Weight Loss, Ayurvedic Churna for Headache, Ayurvedic Churna for Chronic Constipation, Ayurvedic Churna for Hyper Acidity, Ayurvedic Churna for Gastritis, Ayurvedic Churna for Indigestion, Ayurvedic Churna for Retention of Urine, Ayurvedic Churna for Body Detoxifier" />
+<link rel="canonical" href="https://www.ayushmaanbhavah.com/udarshodhak.html">
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, allow" />
+<meta name="author" content="Ayushman Bhavah" />
+{% endblock %}
+{% load static %}
+<div class="sub-banner-section">
+  {% include 'header.html' %}
+  <!-- SUB BANNER SECTION -->
+</div>
+<!-- ABOUT US SECTION -->
+<section class="aboutpage_aboutus_section">
+  <div class="container">
+      <h2>User Details</h2>
+      <br /><br />
+      <p>Name: {{ user.fname }} {{ user.lname }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Phone: {{ user.phone }}</p>
+      <p>Address: {{ user.address }}</p>
+      <a href="{% url 'users' %}" style="color:blue;">Back</a>
+      <br /><br /><br /><br />
+      <h3>Patient Followups</h3>
+      {% if user.followups.all %}
+      <table border="1" cellpadding="10">
+        <tr>
+          <th>Date</th>
+          <th>Diagnosis</th>
+          <th>Treatment</th>
+          <th>Prescription</th>
+          <th>Invoice</th>
+        </tr>
+        {% for f in user.followups.all %}
+        <tr>
+          <td>{{ f.followup_date }}</td>
+          <td>{{ f.diagnosis }}</td>
+          <td>{{ f.treatments }}</td>
+          <td>
+            {% if f.prescription_file %}
+            <a href="{{ f.prescription_file.url }}" target="_blank" style="color:green;">View</a>
+            {% else %}
+            No file
+            {% endif %}
+          </td>
+          <td>
+            {% if f.invoice_file %}
+            <a href="{{ f.invoice_file.url }}" target="_blank" style="color:green;">View</a>
+            {% else %}
+            No file
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>No followups found.</p>
+      {% endif %}
+  </div>
+</section>
+<!-- FOOTER SECTION -->
+{% endblock %}
