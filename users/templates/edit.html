@@ -1,0 +1,29 @@
+<h2>Edit User + Followups</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <h3>User Details</h3>
+
+    {{ form.as_p }}
+
+    <h3>Followups</h3>
+
+    {{ formset.management_form }}
+
+    {% for f in formset %}
+
+        <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+
+            {{ f.as_p }}
+
+        </div>
+
+    {% endfor %}
+
+    <button type="submit">
+        Update All
+    </button>
+
+</form>
