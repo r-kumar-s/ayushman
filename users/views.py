@@ -80,7 +80,11 @@ def edit(request, id):
             instance=user
         )
 
-        if form.is_valid() and formset.is_valid():
+        # Validate BOTH independently so we get errors from each
+        form_valid    = form.is_valid()
+        formset_valid = formset.is_valid()
+
+        if form_valid and formset_valid:
 
             form.save()
 
