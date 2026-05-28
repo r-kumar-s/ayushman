@@ -1,0 +1,583 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Ayushmaan Bhavah — Patient Management{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── DESIGN TOKENS ─────────────────────────────── */
+    :root {
+      --primary:       #5c3960;
+      --primary-light: #7a4f7e;
+      --primary-dark:  #3e2542;
+      --accent:        #c9844a;
+      --accent-soft:   #fdf0e6;
+      --danger:        #dc2626;
+      --danger-soft:   #fee2e2;
+      --success:       #16a34a;
+      --success-soft:  #dcfce7;
+      --info:          #7c3aed;
+      --info-soft:     #ede9fe;
+
+      --bg:            #f5f0f6;
+      --surface:       #ffffff;
+      --surface-2:     #faf7fb;
+      --border:        #ddd0de;
+      --border-light:  #ede5ee;
+
+      --text-primary:  #1a0f1e;
+      --text-secondary:#5c4a64;
+      --text-muted:    #9c85a4;
+
+      --sidebar-w:     240px;
+      --radius:        12px;
+      --radius-sm:     8px;
+      --shadow:        0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.06);
+      --shadow-lg:     0 8px 32px rgba(0,0,0,.12);
+      --font:          'Inter', system-ui, sans-serif;
+    }
+
+    /* ── RESET ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 15px; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      display: flex;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    svg { display: inline-block; flex-shrink: 0; }
+
+    /* ── SIDEBAR ───────────────────────────────────── */
+    .sidebar {
+      width: var(--sidebar-w);
+      background: linear-gradient(180deg, #3e2542 0%, #2d1a30 100%);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      z-index: 100;
+      box-shadow: 2px 0 20px rgba(62,37,66,.4);
+    }
+    .sidebar-brand {
+      padding: 20px 16px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .sidebar-brand .logo-img {
+      width: 160px;
+      height: auto;
+      object-fit: contain;
+      filter: brightness(1.1);
+    }
+    .sidebar-brand .clinic-sub {
+      color: rgba(255,255,255,.45);
+      font-size: 0.7rem;
+      text-align: center;
+      letter-spacing: .04em;
+    }
+    .sidebar-nav { flex: 1; padding: 16px 12px; overflow-y: auto; }
+    .nav-section-label {
+      color: rgba(255,255,255,.35);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 12px 8px 6px;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      color: rgba(255,255,255,.7);
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 2px;
+      transition: background .15s, color .15s;
+      cursor: pointer;
+    }
+    .nav-item:hover, .nav-item.active {
+      background: rgba(255,255,255,.14);
+      color: #fff;
+    }
+    .nav-item.active { background: rgba(201,132,74,.25); border-left: 3px solid var(--accent); padding-left: 9px; }
+    .nav-icon { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .sidebar-footer {
+      padding: 16px 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.45);
+      font-size: 0.72rem;
+    }
+
+    /* ── MAIN LAYOUT ───────────────────────────────── */
+    .main {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── TOP BAR ───────────────────────────────────── */
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border-light);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .topbar-left h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .topbar-left .breadcrumb {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+    .topbar-right { display: flex; align-items: center; gap: 12px; }
+    .doctor-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-light);
+      border-radius: 999px;
+      padding: 5px 12px 5px 5px;
+    }
+    .doctor-avatar {
+      width: 30px; height: 30px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .doctor-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* ── PAGE CONTENT ──────────────────────────────── */
+    .page-content { flex: 1; padding: 28px; }
+
+    /* ── CARDS ─────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-header h2, .card-header h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-body { padding: 24px; }
+
+    /* ── STATS ROW ─────────────────────────────────── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .stat-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .stat-icon.green  { background: var(--success-soft); color: var(--success); }
+    .stat-icon.amber  { background: var(--accent-soft);  color: var(--accent); }
+    .stat-icon.blue   { background: var(--info-soft);    color: var(--info); }
+    .stat-icon.red    { background: var(--danger-soft);  color: var(--danger); }
+    .stat-icon.purple { background: #f0e9f2;             color: var(--primary); }
+    .stat-value { font-size: 1.5rem; font-weight: 700; line-height: 1; }
+    .stat-label { font-size: 0.75rem; color: var(--text-secondary); margin-top: 3px; }
+
+    /* ── BUTTONS ───────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font);
+      border: none;
+      cursor: pointer;
+      transition: all .15s;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-light); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(92,57,96,.35); }
+    .btn-secondary { background: var(--surface-2); color: var(--text-primary); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--border-light); }
+    .btn-danger { background: var(--danger); color: #fff; }
+    .btn-danger:hover { background: #b91c1c; }
+    .btn-success { background: var(--success); color: #fff; }
+    .btn-success:hover { background: #15803d; }
+    .btn-sm { padding: 6px 12px; font-size: 0.78rem; }
+    .btn-lg { padding: 12px 24px; font-size: 0.95rem; }
+
+    /* ── FORM ELEMENTS ─────────────────────────────── */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: .02em;
+    }
+    .form-label .required { color: var(--danger); margin-left: 2px; }
+    .form-control {
+      width: 100%;
+      padding: 9px 13px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-family: var(--font);
+      color: var(--text-primary);
+      background: var(--surface);
+      transition: border-color .15s, box-shadow .15s;
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(92,57,96,.13);
+    }
+    .form-control::placeholder { color: var(--text-muted); }
+    textarea.form-control { resize: vertical; min-height: 90px; }
+    .form-hint { font-size: 0.73rem; color: var(--text-muted); }
+
+    /* ── FIELD ERROR STATES ────────────────────────── */
+    .form-control.is-error {
+      border-color: var(--danger);
+      background: #fff8f8;
+      box-shadow: 0 0 0 3px rgba(220,38,38,.1);
+    }
+    .field-error {
+      font-size: 0.75rem;
+      color: var(--danger);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 2px;
+    }
+
+    /* ── TABLE ─────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; }
+    table.data-table { width: 100%; border-collapse: collapse; }
+    table.data-table thead tr {
+      background: var(--surface-2);
+      border-bottom: 2px solid var(--border);
+    }
+    table.data-table th {
+      text-align: left;
+      padding: 11px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    table.data-table td {
+      padding: 13px 16px;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: middle;
+    }
+    table.data-table tbody tr:hover { background: var(--surface-2); }
+    table.data-table tbody tr:last-child td { border-bottom: none; }
+
+    /* ── BADGE ─────────────────────────────────────── */
+    .badge {
+      display: inline-flex; align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .badge-green  { background: var(--success-soft); color: var(--success); }
+    .badge-amber  { background: var(--accent-soft);  color: #92400e; }
+    .badge-blue   { background: var(--info-soft);    color: #5b21b6; }
+    .badge-red    { background: var(--danger-soft);  color: var(--danger); }
+    .badge-purple { background: #f0e9f2;             color: var(--primary); }
+
+    /* ── AVATAR / INITIALS ─────────────────────────── */
+    .patient-avatar {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .patient-name-cell { display: flex; align-items: center; gap: 10px; }
+
+    /* ── ALERTS ────────────────────────────────────── */
+    .alert {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      border-left: 4px solid;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .alert-success { background: var(--success-soft); border-color: var(--success); color: #15803d; }
+    .alert-error   { background: var(--danger-soft);  border-color: var(--danger);  color: var(--danger); }
+    .alert-info    { background: var(--info-soft);    border-color: var(--info);    color: #5b21b6; }
+
+    /* ── FOLLOWUP CARD ─────────────────────────────── */
+    .followup-block {
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: var(--surface-2);
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .followup-block .block-number {
+      position: absolute;
+      top: 14px; right: 16px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .followup-block input[type="text"],
+    .followup-block input[type="date"],
+    .followup-block textarea,
+    .followup-block select {
+      width: 100%;
+      padding: 9px 13px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: .875rem;
+      font-family: var(--font);
+      color: var(--text-primary);
+      background: var(--surface);
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+      margin-top: 4px;
+    }
+    .followup-block input[type="text"]:focus,
+    .followup-block input[type="date"]:focus,
+    .followup-block textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(92,57,96,.12); }
+    .followup-block input[type="file"] { border: none; padding: 4px 0; background: transparent; }
+    .followup-block input[type="checkbox"] { width: auto; margin-right: 6px; accent-color: var(--danger); }
+
+    /* ── EMPTY STATE ───────────────────────────────── */
+    .empty-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-muted);
+    }
+    .empty-state .empty-icon { margin-bottom: 14px; display: flex; justify-content: center; color: var(--border); }
+    .empty-state h3 { color: var(--text-secondary); font-size: 1rem; margin-bottom: 6px; }
+    .empty-state p  { font-size: 0.85rem; }
+
+    /* ── MODAL OVERLAY ─────────────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 200;
+      align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 32px;
+      max-width: 420px; width: 90%;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+    .modal-icon { margin-bottom: 12px; display: flex; justify-content: center; }
+    .modal-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .modal-box p  { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 24px; }
+    .modal-actions { display: flex; gap: 10px; justify-content: center; }
+
+    /* ── SEARCH BAR ────────────────────────────────── */
+    .search-wrap { position: relative; max-width: 320px; }
+    .search-wrap input {
+      width: 100%;
+      padding: 8px 12px 8px 36px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-family: var(--font);
+      background: var(--surface);
+      outline: none;
+      transition: border-color .15s;
+      color: var(--text-primary);
+    }
+    .search-wrap input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(92,57,96,.1); }
+    .search-wrap .search-icon {
+      position: absolute;
+      left: 10px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      display: flex;
+    }
+
+    /* ── UTILITIES ─────────────────────────────────── */
+    .flex         { display: flex; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .gap-2 { gap: 8px; }
+    .gap-3 { gap: 12px; }
+    .gap-4 { gap: 16px; }
+    .mb-4  { margin-bottom: 16px; }
+    .mb-6  { margin-bottom: 24px; }
+    .mt-4  { margin-top: 16px; }
+    .text-muted { color: var(--text-muted); font-size: 0.8rem; }
+    .w-full { width: 100%; }
+
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); }
+      .main { margin-left: 0; }
+      .page-content { padding: 16px; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<!-- ── SIDEBAR ─────────────────────────────────────── -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <img src="{% static 'images/original_transparent_logo_white.png' %}"
+         alt="Ayushmaan Bhavah" class="logo-img" />
+    <div class="clinic-sub">Patient Management</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Navigation</div>
+
+    <a href="/users/" class="nav-item {% block nav_patients %}{% endblock %}">
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </span>
+      Patients
+    </a>
+
+    <a href="/users/create_with_followup/" class="nav-item {% block nav_add %}{% endblock %}">
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+      </span>
+      Add Patient
+    </a>
+
+    <div class="nav-section-label" style="margin-top:8px;">System</div>
+
+    <a href="/admin/" class="nav-item">
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      </span>
+      Admin Panel
+    </a>
+  </nav>
+  <div class="sidebar-footer">Ayushmaan Bhavah &copy; {% now "Y" %}</div>
+</aside>
+
+<!-- ── MAIN ────────────────────────────────────────── -->
+<main class="main">
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1>{% block page_title %}Dashboard{% endblock %}</h1>
+      <div class="breadcrumb">{% block breadcrumb %}Ayushmaan Bhavah{% endblock %}</div>
+    </div>
+    <div class="topbar-right">
+      <div class="doctor-badge">
+        <div class="doctor-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <span class="doctor-name">Doctor</span>
+      </div>
+    </div>
+  </header>
+
+  {% if messages %}
+  <div style="padding: 0 28px; margin-top: 16px;">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags == 'error' %}error{% elif message.tags == 'success' %}success{% else %}info{% endif %}">
+      {% if message.tags == 'success' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      {% elif message.tags == 'error' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      {% else %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      {% endif %}
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="page-content">
+    {% block content %}{% endblock %}
+  </div>
+</main>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>
