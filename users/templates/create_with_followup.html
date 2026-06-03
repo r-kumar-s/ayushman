@@ -1,40 +1,237 @@
-{% extends "master.html"%}
-{% block title %}Udarshodhak - A Real Body Detoxifier | Buy UdarShodhak Churna At Best Price in India | Ayurvedic Churna for Back Pain, Weight Loss, Headache | ayushmaanbhavah.com{% endblock %}
+{% extends "base_clinic.html" %}
+{% block title %}Add Patient — Ayushmaan Bhavah{% endblock %}
+{% block nav_add %}active{% endblock %}
+{% block page_title %}Add New Patient{% endblock %}
+{% block breadcrumb %}Patients › New Registration{% endblock %}
+
 {% block content %}
-{% block meta %}
-<meta name="description" content="Looking for a Skin Disorder Ayurvedic Clinic in Ahmedabad? Ayushmaan Bhavah provides 100% ayurvedic treatment for thyroid, shirodhara, panchakarma, etc, with no side effects." />
-<meta name="keywords" content="UdarShodhak Churna, UdarShodhak Churna At Best Price India, Ayurvedic UdarShodhak Churna, Ayurvedic Churna for Body Detoxifier, Ayurvedic Churna for Weight Loss, Ayurvedic Churna for Headache, Ayurvedic Churna for Chronic Constipation, Ayurvedic Churna for Hyper Acidity, Ayurvedic Churna for Gastritis, Ayurvedic Churna for Indigestion, Ayurvedic Churna for Retention of Urine, Ayurvedic Churna for Body Detoxifier" />
-<link rel="canonical" href="https://www.ayushmaanbhavah.com/udarshodhak.html">
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, allow" />
-<meta name="author" content="Ayushman Bhavah" />
-{% endblock %}
-{% load static %}
-<div class="sub-banner-section">
-  {% include 'header.html' %}
-  <!-- SUB BANNER SECTION -->
-</div>
-<!-- ABOUT US SECTION -->
-<section class="aboutpage_aboutus_section">
-  <div class="container">
-    <h2>Create User + Followup</h2>
-    <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="container">
-        <!-- USER FORM -->
-        <div class="box">
-          <h2>User Details</h2>
-          {{ user_form.as_p }}
+<div style="max-width: 820px;">
+  <form method="POST" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+
+    <!-- ── PATIENT DETAILS ─────────────────────────── -->
+    <div class="card mb-6">
+      <div class="card-header">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          Patient Information
+        </h2>
+      </div>
+      <div class="card-body">
+
+        <!-- Non-field errors -->
+        {% if user_form.non_field_errors %}
+        <div class="alert alert-error" style="margin-bottom:18px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          {{ user_form.non_field_errors|join:" " }}
         </div>
-        <!-- FOLLOWUP FORM -->
-        <div class="box">
-          <h2>Patient Followup</h2>
-          {{ followup_form.as_p }}
+        {% endif %}
+
+        <div class="form-grid">
+
+          <!-- First Name -->
+          <div class="form-group">
+            <label class="form-label" for="id_fname">First Name <span class="required">*</span></label>
+            <input type="text" name="fname" id="id_fname"
+                   class="form-control {% if user_form.fname.errors %}is-error{% endif %}"
+                   placeholder="e.g. Ramesh"
+                   value="{{ user_form.fname.value|default:'' }}" required />
+            {% if user_form.fname.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ user_form.fname.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Last Name -->
+          <div class="form-group">
+            <label class="form-label" for="id_lname">Last Name</label>
+            <input type="text" name="lname" id="id_lname"
+                   class="form-control {% if user_form.lname.errors %}is-error{% endif %}"
+                   placeholder="e.g. Patel"
+                   value="{{ user_form.lname.value|default:'' }}" />
+            {% if user_form.lname.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ user_form.lname.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label class="form-label" for="id_phone">Phone <span class="required">*</span></label>
+            <input type="tel" name="phone" id="id_phone"
+                   class="form-control {% if user_form.phone.errors %}is-error{% endif %}"
+                   placeholder="e.g. +91 98765 43210"
+                   value="{{ user_form.phone.value|default:'' }}" required />
+            {% if user_form.phone.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ user_form.phone.errors|join:", " }}
+            </span>
+            {% else %}
+            {% endif %}
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label" for="id_email">Email</label>
+            <input type="email" name="email" id="id_email"
+                   class="form-control {% if user_form.email.errors %}is-error{% endif %}"
+                   placeholder="e.g. patient@email.com"
+                   value="{{ user_form.email.value|default:'' }}" />
+            {% if user_form.email.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ user_form.email.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- DOB -->
+          <div class="form-group">
+            <label class="form-label" for="id_dob">Date of Birth</label>
+            <input type="date" name="dob" id="id_dob"
+                   class="form-control {% if user_form.dob.errors %}is-error{% endif %}"
+                   value="{{ user_form.dob.value|default:'' }}" />
+            {% if user_form.dob.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ user_form.dob.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Referred By -->
+          <div class="form-group">
+            <label class="form-label" for="id_referred_by">Referred By</label>
+            <input type="text" name="referred_by" id="id_referred_by"
+                   class="form-control {% if user_form.referred_by.errors %}is-error{% endif %}"
+                   placeholder="Doctor / source name"
+                   value="{{ user_form.referred_by.value|default:'' }}" />
+            {% if user_form.referred_by.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ user_form.referred_by.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Address -->
+          <div class="form-group full">
+            <label class="form-label" for="id_address">Address <span class="required">*</span></label>
+            <textarea name="address" id="id_address"
+                      class="form-control {% if user_form.address.errors %}is-error{% endif %}"
+                      rows="3" placeholder="Full address of the patient…">{{ user_form.address.value|default:'' }}</textarea>
+            {% if user_form.address.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ user_form.address.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
         </div>
       </div>
-      <button type="submit">Save All</button>
-    </form>
-  </div>
-</section>
-<!-- FOOTER SECTION -->
+    </div>
+
+    <!-- ── FOLLOWUP ─────────────────────────────────── -->
+    <div class="card mb-6">
+      <div class="card-header">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          Initial Consultation / Followup
+        </h2>
+      </div>
+      <div class="card-body">
+
+        {% if followup_form.non_field_errors %}
+        <div class="alert alert-error" style="margin-bottom:18px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          {{ followup_form.non_field_errors|join:" " }}
+        </div>
+        {% endif %}
+
+        <div class="form-grid">
+
+          <!-- Followup Date -->
+          <div class="form-group">
+            <label class="form-label" for="id_followup_date">Followup Date <span class="required">*</span></label>
+            <input type="date" name="followup_date" id="id_followup_date"
+                   class="form-control {% if followup_form.followup_date.errors %}is-error{% endif %}"
+                   value="{{ followup_form.followup_date.value|default:'' }}" required />
+            {% if followup_form.followup_date.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ followup_form.followup_date.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Diagnosis -->
+          <div class="form-group">
+            <label class="form-label" for="id_diagnosis">Diagnosis <span class="required">*</span></label>
+            <input type="text" name="diagnosis" id="id_diagnosis"
+                   class="form-control {% if followup_form.diagnosis.errors %}is-error{% endif %}"
+                   placeholder="e.g. Chronic Gastritis"
+                   value="{{ followup_form.diagnosis.value|default:'' }}" required />
+            {% if followup_form.diagnosis.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ followup_form.diagnosis.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Treatments -->
+          <div class="form-group full">
+            <label class="form-label" for="id_treatments">Treatments / Prescription Notes <span class="required">*</span></label>
+            <textarea name="treatments" id="id_treatments"
+                      class="form-control {% if followup_form.treatments.errors %}is-error{% endif %}"
+                      rows="4"
+                      placeholder="Medicines prescribed, therapies recommended, dietary advice…">{{ followup_form.treatments.value|default:'' }}</textarea>
+            {% if followup_form.treatments.errors %}
+            <span class="field-error">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              {{ followup_form.treatments.errors|join:", " }}
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Prescription File -->
+          <div class="form-group">
+            <label class="form-label" for="id_prescription_file">Prescription File</label>
+            <input type="file" name="prescription_file" id="id_prescription_file"
+                   class="form-control" accept=".pdf,.jpg,.jpeg,.png" />
+            <span class="form-hint">PDF, JPG or PNG accepted</span>
+          </div>
+
+          <!-- Invoice File -->
+          <div class="form-group">
+            <label class="form-label" for="id_invoice_file">Invoice File</label>
+            <input type="file" name="invoice_file" id="id_invoice_file"
+                   class="form-control" accept=".pdf,.jpg,.jpeg,.png" />
+            <span class="form-hint">PDF, JPG or PNG accepted</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="flex gap-3">
+      <button type="submit" class="btn btn-success btn-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        Save Patient &amp; Followup
+      </button>
+      <a href="{% url 'users' %}" class="btn btn-secondary btn-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Cancel
+      </a>
+    </div>
+
+  </form>
+</div>
 {% endblock %}
