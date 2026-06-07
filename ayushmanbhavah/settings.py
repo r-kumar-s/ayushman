@@ -101,11 +101,11 @@ WSGI_APPLICATION = 'ayushmanbhavah.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+   'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ayushman',
-        'USER': 'root',
-        'PASSWORD': 'Mynumber@6',
+        'NAME': 'ayushmanbhavah',
+        'USER': 'ayushman',
+        'PASSWORD': 'abhavah_ayushman',
         'HOST':'localhost',
         'PORT':'3306'     
     }
