@@ -69,6 +69,52 @@
     </div>
   </section>
 </div>
+
+
+
+<!-- ABOUT US SECTION -->
+<section class="aboutus_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+        <div class="aboutus_image">
+          <figure class="mb-0">
+            <img src="{% static 'images/sushma_tiwary_vaidya.jpeg' %}" alt="Dr. Sushma Tiwary" class="img-fluid" style="border-radius: 200px 20px 200px 20px;width:470px;height:482px;margin:50px 0 0 50px;" loading="lazy" />
+          </figure>
+        </div>
+        <figure class="aboutus_top_shape left_shape mb-0">
+          <img src="{% static 'images/aboutus_top_shape.png' %}" alt="Ayurvedic Doctor Sushma Tiwary" class="img-fluid" loading="lazy"/>
+        </figure>
+        <figure class="aboutus_bottom_shape left_shape mb-0">
+          <img src="{% static 'images/aboutus_bottom_shape.png' %}" alt="Ayurvedic Doctor Sushma Tiwary" class="img-fluid" loading="lazy"/>
+        </figure>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" data-aos="fade-right">
+        <div class="aboutus_content">
+          <h5 style="font-weight: 550;">Dr. Sushma Tiwary <br/><font style="font-size: 18px;color:blue;">20+ Years in Nadi Parikshan</font></h5>
+          <h2>PGD Ras Shatra (CRAV)</h2>
+          <div class="aboutus_line_wrapper">
+            <h5 style="font-size: 18px;">(Dept. Of Ayus, Govt. Of India)</h5>
+          </div>
+          <h2>B.A.M.S</h2>
+          <div class="aboutus_line_wrapper">
+            <h5 style="font-size: 18px;">Calcutta University (CU)</h5>
+          </div>
+          <h2>Diploma in Panchkarma</h2>
+          <div class="aboutus_line_wrapper">
+            <h5 style="font-size: 18px;">Panchkarma Specialist</h5>
+          </div>
+          <p>Certified through national academy of Ayurveda for Management of Skin Diseases.</p>
+          <div class="btn_wrapper">
+            <a href="/dr-sushma-tiwary/" class="text-decoration-none get_started_btn">Know Your Doctor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- OUR SERVICES SECTION -->
 <section class="services_section">
   <div class="container">
@@ -168,47 +214,12 @@
     </figure>
   </div>
 </section>
-<!-- ABOUT US SECTION -->
-<section class="aboutus_section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-        <div class="aboutus_image">
-          <figure class="mb-0">
-            <img src="{% static 'images/sushma_tiwary_vaidya.jpeg' %}" alt="Dr. Sushma Tiwary" class="img-fluid" style="border-radius: 200px 20px 200px 20px;width:470px;height:482px;margin:50px 0 0 50px;" loading="lazy" />
-          </figure>
-        </div>
-        <figure class="aboutus_top_shape left_shape mb-0">
-          <img src="{% static 'images/aboutus_top_shape.png' %}" alt="Ayurvedic Doctor Sushma Tiwary" class="img-fluid" loading="lazy"/>
-        </figure>
-        <figure class="aboutus_bottom_shape left_shape mb-0">
-          <img src="{% static 'images/aboutus_bottom_shape.png' %}" alt="Ayurvedic Doctor Sushma Tiwary" class="img-fluid" loading="lazy"/>
-        </figure>
-      </div>
-      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" data-aos="fade-right">
-        <div class="aboutus_content">
-          <h5 style="font-weight: 550;">Dr. Sushma Tiwary</h5>
-          <h2>PGD Ras Shatra (CRAV)</h2>
-          <div class="aboutus_line_wrapper">
-            <h5 style="font-size: 18px;">(Dept. Of Ayus, Govt. Of India)</h5>
-          </div>
-          <h2>B.A.M.S</h2>
-          <div class="aboutus_line_wrapper">
-            <h5 style="font-size: 18px;">Calcutta University (CU)</h5>
-          </div>
-          <h2>Diploma in Panchkarma</h2>
-          <div class="aboutus_line_wrapper">
-            <h5 style="font-size: 18px;">Panchkarma Specialist</h5>
-          </div>
-          <p>Certified through national academy of Ayurveda for Management of Skin Diseases.</p>
-          <div class="btn_wrapper">
-            <a href="/dr-sushma-tiwary/" class="text-decoration-none get_started_btn">Know Your Doctor</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
+
+
+
+
 <!-- OUR SPECIALTIES SECTION -->
 <section class="our_specialties_section">
   <div class="container">
@@ -430,7 +441,7 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="get_in_touch_content">
           <h5>Get in touch</h5>
-          <h2>Get a Free Consultation Now</h2>
+          <h2>Book Consultation Now</h2>
           <form method="POST" action="{% url 'contact_us_email' %}">
             {% csrf_token %}
             <div class="row">
