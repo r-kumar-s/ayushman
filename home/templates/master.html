@@ -132,39 +132,42 @@
     background: #25d366;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
 
     .float-btn {
-        right: 12px;
-        width: 52px;
-        height: 52px;
-        border-radius: 26px;
+        right: 15px !important;
+        width: 55px !important;
+        height: 55px !important;
+        border-radius: 50% !important;
     }
 
     .float-btn i {
-        width: 52px;
-        min-width: 52px;
-        font-size: 22px;
-        line-height: 52px;
+        width: 55px !important;
+        min-width: 55px !important;
+        line-height: 55px !important;
+        font-size: 24px !important;
     }
 
     /* Hide text on mobile */
     .float-btn span {
-        display: none;
+        display: none !important;
     }
 
-    /* Prevent expansion on touch devices */
+    /* Disable expansion on mobile */
     .float-btn:hover {
-        width: 52px;
+        width: 55px !important;
     }
 
+    /* Call button */
     .call-float {
-        bottom: 90px;
+        right: 15px !important;
+        bottom: 100px !important;
     }
 
+    /* WhatsApp button */
     .whatsapp-float {
-        bottom: 20px;
+        right: 15px !important;
+        bottom: 30px !important;
     }
 }
   </style>
