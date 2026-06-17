@@ -64,73 +64,107 @@
   <style>
 .float-btn {
     position: fixed;
-    right: 20px;
-    height: 56px;
-    width: 56px;
-    border-radius: 28px;
+    right: 25px;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-    text-decoration: none;
-    color: #fff;
-    transition: width 0.3s ease;
+    text-decoration: none !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,.25);
     z-index: 9999;
 }
 
 .float-btn i {
-    width: 56px;
-    min-width: 56px;
+    width: 60px;
+    min-width: 60px;
     text-align: center;
-    font-size: 24px;
-    line-height: 56px;
+    font-size: 26px;
+    line-height: 60px;
 }
 
+/* Text */
 .float-btn span {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
     font-size: 18px;
     font-weight: 800;
+    color: #fff !important;
+    transition: all 0.3s ease;
 }
 
+/* Remove underline */
 .float-btn,
 .float-btn:hover,
 .float-btn:focus,
 .float-btn:active,
 .float-btn span {
     text-decoration: none !important;
-    color: #fff;
+    color: #fff !important;
 }
 
+/* Hover expand */
 .float-btn:hover {
     width: 220px;
 }
 
 .float-btn:hover span {
     opacity: 1;
+    max-width: 150px;
     margin-left: 5px;
 }
 
 /* Call Button */
 .call-float {
-    bottom: 110px;
+    bottom: 140px;
     background: #0d6efd;
 }
 
 /* WhatsApp Button */
 .whatsapp-float {
-    bottom: 40px;
+    bottom: 65px;
     background: #25d366;
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+
+    .float-btn {
+        right: 12px;
+        width: 52px;
+        height: 52px;
+        border-radius: 26px;
+    }
+
+    .float-btn i {
+        width: 52px;
+        min-width: 52px;
+        font-size: 22px;
+        line-height: 52px;
+    }
+
+    /* Hide text on mobile */
+    .float-btn span {
+        display: none;
+    }
+
+    /* Prevent expansion on touch devices */
+    .float-btn:hover {
+        width: 52px;
+    }
+
     .call-float {
-        right: 15px;
-        bottom: 110px;
+        bottom: 90px;
     }
 
     .whatsapp-float {
-        right: 15px;
-        bottom: 40px;
+        bottom: 20px;
     }
 }
   </style>
