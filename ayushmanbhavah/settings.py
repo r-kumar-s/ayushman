@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'payments',
     'django.contrib.sitemaps',
     'django.contrib.sites',
+    'tracker',
 ]
 
 SITE_ID = 3
@@ -69,11 +70,13 @@ SITE_ID = 3
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'tracker.middleware.VisitorTrackingMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'ayushmanbhavah.urls'
