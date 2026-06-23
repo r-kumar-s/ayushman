@@ -61,8 +61,18 @@
     "priceRange": "Rs 500"
   }
   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSPH8XZV34"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSPH8XZV34');
+  </script>
   <style>
-.float-btn {
+  .float-btn {
     position: fixed;
     right: 25px;
     height: 60px;
@@ -75,20 +85,20 @@
     text-decoration: none !important;
     color: #fff !important;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
     z-index: 9999;
-}
+  }
 
-.float-btn i {
+  .float-btn i {
     width: 60px;
     min-width: 60px;
     text-align: center;
     font-size: 26px;
     line-height: 60px;
-}
+  }
 
-/* Text */
-.float-btn span {
+  /* Text */
+  .float-btn span {
     opacity: 0;
     max-width: 0;
     overflow: hidden;
@@ -97,75 +107,68 @@
     font-weight: 800;
     color: #fff !important;
     transition: all 0.3s ease;
-}
+  }
 
-/* Remove underline */
-.float-btn,
-.float-btn:hover,
-.float-btn:focus,
-.float-btn:active,
-.float-btn span {
+  /* Remove underline */
+  .float-btn,
+  .float-btn:hover,
+  .float-btn:focus,
+  .float-btn:active,
+  .float-btn span {
     text-decoration: none !important;
     color: #fff !important;
-}
+  }
 
-/* Hover expand */
-.float-btn:hover {
+  /* Hover expand */
+  .float-btn:hover {
     width: 220px;
-}
+  }
 
-.float-btn:hover span {
+  .float-btn:hover span {
     opacity: 1;
     max-width: 150px;
     margin-left: 5px;
-}
+  }
 
-/* Call Button */
-.call-float {
+  /* Call Button */
+  .call-float {
     bottom: 140px;
     background: #0d6efd;
-}
+  }
 
-/* WhatsApp Button */
-.whatsapp-float {
+  /* WhatsApp Button */
+  .whatsapp-float {
     bottom: 65px;
     background: #25d366;
-}
+  }
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
 
     .call-float {
-        right: 50px !important;
-        bottom: 180px !important;
+      right: 50px !important;
+      bottom: 180px !important;
     }
 
     .whatsapp-float {
-        right: 50px !important;
-        bottom: 100px !important;
+      right: 50px !important;
+      bottom: 100px !important;
     }
-}
+  }
   </style>
 </head>
 
 <body>
   {% block content %}
   {% endblock %}
-  
   {% include 'footer.html' %}
-
-<a href="tel:+918469260584" class="float-btn call-float">
+  <a href="tel:+918469260584" class="float-btn call-float">
     <i class="fas fa-phone-alt"></i>
     <span>Call Now</span>
-</a>
-
-<a href="https://wa.me/918469260584?text=Hello%20I%20need%20help"
-   class="float-btn whatsapp-float"
-   target="_blank">
+  </a>
+  <a href="https://wa.me/918469260584?text=Hello%20I%20need%20help" class="float-btn whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
     <span>Chat with us</span>
-</a>
-
-
+  </a>
   <!-- Latest compiled JavaScript -->
   <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
   <script src="{% static 'js/popper.min.js' %}"></script>
