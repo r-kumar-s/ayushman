@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.sites',
     'tracker',
+    'campaigns',
 ]
 
 SITE_ID = 3

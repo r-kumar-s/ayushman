@@ -33,6 +33,7 @@ urlpatterns = [
     path('payments/', include('payments.urls')),
     path('admin/', admin.site.urls),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+    path("", include("campaigns.urls")),
 ]
 
 

@@ -1,0 +1,1076 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Best Ayurvedic Clinic in Ahmedabad. Expert Panchakarma, Shirodhara, thyroid, PCOD & skin treatments by Dr. Sushma Tiwary. Book a consultation today!" />
+  <meta name="keywords" content="Ayurvedic Clinic Ahmedabad, Panchakarma, Shirodhara, Thyroid Treatment, Dr Sushma Tiwary" />
+  <meta property="og:title" content="Ayushman Bhavah – Best Ayurvedic Clinic in Ahmedabad" />
+  <meta property="og:url" content="https://www.ayushmaanbhavah.com/" />
+  <link rel="canonical" href="https://www.ayushmaanbhavah.com/" />
+  <title>Ayushman Bhavah – Best Ayurvedic Clinic in Ahmedabad | Dr. Sushma Tiwary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'why-ayushmaan-bhavah/css/style.css' %}">
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <strong>First Consultation</strong> for new patients &nbsp;|&nbsp;
+    <a href="tel:+918469260584">Call Now: +91 84692 60584</a>
+  </div>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="logo">
+          <img src="{% static 'why-ayushmaan-bhavah/images/original_transparent_logo.png' %}" alt="Ayushman Bhavah Logo" class="logo-img">
+        </a>
+        <div class="nav-links">
+          <a href="#doctor">Doctor</a>
+          <a href="#clinic">Clinic</a>
+          <a href="#treatments">Treatments</a>
+          <a href="#products">Products</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <a href="#book" class="btn btn-gold" id="nav-cta">Book Consultation</a>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <span class="mobile-nav-close" id="mobileClose">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="28" height="28">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" /></svg>
+    </span>
+    <a href="#doctor" class="mobile-link">Doctor</a>
+    <a href="#clinic" class="mobile-link">Clinic</a>
+    <a href="#treatments" class="mobile-link">Treatments</a>
+    <a href="#products" class="mobile-link">Products</a>
+    <a href="#testimonials" class="mobile-link">Testimonials</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#book" class="btn btn-gold mobile-link">Book Consultation</a>
+  </div>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-inner">
+        <!-- Left: Text -->
+        <div>
+          <div class="hero-trust-badge">
+            <span class="badge-dot"></span>
+            TRUSTED BY 50,000+ PATIENTS
+          </div>
+          <h1>Ayurvedic Treatment for <span class="accent">Natural, Lasting Healing</span></h1>
+          <div class="hero-benefits">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2" /></svg>
+              </div>
+              TSH levels normalized within 3–4 months, naturally
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+              </div>
+              100% pure Ayurvedic herbs — zero synthetic chemicals or side effects
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M20 21a8 8 0 00-16 0" /></svg>
+              </div>
+              Personalized treatment by Dr. Sushma Tiwary — 15+ years experience
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+                  <polyline points="20,6 9,17 4,12" /></svg>
+              </div>
+              No lifelong dependency on allopathic medicines
+            </div>
+          </div>
+          <div class="hero-cta-wrap">
+            <a href="#book" class="hero-cta-main" id="hero-cta">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" /></svg>
+              Book Consultation
+            </a>
+          </div>
+        </div>
+        <!-- Right: Doctor card + stats -->
+        <div class="doc-img-wrap reveal-right">
+          <div class="doc-img-frame">
+            <iframe width="400" height="300" src="https://www.youtube.com/embed/WbXv6ZRrGhQ" title="आयुर्वेद से प्राकृतिक इलाज | Best Ayurvedic Clinic for Natural Healing |  AYUSHMAN BHAVAH Clinic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="doc-exp-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2" style="margin:0 auto 8px;display:block">
+              <circle cx="12" cy="8" r="7" />
+              <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88" /></svg>
+            <div class="doc-exp-num">15+</div>
+            <div class="doc-exp-label">Years of Healing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TRUST MARQUEE -->
+  <div class="trust-bar">
+    <div class="trust-scroll" id="trustScroll">
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+        Award-Winning Clinic
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+        100% Natural Treatments
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M20 21a8 8 0 00-16 0" /></svg>
+        Certified Ayurvedic Doctors
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+          <circle cx="12" cy="10" r="3" /></svg>
+        Satellite, Ahmedabad
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2.5">
+          <polyline points="20,6 9,17 4,12" /></svg>
+        No Side Effects
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+        4.9 Google Rating
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+        Award-Winning Clinic
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+        100% Natural Treatments
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M20 21a8 8 0 00-16 0" /></svg>
+        Certified Ayurvedic Doctors
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+          <circle cx="12" cy="10" r="3" /></svg>
+        Satellite, Ahmedabad
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2.5">
+          <polyline points="20,6 9,17 4,12" /></svg>
+        No Side Effects
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#413625" stroke-width="2.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+        4.9 Google Rating
+      </div>
+    </div>
+  </div>
+  <!-- ===================== DOCTOR AUTHORITY ===================== -->
+  <section class="doctor-section" id="doctor">
+    <div class="container">
+      <div class="doctor-grid">
+        <div class="hero-left">
+          <div class="hero-doc-card">
+            <img src="{% static 'why-ayushmaan-bhavah/images/sushma_tiwary_vaidya.jpeg' %}" alt="Dr. Sushma Tiwary – Best Ayurvedic Doctor Ahmedabad" class="logo-img">
+            <div class="hero-doc-overlay">
+              <div class="doc-name">Dr. Sushma Tiwary</div>
+              <div class="doc-title">B.A.M.S. | CRAV Rasayan · 20+ Years Experience</div>
+            </div>
+          </div>
+          <div class="hero-stats-row">
+            <div class="hero-stat-card">
+              <div class="hsc-num" data-count="50000" data-sfx="K+">0</div>
+              <div class="hsc-label">Patients Healed</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hsc-num" data-count="20" data-sfx="+">0</div>
+              <div class="hsc-label">Years of Excellence</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hsc-num" data-count="98" data-sfx="%">0</div>
+              <div class="hsc-label">Satisfaction Rate</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="tag">Meet Your Doctor</span>
+          <h2 class="section-title">Dr. Sushma Tiwary</h2>
+          <div class="divider divider-left"></div>
+          <div class="cred-pills">
+            <span class="cred-pill">B.A.M.S.</span>
+            <span class="cred-pill">CRA.V Ras Shastra</span>
+            <span class="cred-pill">Panchakarma Expert</span>
+            <span class="cred-pill">Nadi Pariksha</span>
+          </div>
+          <p style="margin-bottom:15px">
+            With over 15 years of dedicated practice, Dr. Sushma Tiwary combines ancient Ayurvedic wisdom
+            with modern diagnostic precision. She has successfully treated thousands of patients with chronic
+            illnesses using time-tested Ayurvedic protocols — without any side effects.
+          </p>
+          <p style="margin-bottom:22px">
+            Her patient-first approach, deep knowledge of <strong>Nadi Pariksha</strong> and personalized
+            treatment plans have made Ayushman Bhavah the most trusted name in Ahmedabad.
+          </p>
+          <div class="specialty-grid">
+            <div class="specialty-row">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+              </div>
+              Thyroid Disorders
+            </div>
+            <div class="specialty-row">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+              </div>
+              PCOD / PCOS
+            </div>
+            <div class="specialty-row">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z" />
+                  <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" />
+                  <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                  <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></svg>
+              </div>
+              Panchakarma
+            </div>
+            <div class="specialty-row">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z" />
+                  <path d="M19 10a7 7 0 01-14 0" />
+                  <line x1="12" y1="17" x2="12" y2="22" />
+                  <line x1="8" y1="22" x2="16" y2="22" /></svg>
+              </div>
+              Shirodhara
+            </div>
+            <div class="specialty-row">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0H5a2 2 0 00-2 2v4a2 2 0 002 2h4m0-6h10m0 0h4a2 2 0 012-2V9a2 2 0 00-2-2H14" />
+                  <path d="M9 14h6" /></svg>
+              </div>
+              Arthritis
+            </div>
+            <div class="specialty-row">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" /></svg>
+              </div>
+              Skin Disorders
+            </div>
+          </div>
+          <a href="#book" class="btn btn-maroon" style="margin-top:18px;display:inline-flex" id="doc-cta">
+            Book Consultation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section class="comparison-section" id="comparison">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="tag">Why Choose Ayurveda</span>
+        <h2 class="section-title">Ayurveda vs. Conventional Treatment</h2>
+        <div class="divider"></div>
+        <p class="section-sub">See why thousands of patients choose authentic Ayurvedic healing over conventional approaches.</p>
+      </div>
+      <div class="comparison-table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Benefit</th>
+              <th class="col-ours">Ayushman Bhavah Ayurveda</th>
+              <th class="col-them">Conventional Allopathy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Root Cause Treatment</td>
+              <td class="center td-ours"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3">
+                    <polyline points="20,6 9,17 4,12" /></svg></span></td>
+              <td class="center td-them"><span class="cross-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="3">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span></td>
+            </tr>
+            <tr>
+              <td>Zero Side Effects</td>
+              <td class="center td-ours"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3">
+                    <polyline points="20,6 9,17 4,12" /></svg></span></td>
+              <td class="center td-them"><span class="cross-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="3">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span></td>
+            </tr>
+            <tr>
+              <td>100% Natural Herbs</td>
+              <td class="center td-ours"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3">
+                    <polyline points="20,6 9,17 4,12" /></svg></span></td>
+              <td class="center td-them"><span class="cross-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="3">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span></td>
+            </tr>
+            <tr>
+              <td>Long-term Hormone Balance</td>
+              <td class="center td-ours"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3">
+                    <polyline points="20,6 9,17 4,12" /></svg></span></td>
+              <td class="center td-them"><span class="cross-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="3">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span></td>
+            </tr>
+            <tr>
+              <td>Eliminate Lifelong Dependency</td>
+              <td class="center td-ours"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3">
+                    <polyline points="20,6 9,17 4,12" /></svg></span></td>
+              <td class="center td-them"><span class="cross-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="3">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span></td>
+            </tr>
+            <tr>
+              <td>Personalized Treatment Plan</td>
+              <td class="center td-ours"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3">
+                    <polyline points="20,6 9,17 4,12" /></svg></span></td>
+              <td class="center td-them"><span class="cross-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="3">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span></td>
+            </tr>
+            <tr>
+              <td>Immune System Strengthening</td>
+              <td class="center td-ours"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3">
+                    <polyline points="20,6 9,17 4,12" /></svg></span></td>
+              <td class="center td-them"><span class="cross-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="3">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="testi-headline">Over <span>10,000+</span> lives transformed</div>
+      <p class="testi-sub">Real stories of natural, side-effect-free healing</p>
+      <!-- Hidden featured player for modal (if needed) or simple JS replacement -->
+      <div id="vid-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;padding:24px">
+        <div style="width:100%;max-width:900px;position:relative;background:#000;aspect-ratio:16/9;border-radius:12px;overflow:hidden">
+          <button id="close-modal" style="position:absolute;top:16px;right:16px;background:white;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" /></svg></button>
+          <iframe id="modal-iframe" style="width:100%;height:100%;border:none" allow="autoplay;encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+      <!-- Video Grid -->
+      <div class="vt-carousel-wrap reveal">
+        <button class="carousel-btn left" id="vtPrev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6" /></svg>
+        </button>
+        <button class="carousel-btn right" id="vtNext" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" /></svg>
+        </button>
+        <div class="vt-grid" id="vtGrid">
+          <!-- Card 1 -->
+          <div class="vt-video-card" data-video="joceu4XibBs" data-filter="thyroid" data-name="Anna Obrazhei" data-cond="Thyroid & Panchkarma Treatment" data-quote="After 3 years of struggling with hypothyroidism, my TSH levels are finally normal! Dr. Sushma's treatment was completely natural.">
+            <img src="{% static 'why-ayushmaan-bhavah/images/Anna3.png' %}" alt="Anna" class="vt-thumb-img">
+            <div class="vt-play-overlay">
+              <div class="vt-play-circle"><svg viewBox="0 0 24 24" fill="var(--m)">
+                  <path d="M5 3l14 9-14 9V3z" /></svg></div>
+            </div>
+            <div class="vt-card-bottom">
+              <div class="vt-patient-name">Anna Obrazhei</div>
+              <div class="vt-condition-tag">Thyroid</div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="vt-video-card" data-video="joceu4XibBs" data-filter="pcod" data-name="Bhavika Patel" data-cond="PCOD Treatment" data-quote="Cycles completely regular in 3 months — zero side effects and I feel so energetic!">
+            <img src="{% static 'why-ayushmaan-bhavah/images/Bhavika_Patel.png' %}" alt="Bhavika Patel" class="vt-thumb-img">
+            <div class="vt-play-overlay">
+              <div class="vt-play-circle"><svg viewBox="0 0 24 24" fill="var(--m)">
+                  <path d="M5 3l14 9-14 9V3z" /></svg></div>
+            </div>
+            <div class="vt-card-bottom">
+              <div class="vt-patient-name">Bhavika Patel</div>
+              <div class="vt-condition-tag">PCOD/PCOS</div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="vt-video-card" data-video="joceu4XibBs" data-filter="arthritis" data-name="Prabha" data-cond="Arthritis and Joint Pain" data-quote="Relieve joint pain naturally and regain smooth, pain-free movement with holistic Ayurvedic care. Highly recommend!">
+            <img src="{% static 'why-ayushmaan-bhavah/images/Prabha.png' %}" alt="Prabha" class="vt-thumb-img">
+            <div class="vt-play-overlay">
+              <div class="vt-play-circle"><svg viewBox="0 0 24 24" fill="var(--m)">
+                  <path d="M5 3l14 9-14 9V3z" /></svg></div>
+            </div>
+            <div class="vt-card-bottom">
+              <div class="vt-patient-name">Prabha</div>
+              <div class="vt-condition-tag">Arthritis and Joint Pain</div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="vt-video-card" data-video="joceu4XibBs" data-filter="panchakarma" data-name="Hitesh Thakkar" data-cond="Panchakarma" data-quote="Lost 8 kg, my digestion improved dramatically. Highly recommend!">
+            <img src="{% static 'why-ayushmaan-bhavah/images/Hitesh_Thakkar.png' %}" alt="Bhavika" class="vt-thumb-img">
+            <div class="vt-play-overlay">
+              <div class="vt-play-circle"><svg viewBox="0 0 24 24" fill="var(--m)">
+                  <path d="M5 3l14 9-14 9V3z" /></svg></div>
+            </div>
+            <div class="vt-card-bottom">
+              <div class="vt-patient-name">Hitesh Thakkar</div>
+              <div class="vt-condition-tag">Panchakarma</div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="vt-video-card" data-video="joceu4XibBs" data-filter="pregnancy" data-name="Priya Mehta" data-cond="Pregnancy" data-quote="Dr. Sushma listened to all my concerns with great patience and provided a treatment plan that was both safe and effective. Thanks to the care I received, I enjoyed a healthy pregnancy and a smooth recovery after childbirth. Thank you to the entire clinic for the exceptional care.">
+            <img src="{% static 'why-ayushmaan-bhavah/images/Priya_Mehta.png' %}" alt="Priya Mehta" class="vt-thumb-img">
+            <div class="vt-play-overlay">
+              <div class="vt-play-circle"><svg viewBox="0 0 24 24" fill="var(--m)">
+                  <path d="M5 3l14 9-14 9V3z" /></svg></div>
+            </div>
+            <div class="vt-card-bottom">
+              <div class="vt-patient-name">Priya Mehta</div>
+              <div class="vt-condition-tag">Pre and Post Pregnancy care</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Dynamic Quote Container (displays when filtering or clicking cards) -->
+      <div style="display:flex;justify-content:center;margin-top:24px">
+        <div class="vt-quote-card" id="activeQuote">
+          <div class="vt-quote-text" id="quoteText">"Select a video to see patient story."</div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="vt-quote-name" id="quoteName">Name</div>
+            <div style="width:1px;height:12px;background:rgba(0,0,0,.2)"></div>
+            <div class="vt-quote-cond" id="quoteCond">Condition</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== TREATMENTS ===================== -->
+  <section class="treatments-section section" id="treatments">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Conditions We Specialize In</h2>
+        <div class="divider"></div>
+        <p class="section-sub">Targeted Ayurvedic treatments addressing the root cause, not just symptoms.</p>
+      </div>
+      <div class="condition-grid reveal">
+        <!-- Condition 1 -->
+        <div class="condition-card">
+          <div class="cond-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+          </div>
+          <div class="cond-title">Thyroid Disorders</div>
+          <div class="cond-bullets">
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>TSH normalized in 3-4 months
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Kanchanar Guggulu protocol
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Reduces dependency on drugs
+            </div>
+          </div>
+          <a href="#book" class="cond-cta">Consult Doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" /></svg></a>
+        </div>
+        <!-- Condition 2 -->
+        <div class="condition-card">
+          <div class="cond-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+          </div>
+          <div class="cond-title">PCOD & PCOS</div>
+          <div class="cond-bullets">
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Irregular cycles restored
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Cysts reduced via Virechana
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Shatavari & Ashoka herbs
+            </div>
+          </div>
+          <a href="#book" class="cond-cta">Consult Doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" /></svg></a>
+        </div>
+        <!-- Condition 3 -->
+        <div class="condition-card">
+          <div class="cond-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z" />
+              <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" /></svg>
+          </div>
+          <div class="cond-title">Panchakarma Detox</div>
+          <div class="cond-bullets">
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Deep cellular detoxification
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Weight & digestion reset
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>7–21 day custom programs
+            </div>
+          </div>
+          <a href="#book" class="cond-cta">Consult Doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" /></svg></a>
+        </div>
+        <!-- Condition 4 -->
+        <div class="condition-card">
+          <div class="cond-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z" />
+              <path d="M19 10a7 7 0 01-14 0" />
+              <line x1="12" y1="17" x2="12" y2="22" />
+              <line x1="8" y1="22" x2="16" y2="22" /></svg>
+          </div>
+          <div class="cond-title">Shirodhara</div>
+          <div class="cond-bullets">
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Insomnia & anxiety relief
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Migraine treatment
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Nervous system relaxation
+            </div>
+          </div>
+          <a href="#book" class="cond-cta">Consult Doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" /></svg></a>
+        </div>
+        <!-- Condition 5 -->
+        <div class="condition-card">
+          <div class="cond-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0H5a2 2 0 00-2 2v4a2 2 0 002 2h4m0-6h10" /></svg>
+          </div>
+          <div class="cond-title">Arthritis & Joint Pain</div>
+          <div class="cond-bullets">
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Janu Basti for knee pain
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Kati Basti for lower back
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>No steroids or painkillers
+            </div>
+          </div>
+          <a href="#book" class="cond-cta">Consult Doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" /></svg></a>
+        </div>
+        <!-- Condition 6 -->
+        <div class="condition-card">
+          <div class="cond-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" /></svg>
+          </div>
+          <div class="cond-title">Skin Disorders</div>
+          <div class="cond-bullets">
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Psoriasis & eczema clearance
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>Blood purification naturally
+            </div>
+            <div class="cond-bullet">
+              <div class="cond-bullet-dot"><svg viewBox="0 0 12 12" fill="none" stroke-width="2.5">
+                  <polyline points="1.5,6 4.5,9 10.5,3" /></svg></div>No topical steroids needed
+            </div>
+          </div>
+          <a href="#book" class="cond-cta">Consult Doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" /></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== CLINIC ===================== -->
+  <section class="clinic-section" id="clinic">
+    <div class="container">
+      <div class="clinic-grid">
+        <div class="reveal-left">
+          <span class="tag">Our Clinic</span>
+          <h2 class="section-title">A Sanctuary for<br>Holistic Healing</h2>
+          <div class="divider divider-left"></div>
+          <p style="margin-bottom:24px">Our state-of-the-art Ayurvedic center in Satellite, Ahmedabad is designed to provide the most authentic and peaceful healing experience. Every corner crafted to promote wellness.</p>
+          <div class="clinic-features">
+            <div class="clinic-feat">
+              <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                  <polyline points="9,22 9,12 15,12 15,22" /></svg></div>
+              <div class="feat-text">
+                <h4>Panchakarma Treatment Rooms</h4>
+                <p>Private, climate-controlled rooms with authentic wooden treatment tables and handcrafted Ayurvedic equipment.</p>
+              </div>
+            </div>
+            <div class="clinic-feat">
+              <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg></div>
+              <div class="feat-text">
+                <h4>Nadi Pariksha Diagnostics</h4>
+                <p>Pulse diagnosis combined with modern health assessments for accurate, personalized treatment.</p>
+              </div>
+            </div>
+            <div class="clinic-feat">
+              <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z" />
+                  <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" /></svg></div>
+              <div class="feat-text">
+                <h4>In-House Herbal Pharmacy</h4>
+                <p>Pure, quality-tested herbal formulations prepared in-house — no synthetic chemicals, ever.</p>
+              </div>
+            </div>
+            <div class="clinic-feat">
+              <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" /></svg></div>
+              <div class="feat-text">
+                <h4>Conveniently Located</h4>
+                <p>10 Jaswant Society, Satellite, Ahmedabad – 380015. Easy parking & metro access nearby.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clinic-img-stack reveal-right">
+          <div class="clinic-float-badge">
+            <div class="fl-num">500+</div>
+            <div class="fl-lbl">Treatments / Month</div>
+          </div>
+          <div class="clinic-main-img">
+            <img src="{% static 'why-ayushmaan-bhavah/images/panchkarma_room.png' %}" alt="Ayushman Bhavah Ayurvedic Clinic Interior Ahmedabad">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== PRODUCTS ===================== -->
+  <section class="products-section section" id="products">
+    <div class="container">
+      <div class="products-intro">
+        <div class="reveal-left">
+          <span class="tag">Our Products</span>
+          <h2 class="section-title">Authentic Ayurvedic<br>Formulations</h2>
+          <div class="divider divider-left"></div>
+          <p style="margin-bottom:22px">We prepare our own range of pure herbal medicines in-house — using traditional Ayurvedic recipes with quality-tested, wild-harvested herbs. Zero fillers. Zero synthetic additives.</p>
+          <p style="font-size:13.5px;color:var(--m);font-weight:700;margin-bottom:22px">Hover over any product card to see details</p>
+          <a href="#book" class="btn btn-maroon" id="product-cta">
+            Get Product Recommendation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12,5 19,12 12,19" /></svg>
+          </a>
+        </div>
+        <div class="products-img-frame reveal-right">
+          <img src="images/products.png" alt="Ayurvedic Herbal Products by Ayushman Bhavah" />
+        </div>
+      </div>
+      <div class="products-cards">
+        <div class="flip-card reveal">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z" />
+                  <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" /></svg></div>
+              <h3>Thyroid Care Capsules</h3>
+              <div class="flip-hint">Bestseller</div>
+            </div>
+            <div class="flip-back">
+              <h3>Thyroid Care Capsules</h3>
+              <p>Kanchanar, Guggulu & Ashwagandha blend for thyroid hormone balance. Supports both hypo & hyperthyroidism naturally.</p><span class="flip-tag-pill">Bestseller</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card reveal">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div>
+              <h3>Shatavari Gold</h3>
+              <div class="flip-hint">Women's Health</div>
+            </div>
+            <div class="flip-back">
+              <h3>Shatavari Gold</h3>
+              <p>Premium women's wellness tonic for PCOD, hormonal imbalance & reproductive health. 100% pure extract.</p><span class="flip-tag-pill">Women's Health</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card reveal">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z" />
+                  <path d="M19 10a7 7 0 01-14 0" /></svg></div>
+              <h3>Brahmi Mind Tonic</h3>
+              <div class="flip-hint">Mental Wellness</div>
+            </div>
+            <div class="flip-back">
+              <h3>Brahmi Mind Tonic</h3>
+              <p>Pure Brahmi & Shankhapushpi for memory, focus, stress relief & deep sleep. Clinically validated formula.</p><span class="flip-tag-pill">Mental Wellness</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card reveal">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                  <line x1="4" y1="22" x2="4" y2="15" /></svg></div>
+              <h3>Vasa Lung Syrup</h3>
+              <div class="flip-hint">Respiratory</div>
+            </div>
+            <div class="flip-back">
+              <h3>Vasa Lung Syrup</h3>
+              <p>Traditional Vasavaleha for respiratory support, chronic cough & lung strengthening. Safe for all ages.</p><span class="flip-tag-pill">Respiratory</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card reveal">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" /></svg></div>
+              <h3>Neem Manjistha Oil</h3>
+              <div class="flip-hint">Skin Health</div>
+            </div>
+            <div class="flip-back">
+              <h3>Neem Manjistha Oil</h3>
+              <p>Blood purifying herbal oil for psoriasis, eczema & chronic skin conditions. No steroids, no side effects.</p><span class="flip-tag-pill">Skin Health</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card reveal">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+                  <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0H5a2 2 0 00-2 2v4a2 2 0 002 2h4" /></svg></div>
+              <h3>Maharayan Oil</h3>
+              <div class="flip-hint">Pain Relief</div>
+            </div>
+            <div class="flip-back">
+              <h3>Maharayan Oil</h3>
+              <p>Classical joint & muscle oil for arthritis, back pain & inflammation. Apply warm for best results.</p><span class="flip-tag-pill">Pain Relief</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== FAQ ===================== -->
+  <section class="faq-section section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="tag">Frequently Asked</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="divider"></div>
+        <p class="section-sub">Find answers to the most common questions about our Ayurvedic treatments and consultation process.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">How long does it take to see results from Ayurvedic treatment?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+              <polyline points="6,9 12,15 18,9" /></svg></div>
+          <div class="faq-a">Results vary by condition and individual constitution. Typically, patients notice significant improvements within 4–8 weeks of consistent treatment. Chronic conditions like thyroid disorders often stabilize within 3–4 months, while acute symptoms like stress or pain relief can be experienced within the first few sessions.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Are there any side effects from Ayurvedic medicines?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+              <polyline points="6,9 12,15 18,9" /></svg></div>
+          <div class="faq-a">When prescribed by a qualified Ayurvedic physician and sourced from pure, quality-tested herbs, Ayurvedic medicines have minimal to no side effects. All our formulations are prepared in-house using wild-harvested, tested herbs — absolutely no synthetic chemicals or fillers.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I continue my allopathic medications alongside Ayurvedic treatment?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+              <polyline points="6,9 12,15 18,9" /></svg></div>
+          <div class="faq-a">Yes, in most cases patients can continue their existing medications during Ayurvedic treatment. Dr. Sushma Tiwary carefully reviews all current medications during consultation. Many patients are gradually able to reduce and eventually eliminate allopathic medications as their condition improves — but never abruptly and always under medical guidance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I need to follow any dietary restrictions during treatment?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+              <polyline points="6,9 12,15 18,9" /></svg></div>
+          <div class="faq-a">Dietary guidance is an integral part of Ayurvedic healing. Dr. Sushma will prescribe a personalized Pathya (compatible diet) based on your Prakriti (body type) and condition. The guidelines are practical and easy to follow — not extreme or restrictive.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is Panchakarma treatment safe? Who should avoid it?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+              <polyline points="6,9 12,15 18,9" /></svg></div>
+          <div class="faq-a">Panchakarma is safe when performed under the supervision of a trained Ayurvedic physician. Certain conditions such as pregnancy, severe anemia, or acute infections may require modifications or avoidance of specific procedures. Dr. Sushma conducts a thorough pre-assessment to determine the safest and most effective protocols for each individual.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you offer online consultations?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+              <polyline points="6,9 12,15 18,9" /></svg></div>
+          <div class="faq-a">Yes, we offer online video consultations for patients who cannot visit the clinic in person. However, for Panchakarma, Shirodhara, and other hands-on therapies, you will need to visit our clinic in Satellite, Ahmedabad. Contact us to schedule an online consultation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== CTA SECTION ===================== -->
+  <section class="cta-section">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="reveal">
+        <span class="tag tag-light">Start Your Healing Journey</span>
+        <h2>Your Body Deserves<br><span>Natural Healing</span></h2>
+        <p class="cta-desc">Book your Ayurvedic consultation today and take the first step towards a healthier, medicine-free life.</p>
+        <div class="cta-btns">
+          <a href="#book" class="btn btn-gold btn-lg" id="main-cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" /></svg>
+            Book Consultation
+          </a>
+          <a href="tel:+918469260584" class="btn-outline-light btn-lg" id="main-call">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 9.09a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
+            +91 84692 60584
+          </a>
+        </div>
+        <div class="cta-feats">
+          <div class="cta-feat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5">
+              <polyline points="20,6 9,17 4,12" /></svg>
+            100% Natural
+          </div>
+          <div class="cta-feat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5">
+              <polyline points="20,6 9,17 4,12" /></svg>
+            No Side Effects
+          </div>
+          <div class="cta-feat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5">
+              <polyline points="20,6 9,17 4,12" /></svg>
+            Personalized Treatment
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== BOOKING FORM ===================== -->
+  <section class="form-section" id="book">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom:40px">
+        <span class="tag">Book Consultation</span>
+        <h2 class="section-title">Get Your Consultation</h2>
+        <div class="divider"></div>
+        <p class="section-sub">Dr. Sushma Tiwary will personally call you back within 2 hours.</p>
+      </div>
+      <div class="form-wrap reveal">
+        <form id="consultationForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" placeholder="Your full name" required /></div>
+            <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="age">Age</label><input type="number" id="age" name="age" placeholder="Your age" min="1" max="120" /></div>
+            <div class="form-group">
+              <label for="condition">Health Concern *</label>
+              <select id="condition" name="condition" required>
+                <option value="" disabled selected>Select condition</option>
+                <option>Thyroid Disorder</option>
+                <option>PCOD / PCOS</option>
+                <option>Panchakarma / Detox</option>
+                <option>Shirodhara / Stress</option>
+                <option>Arthritis / Joint Pain</option>
+                <option>Skin Disorder</option>
+                <option>Digestive Issues</option>
+                <option>Lung / Respiratory</option>
+                <option>Weight Management</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label for="message">Brief Description</label><textarea id="message" name="message" placeholder="Describe your concern briefly..."></textarea></div>
+          <button type="submit" class="btn btn-gold form-submit" id="form-submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" /></svg>
+            Book My Consultation
+          </button>
+          <p class="privacy-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+            100% private & secure. We'll call within 2 hours.
+          </p>
+        </form>
+        <div id="form-success" style="display:none;text-align:center;padding:40px">
+          <div style="width:72px;height:72px;background:rgba(159,29,28,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--m)" stroke-width="2.5">
+              <polyline points="20,6 9,17 4,12" /></svg>
+          </div>
+          <h3 style="font-family:'Outfit',serif;font-size:26px;color:var(--m);margin-bottom:12px">Consultation Booked!</h3>
+          <p>Our team will call you within 2 hours.<br>Or call us at <strong><a href="tel:+918469260584" style="color:var(--m)">+91 84692 60584</a></strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="margin-bottom:0">
+            <img src="images/original_transparent_logo_white.png" alt="Ayushman Bhavah Logo" class="logo-img" />
+          </div>
+          <p class="footer-desc">Ancient wisdom. Modern healing. Most trusted Ayurvedic clinic offering authentic Panchakarma, Shirodhara & holistic treatments.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/918469260584" class="social-btn" id="footer-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.106 1.523 5.83L.046 24l6.327-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.846 0-3.566-.49-5.054-1.346l-.362-.214-3.754.982.999-3.648-.236-.373A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" /></svg>
+            </a>
+            <a href="https://www.instagram.com/ayushmanbhavahahm/" class="social-btn" id="footer-insta" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+            </a>
+            <a href="https://www.facebook.com/people/Ayushman-Bhavah/100089777445779/" class="social-btn" id="footer-fb" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="white">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+            </a>
+            <a href="https://www.youtube.com/@ayushmanbhavah6375" class="social-btn" id="footer-yt" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="white">
+                <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#9f1d1c" /></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Treatments</h4>
+          <div class="footer-links">
+            <a href="https://ayushmaanbhavah.com/panchakarma/">Panchakarma</a>
+            <a href="https://ayushmaanbhavah.com/shirodhara/">Shirodhara</a>
+            <a href="https://ayushmaanbhavah.com/thyroid/">Thyroid</a>
+            <a href="https://ayushmaanbhavah.com/skin/">Skin Disorders</a>
+            <a href="https://ayushmaanbhavah.com/arthritis/">Arthritis</a>
+            <a href="https://ayushmaanbhavah.com/abhyanga/">Abhyanga</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#doctor">Our Doctor</a>
+            <a href="#clinic">The Clinic</a>
+            <a href="#products">Products</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#faq">FAQ</a>
+            <a href="#book">Book Consultation</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact">
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" /></svg>
+              <span>10 Jaswant Society, Satellite, Ahmedabad – 380015</span>
+            </div>
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 9.09a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
+              <a href="tel:+918469260584" style="color:rgba(255,255,255,.6)">+91 84692 60584</a>
+            </div>
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12,6 12,12 16,14" /></svg>
+              <span>Mon–Sat: 9:00 AM – 7:00 PM</span>
+            </div>
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></svg>
+              <a href="https://ayushmaanbhavah.com" style="color:rgba(255,255,255,.6)">ayushmaanbhavah.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-hr" />
+      <div class="footer-bottom">
+        <span>© 2026 Ayushman Bhavah. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/918469260584?text=Hello%20Dr.%20Sushma%2C%20I%20would%20like%20to%20book%20a%20consultation." class="wa-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.106 1.523 5.83L.046 24l6.327-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.846 0-3.566-.49-5.054-1.346l-.362-.214-3.754.982.999-3.648-.236-.373A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" /></svg>
+  </a>
+  <script src="{% static 'why-ayushmaan-bhavah/js/main.js' %}"></script>
+</body>
+
+</html>
