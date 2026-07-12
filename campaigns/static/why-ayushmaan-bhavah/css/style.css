@@ -139,7 +139,6 @@
 
   .logo-img {
     height: 50px;
-    border-radius: 50%;
     object-fit: contain;
     background: transparent;
     flex-shrink: 0
@@ -235,6 +234,19 @@
     box-shadow: 0 8px 28px rgba(159, 29, 28, .4);
     background: var(--md)
   }
+
+  #membership-cta.btn-maroon {
+    background: var(--g);
+    color: var(--br);
+    box-shadow: 0 4px 16px rgba(246, 212, 91, .4);
+  }
+
+  #membership-cta.btn-maroon:hover {
+    background: var(--gd);
+    box-shadow: 0 8px 28px rgba(246, 212, 91, .5);
+    color: var(--br);
+  }
+
 
   .btn-outline-light {
     background: transparent;
@@ -808,14 +820,13 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, .12);
     transition: transform .25s, box-shadow .25s;
     background: #000;
   }
 
   .vt-video-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 48px rgba(0, 0, 0, .2)
+   
   }
 
   .vt-video-card[style*='none'] {
@@ -1464,7 +1475,135 @@
     line-height: 1.55
   }
 
+  /* ===== MEMBERSHIP ===== */
+  .membership-section {
+    background: var(--bp);
+    padding: 88px 0;
+  }
+
+  .membership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+
+  .membership-left {
+    position: sticky;
+    top: 100px;
+  }
+
+  .membership-price-block {
+    margin-top: 8px;
+  }
+
+  .membership-price-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    line-height: 1;
+  }
+
+  .membership-rs {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--m);
+    margin-top: 10px;
+  }
+
+  .membership-big-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 76px;
+    font-weight: 800;
+    color: var(--m);
+    letter-spacing: -3px;
+    line-height: 1;
+  }
+
+  .membership-validity-tag {
+    display: inline-block;
+    background: var(--m);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-top: 12px;
+  }
+
+  /* Right column */
+  .membership-right {
+    padding: 36px;
+    /* border: 1.5px solid rgba(74, 124, 47, 0.18); */
+    box-shadow: var(--sh);
+    background: var(--wh);
+    border-radius: var(--r32);
+  }
+
+  .membership-includes-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--m);
+    margin-bottom: 24px;
+  }
+
+  .membership-benefits-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .mbf-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .mbf-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .mbf-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background: rgba(159, 29, 28, .08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mbf-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--m);
+    stroke-width: 2;
+  }
+
+  .mbf-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--dk);
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .mbf-desc {
+    font-size: 12.5px;
+    color: var(--tb);
+    line-height: 1.4;
+  }
+
+
   /* ===== PRODUCTS ===== */
+
   .products-section {
     background: var(--bp);
     padding: 88px 0
