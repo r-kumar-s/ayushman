@@ -71,8 +71,8 @@ vCards.forEach(card => {
 
   // Open modal on click
   card.addEventListener('click', () => {
-iframe.src =
-`https://www.youtube.com/embed/${card.dataset.video}`;
+    const origin = window.location.protocol === 'file:' ? 'https://www.ayushmaanbhavah.com' : window.location.origin;
+    iframe.src = 'https://www.youtube.com/embed/' + card.dataset.video + '?autoplay=1&rel=0&origin=' + encodeURIComponent(origin);
     modal.style.display = 'flex';
   });
 });
