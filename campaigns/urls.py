@@ -1,6 +1,3 @@
-print("***** campaigns.urls loaded *****")
-
-
 from django.urls import path
 from . import views
 
