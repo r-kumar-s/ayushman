@@ -110,7 +110,7 @@ function handleSubmit(e) {
   }, 1200);
 }
 
-// ── Smooth scroll
+// ── Smooth scroll/
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const t = document.querySelector(a.getAttribute('href'));
