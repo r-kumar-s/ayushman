@@ -199,7 +199,7 @@ EMAIL_USE_SSL = True
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 465
 EMAIL_HOST_USER = "contact@ayushmaanbhavah.com"
-EMAIL_HOST_PASSWORD = "dpur uzmr ywur zros"
+EMAIL_HOST_PASSWORD = "yylx xmlm ipcl okwr"
 #=============================
 
 # Cashfree credentials
