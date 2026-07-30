@@ -151,7 +151,7 @@ def contact_us_email(request):
         return redirect ("index.html")
 
       #return render(request, "home/index.html")
-      return redirect ("./index.html#get_in_touch_section")
+      return redirect('/#get_in_touch_section')
   else:
       return render(request, 'index.html')
 
