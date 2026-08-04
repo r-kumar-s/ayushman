@@ -100,7 +100,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
 // ── Form submit
 function handleSubmit(e) {
-  alert("here it is");
     e.preventDefault();
 
     const form = document.getElementById('consultationForm');
