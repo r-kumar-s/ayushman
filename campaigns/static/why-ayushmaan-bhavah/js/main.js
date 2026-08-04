@@ -100,14 +100,44 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
 // ── Form submit
 function handleSubmit(e) {
-  e.preventDefault();
-  const btn = document.getElementById('form-submit');
-  btn.textContent = 'Submitting...';
-  btn.disabled = true;
-  setTimeout(() => {
-    document.getElementById('consultationForm').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }, 1200);
+  alert("here it is");
+    e.preventDefault();
+
+    const form = document.getElementById('consultationForm');
+    const btn = document.getElementById('form-submit');
+
+    btn.disabled = true;
+    btn.innerHTML = "Submitting...";
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        if (data.success) {
+            form.style.display = "none";
+            document.getElementById("form-success").style.display = "block";
+        } else {
+            alert(data.message || "Unable to submit.");
+            btn.disabled = false;
+            btn.innerHTML = "Book My Consultation";
+        }
+
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Server Error");
+
+        btn.disabled = false;
+        btn.innerHTML = "Book My Consultation";
+    });
 }
 
 // ── Smooth scroll/
