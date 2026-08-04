@@ -174,4 +174,30 @@ Allow: /
 Sitemap: https://www.ayushmaanbhavah.com/sitemap.xml
 """
   return HttpResponse(content, content_type="text/plain")
+
+def consultation_submit(request):
+    if request.method == "POST":
+        data = request.POST.dict()
+        print(data)
+
+        """
+        {
+            'name': 'Rohit Kumar',
+            'phone': '9876543210',
+            'age': '44',
+            'condition': 'Thyroid Disorder',
+            'message': 'Need consultation',
+            'csrfmiddlewaretoken': 'xxxxx'
+        }
+        """
+
+        # Save to database here
+
+        return JsonResponse({
+            "success": True
+        })
+
+    return JsonResponse({
+        "success": False
+    })
             
