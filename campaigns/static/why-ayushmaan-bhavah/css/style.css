@@ -2183,6 +2183,8 @@
   }
 
   /* ===== RESPONSIVE ===== */
+
+  /* ── Tablet landscape ── */
   @media(max-width:1024px) {
 
     .hero-inner,
@@ -2194,7 +2196,7 @@
     }
 
     .hero-img-frame {
-      max-width: 380px;
+      max-width: 480px;
       margin: 0 auto
     }
 
@@ -2229,9 +2231,28 @@
     .treat-visual {
       height: 200px
     }
+
+    /* Membership: stack on tablet */
+    .membership-grid {
+      grid-template-columns: 1fr;
+      gap: 44px
+    }
+
+    .membership-left {
+      position: static
+    }
+
+    .membership-big-price {
+      font-size: 60px
+    }
   }
 
+  /* ── Tablet portrait / large phones ── */
   @media(max-width:768px) {
+    .container {
+      padding: 0 18px
+    }
+
     .section {
       padding: 60px 0
     }
@@ -2248,6 +2269,80 @@
       display: none
     }
 
+    /* Hero */
+    .hero {
+      padding: 44px 0 52px
+    }
+
+    .hero-inner {
+      gap: 32px
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 7vw, 42px)
+    }
+
+    /* Make YouTube iframe fully responsive */
+    .doc-img-frame {
+      border-radius: var(--r20);
+      width: 100%;
+    }
+
+    .doc-img-frame iframe {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 16 / 9;
+      display: block
+    }
+
+    .doc-exp-badge {
+      position: static;
+      margin-top: 16px;
+      display: inline-block;
+      border-radius: var(--r12);
+      padding: 14px 20px;
+      text-align: center
+    }
+
+    .doc-img-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+
+    /* Doctor section */
+    .doctor-section,
+    .clinic-section,
+    .treatments-section,
+    .products-section,
+    .faq-section,
+    .comparison-section,
+    .stats-bar,
+    .form-section,
+    .membership-section {
+      padding: 60px 0
+    }
+
+    .hero-stats-row {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px
+    }
+
+    .hsc-num {
+      font-size: 20px
+    }
+
+    .hsc-label {
+      font-size: 10px
+    }
+
+    /* Clinic */
+    .clinic-float-badge {
+      left: 8px;
+      top: 12px
+    }
+
+    /* Condition grid */
     .products-cards {
       grid-template-columns: 1fr
     }
@@ -2256,14 +2351,12 @@
       grid-template-columns: 1fr
     }
 
-    .stats-grid {
-      grid-template-columns: 1fr 1fr
-    }
-
+    /* Testimonial carousel */
     .vt-video-card {
       flex: 0 0 85%
     }
 
+    /* Form */
     .form-row {
       grid-template-columns: 1fr
     }
@@ -2272,19 +2365,36 @@
       padding: 32px 20px
     }
 
+    /* Footer */
     .footer-grid {
       grid-template-columns: 1fr;
-      gap: 24px
+      gap: 28px
     }
 
+    /* Membership */
+    .membership-grid {
+      grid-template-columns: 1fr;
+      gap: 36px
+    }
+
+    .membership-left {
+      position: static
+    }
+
+    .membership-big-price {
+      font-size: 52px
+    }
+
+    .membership-right {
+      padding: 24px 20px
+    }
+
+    /* Specialty */
     .specialty-grid {
       grid-template-columns: 1fr
     }
 
-    .clinic-float-badge {
-      left: -8px
-    }
-
+    /* Treatment tabs */
     .treatment-tabs {
       gap: 0
     }
@@ -2294,19 +2404,48 @@
       font-size: 13px
     }
 
-    .doctor-section,
-    .clinic-section,
-    .treatments-section,
-    .products-section,
-    .faq-section,
-    .comparison-section,
-    .stats-bar,
-    .form-section {
-      padding: 60px 0
+    /* Stats */
+    .stats-grid {
+      grid-template-columns: 1fr 1fr
     }
   }
 
+  /* ── Small phones ── */
   @media(max-width:480px) {
+    .container {
+      padding: 0 14px
+    }
+
+    .hero {
+      padding: 36px 0 44px
+    }
+
+    .hero h1 {
+      font-size: clamp(24px, 8vw, 36px)
+    }
+
+    .hero-cta-main {
+      font-size: 15px;
+      padding: 14px 28px
+    }
+
+    .hero-trust-badge {
+      font-size: 10px;
+      padding: 6px 12px
+    }
+
+    .hero-stats-row {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px
+    }
+
+    .hsc-num {
+      font-size: 18px
+    }
+
+    .hsc-label {
+      font-size: 9.5px
+    }
 
     .hero-actions,
     .cta-btns {
@@ -2314,11 +2453,104 @@
       align-items: stretch
     }
 
-    .btn-outline-light {
-      justify-content: center
+    .btn-outline-light,
+    .btn-gold.btn-lg {
+      justify-content: center;
+      text-align: center
     }
 
     .top-bar {
-      font-size: 12px
+      font-size: 11.5px;
+      padding: 8px 12px
+    }
+
+    /* Doctor card */
+    .hero-doc-card img {
+      height: 320px
+    }
+
+    /* Comparison table */
+    .comparison-table {
+      font-size: 13px
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 14px
+    }
+
+    /* Membership */
+    .membership-big-price {
+      font-size: 44px;
+      letter-spacing: -1px
+    }
+
+    .membership-right {
+      padding: 20px 14px
+    }
+
+    /* Clinic badge */
+    .clinic-float-badge {
+      left: 4px;
+      top: 8px;
+      padding: 12px 14px
+    }
+
+    .fl-num {
+      font-size: 20px
+    }
+
+    /* FAQ */
+    .faq-q {
+      font-size: 14px;
+      padding: 15px 16px
+    }
+
+    .faq-a {
+      padding: 0 16px
+    }
+
+    .faq-item.open .faq-a {
+      padding: 0 16px 16px
+    }
+
+    /* Form */
+    .form-wrap {
+      padding: 24px 14px
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: clamp(22px, 6vw, 32px)
+    }
+
+    /* Footer */
+    .footer {
+      padding: 44px 0 20px
+    }
+
+    /* Nav */
+    .navbar {
+      top: 34px
     }
   }
+
+  /* ── Extra small (320px phones) ── */
+  @media(max-width:360px) {
+    .hero h1 {
+      font-size: 22px
+    }
+
+    .top-bar {
+      font-size: 10.5px
+    }
+
+    .hero-stat-card {
+      padding: 12px 6px
+    }
+
+    .hsc-num {
+      font-size: 16px
+    }
+  }
+
