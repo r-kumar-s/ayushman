@@ -7,7 +7,10 @@ class User(models.Model):
 
     phone = models.CharField(max_length=20)
     email = models.EmailField(unique=True, blank=True, null=True)
-
+    age = models.PositiveIntegerField(
+        null=True,
+        blank=True
+    )
     address = models.TextField()
 
     dob = models.DateField(null=True, blank=True)  # ✅ fixed
@@ -17,6 +20,7 @@ class User(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
 
     def __str__(self):
         return f"{self.fname} {self.lname or ''} ({self.email})"

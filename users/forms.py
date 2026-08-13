@@ -21,7 +21,7 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = [
-            'fname', 'lname', 'phone', 'email',
+            'fname', 'lname', 'phone', 'email', 'age',
             'address', 'dob', 'referred_by'
         ]
 
