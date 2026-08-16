@@ -28,11 +28,97 @@ sitemaps = {
 }
 
 urlpatterns = [
+
+    # ============================================================
+    # 301 REDIRECTS FROM OLD WEBSITE URLs
+    # ============================================================
+
+    path(
+        'index.php',
+        RedirectView.as_view(url='/', permanent=True)
+    ),
+
+    path(
+        'index.html',
+        RedirectView.as_view(url='/', permanent=True)
+    ),
+
+    path(
+        'about.html',
+        RedirectView.as_view(url='/about/', permanent=True)
+    ),
+
+    path(
+        'thyroid.html',
+        RedirectView.as_view(url='/thyroid/', permanent=True)
+    ),
+
+    path(
+        'gastrointestinal.html',
+        RedirectView.as_view(url='/gastrointestinal/', permanent=True)
+    ),
+
+    path(
+        'lungs.html',
+        RedirectView.as_view(url='/lungs/', permanent=True)
+    ),
+
+    path(
+        'hematological.html',
+        RedirectView.as_view(url='/hematological/', permanent=True)
+    ),
+
+    path(
+        'stone.html',
+        RedirectView.as_view(url='/stone/', permanent=True)
+    ),
+
+    path(
+        'tumor.html',
+        RedirectView.as_view(url='/tumor/', permanent=True)
+    ),
+
+    path(
+        'arthritis.html',
+        RedirectView.as_view(url='/arthritis/', permanent=True)
+    ),
+
+    path(
+        'skin.html',
+        RedirectView.as_view(url='/skin/', permanent=True)
+    ),
+
+    path(
+        'udarshodhak.html',
+        RedirectView.as_view(url='/udarshodhak/', permanent=True)
+    ),
+
+    path(
+        'contact.html',
+        RedirectView.as_view(url='/contact/', permanent=True)
+    ),
+
+    path(
+        'dr-sushma-tiwary.html',
+        RedirectView.as_view(url='/dr-sushma-tiwary/', permanent=True)
+    ),
+
+    # ============================================================
+    # CURRENT WEBSITE URLS
+    # ============================================================
+
     path('', include('home.urls')),
     path('users/', include('users.urls')),
     path('payments/', include('payments.urls')),
     path('admin/', admin.site.urls),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+
+    path(
+        'sitemap.xml',
+        sitemap,
+        {'sitemaps': sitemaps},
+        name='sitemap'
+    ),
+
     path("", include("campaigns.urls")),
 ]
 
