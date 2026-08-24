@@ -6,6 +6,27 @@ class VisitorTrackingMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 
+    def get_public_url(self, request):
+        """
+        Build the public URL seen by visitors.
+
+        Apache internally forwards the request to Django on port 8090,
+        so request.build_absolute_uri() can incorrectly produce:
+            http://ayushmaanbhavah.com:8090/...
+
+        The public website is:
+            https://ayushmaanbhavah.com/...
+        """
+
+        host = request.get_host()
+
+        # Remove internal proxy port if Django sees it
+        if ':8090' in host:
+            host = host.replace(':8090', '')
+
+        # Always use the public HTTPS URL
+        return 'https://' + host + request.get_full_path()
+
     def __call__(self, request):
 
         if not request.session.session_key:
@@ -21,9 +42,11 @@ class VisitorTrackingMiddleware:
             }
         )
 
+        public_url = self.get_public_url(request)
+
         PageView.objects.create(
             visitor=visitor,
-            url=request.build_absolute_uri(),
+            url=public_url,
             referrer=request.META.get("HTTP_REFERER")
         )
 
@@ -36,7 +59,7 @@ class VisitorTrackingMiddleware:
                 utm_campaign=request.GET.get("utm_campaign"),
                 utm_content=request.GET.get("utm_content"),
                 utm_term=request.GET.get("utm_term"),
-                landing_page=request.build_absolute_uri()
+                landing_page=public_url
             )
 
         return self.get_response(request)
