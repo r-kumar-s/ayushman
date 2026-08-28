@@ -36,6 +36,12 @@ DEBUG = True
     # Add your production domain(s) here when deploying, e.g., 'yourdomain.com'
 #]
 
+CAPTCHA_IMAGE_SIZE = (200, 70)
+CAPTCHA_FONT_SIZE = 36
+CAPTCHA_LETTER_ROTATION = (-15, 15)
+CAPTCHA_BACKGROUND_COLOR = "#ffffff"
+CAPTCHA_FOREGROUND_COLOR = "#000000"
+
 ALLOWED_HOSTS = ['ayushmaanbhavah.com', 'www.ayushmaanbhavah.com','127.0.0.1']
 
 
@@ -64,6 +70,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'tracker',
     'campaigns',
+    'captcha',
 ]
 
 SITE_ID = 3

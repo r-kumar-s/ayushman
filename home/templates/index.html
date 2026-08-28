@@ -34,8 +34,6 @@
     <div class="container-fluid">
       <div class="row" data-aos="fade-up">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-md-left text-center">
-          
-
           <div class="banner-section-content">
             <h5>Traditional Ayurveda • Personalized Care</h5>
             <!-- PRIMARY ENTITY / AEO H1 -->
@@ -63,13 +61,11 @@
               <i class="fa-solid fa-arrow-down-long" aria-hidden="true"></i>
             </a>
           </div>
-
-
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="banner-section-image">
             <figure class="mb-0">
-              <img src="{% static 'images/nadi-parikshan.jpg' %}" alt="Nadi Parikshan" class="img-fluid" style="border-radius: 150px 10px 150px 10px;" loading="lazy"/>
+              <img src="{% static 'images/nadi-parikshan.jpg' %}" alt="Nadi Parikshan" class="img-fluid" style="border-radius: 150px 10px 150px 10px;" loading="lazy" />
             </figure>
           </div>
         </div>
@@ -89,9 +85,6 @@
     </div>
   </section>
 </div>
-
-
-
 <!-- ABOUT US SECTION -->
 <section class="aboutus_section">
   <div class="container">
@@ -103,13 +96,13 @@
           </figure>
         </div>
         <figure class="aboutus_top_shape left_shape mb-0">
-          <img src="{% static 'images/aboutus_top_shape.png' %}" alt="Ayurvedic Doctor Sushma Tiwary" class="img-fluid" loading="lazy"/>
+          <img src="{% static 'images/aboutus_top_shape.png' %}" alt="Ayurvedic Doctor Sushma Tiwary" class="img-fluid" loading="lazy" />
         </figure>
         <figure class="aboutus_bottom_shape left_shape mb-0">
-          <img src="{% static 'images/aboutus_bottom_shape.png' %}" alt="Ayurvedic Doctor Sushma Tiwary" class="img-fluid" loading="lazy"/>
+          <img src="{% static 'images/aboutus_bottom_shape.png' %}" alt="Ayurvedic Doctor Sushma Tiwary" class="img-fluid" loading="lazy" />
         </figure>
       </div>
-       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" data-aos="fade-right">
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" data-aos="fade-right">
         <div class="aboutus_content">
           <h2 id="about-heading">
             Ayurvedic Care at Ayushman Bhavah
@@ -151,10 +144,6 @@
     </div>
   </div>
 </section>
-
-
-
-
 <!-- ========================================================= -->
 <!-- WHAT IS Ayushman Bhavah -->
 <!-- ========================================================= -->
@@ -183,8 +172,6 @@
     </div>
   </div>
 </section>
-
-
 <!-- ========================================================= -->
 <!-- PANCHAKARMA -->
 <!-- ========================================================= -->
@@ -380,12 +367,6 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
 <!-- ========================================================= -->
 <!-- HEALTH CONDITIONS -->
 <!-- ========================================================= -->
@@ -669,7 +650,7 @@
                   <div class="get_in_touch_video position-relative">
                     <a class="popup-vimeo" href="{% static 'videos/anna_testimonial.mp4' %}">
                       <figure class="video_img mb-0">
-                        <img src="{% static 'images/get_in_touch_video_icon.png' %}" alt="Anna Obrazhei" class="img-fluid" style="cursor: pointer;width: 50px;height: 50px;" loading="lazy"/>
+                        <img src="{% static 'images/get_in_touch_video_icon.png' %}" alt="Anna Obrazhei" class="img-fluid" style="cursor: pointer;width: 50px;height: 50px;" loading="lazy" />
                       </figure>
                     </a>
                   </div>
@@ -681,7 +662,7 @@
                 <i class="fa-solid fa-quote-left"></i>
                 <p class="testimonial_paragraph">“I have some different experience and something very special impression about Ayushman Bhavah. I took for 7 days the course of Netra Tarpan. It gives good results in my both eye. The behaviour is more like a home hospital and that gives much more moral supports to gain the good results in your body. I wish to all the very best and all the very success to Ayushman bhavah and Dr. Sushma Tiwary.”</p>
                 <figure>
-                  <img src="{% static 'images/shuklaji_testimonial.png' %}" alt="Vijay Shukla" class="img-fluid" style="border-radius:50px;" loading="lazy"/>
+                  <img src="{% static 'images/shuklaji_testimonial.png' %}" alt="Vijay Shukla" class="img-fluid" style="border-radius:50px;" loading="lazy" />
                 </figure>
                 <p class="testimonial_person_name">Shri Vijay Shukla</p>
                 <span>
@@ -717,8 +698,6 @@
 </div>
 <!-- BLOG POSTS SECTION -->
 {% include 'blog.html' %}
-
-
 <!-- ========================================================= -->
 <!-- FAQ / AEO -->
 <!-- ========================================================= -->
@@ -811,7 +790,7 @@
 <section class="aboutus_section" aria-labelledby="important-information-heading">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12"> 
+      <div class="col-lg-12">
         <div class="aboutus_content">
           <h2 id="important-information-heading">
             Important Information
@@ -833,7 +812,6 @@
     </div>
   </div>
 </section>
-
 <!-- GET IN TOUCH SECTION -->
 <section class="get_in_touch_section" id="get_in_touch_section">
   <div class="container">
@@ -873,6 +851,20 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group mb-3">
+                  {{ form.captcha }}
+                  {% if form.captcha.errors %}
+                  <div class="text-danger mt-2">
+                    {% for error in form.captcha.errors %}
+                    <div>{{ error }}</div>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
             <div class="btn_wrapper">
               <button type="submit" name="get_started" id="started">Get Started</button>
             </div>
@@ -882,7 +874,6 @@
       <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 d-md-block d-none"></div>
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <div class="get_in_touch_video position-relative">
-
           <a class="popup-vimeo" href="{% static 'videos/final_uric_acid_with_music.mp4' %}">
             <figure class="video_img mb-0">
               <img class="thumb img-fluid" style="cursor: pointer" src="{% static 'images/get_in_touch_video_icon.png' %}" alt="Best panchkarma clinic in Ahmedabad" loading="lazy">
@@ -892,11 +883,14 @@
       </div>
     </div>
     <figure class="get_in_touch_shape left_shape mb-0">
-
       <img src="{% static 'images/get_in_touch_shape.png' %}" alt="Best ayurvedic doctor in ahmedabad" class="img-fluid" loading="lazy">
     </figure>
   </div>
 </section>
 <!-- FOOTER SECTION -->
-
+{% if scroll_to_contact %}
+<script>
+window.location.hash = "get_in_touch_section";
+</script>
+{% endif %}
 {% endblock %}

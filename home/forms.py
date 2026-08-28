@@ -1,6 +1,8 @@
 # import the standard Django Forms
 # from built-in library
 from django import forms
+from captcha.fields import CaptchaField
+
 
 # creating a form
 class ContactUsForm(forms.Form):
@@ -11,3 +13,7 @@ class ContactUsForm(forms.Form):
   subject = forms.CharField(max_length=200,required=False)
   message = forms.CharField(widget=forms.Textarea,required=True)  
   cc_myself = forms.BooleanField(required=False)
+  captcha = CaptchaField()
+
+class ContactCaptchaForm(forms.Form):
+  captcha = CaptchaField()

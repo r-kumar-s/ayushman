@@ -12,6 +12,7 @@ import datetime;
 
 
 from .forms import ContactUsForm
+from .forms import ContactCaptchaForm
 
 #from .models import Home
 
@@ -29,41 +30,58 @@ def about(request):
   template = loader.get_template('about.html')
   return HttpResponse(template.render())
 
+def contact_us(request):
+    return contact(request)
+
 def contact(request):
   template = loader.get_template('contact.html')
   return HttpResponse(template.render())
 
-def contact_us(request):
-    # if this is a POST request we need to process the form data
-    if request.method == "POST":
-        # create a form instance and populate it with data from the request:
+def contact_us_email(request):
+
+    if request.method == 'POST':
+
         form = ContactUsForm(request.POST)
-        # check whether it's valid:     
-        if form.is_valid(): 
-            
-            subject = "Ayushman Bhavah Website Inquiry" 
-            body = {
-              'first_name': form.cleaned_data['fname'], 
-              'last_name': form.cleaned_data['lname'], 
-              'email': form.cleaned_data['sender'], 
-              'message':form.cleaned_data['message'], 
-            }
-            message = "\n".join(body.values())
+
+        if not form.is_valid():
+            print("Inside =================================")
+            return render(
+                request,
+                'index.html',
+                {
+                    'form': form,
+                    'scroll_to_contact': True,
+                }
+            )
+
+        subject = "Ayushman Bhavah Website Inquiry"
+
+        body = {
+            'first_name': request.POST.get('fname'),
+            'last_name': request.POST.get('lname'),
+            'email': request.POST.get('sender'),
+            'phone': request.POST.get('phone'),
+            'message': request.POST.get('message')
+        }
+
+        message = "\n".join(
+            str(value or '') for value in body.values()
+        )
 
         try:
-          send_mail(subject, message, form.cleaned_data['sender'], ['stsush29@gmail.com','contact@ayushmaanbhavah.com',]) 
-          #email = EmailMessage(subject, message, to=['rshaw@aecordigital.com'])
-          #email.send()
+            send_mail(
+                subject,
+                message,
+                request.POST.get('sender'),
+                ['contact@ayushmaanbhavah.com']
+            )
+
         except BadHeaderError:
-          #return HttpResponseRedirect("/thanks/")
-          return HttpResponse('Invalid header found.')
-          return redirect ("home:index")
+            return HttpResponse('Invalid header found.')
 
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = ContactUsForm()
+        return redirect('/#get_in_touch_section')
 
-    return render(request, "index.html", {"form": form})
+    return redirect('/#get_in_touch_section')
 
 def thyroid(request):
   template = loader.get_template('treatments/thyroid.html')
@@ -129,31 +147,31 @@ def dr_sushma_tiwary(request):
   template = loader.get_template('sushma-tiwary.html')
   return HttpResponse(template.render())
 
-def contact_us_email(request):
-  if request.method == 'POST':
-      subject = "Ayushman Bhavah Website Inquiry" 
-      body = {
-        'first_name': request.POST.get('fname'), 
-        'last_name': request.POST.get('lname'), 
-        'email': request.POST.get('sender'), 
-        'phone': request.POST.get('phone'), 
-        'message':request.POST.get('message')
-      }
-      message = "\n".join(body.values())
+# def contact_us_email(request):
+#   if request.method == 'POST':
+#       subject = "Ayushman Bhavah Website Inquiry" 
+#       body = {
+#         'first_name': request.POST.get('fname'), 
+#         'last_name': request.POST.get('lname'), 
+#         'email': request.POST.get('sender'), 
+#         'phone': request.POST.get('phone'), 
+#         'message':request.POST.get('message')
+#       }
+#       message = "\n".join(body.values())
 
-      try:
-        send_mail(subject, message, request.POST.get('sender'), ['contact@ayushmaanbhavah.com']) 
-        #email = EmailMessage(subject, message, to=['rshaw@aecordigital.com'])
-        #email.send()
-      except BadHeaderError:
-        #return HttpResponseRedirect("/thanks/")
-        return HttpResponse('Invalid header found.')
-        return redirect ("index.html")
+#       try:
+#         send_mail(subject, message, request.POST.get('sender'), ['contact@ayushmaanbhavah.com']) 
+#         #email = EmailMessage(subject, message, to=['rshaw@aecordigital.com'])
+#         #email.send()
+#       except BadHeaderError:
+#         #return HttpResponseRedirect("/thanks/")
+#         return HttpResponse('Invalid header found.')
+#         return redirect ("index.html")
 
-      #return render(request, "home/index.html")
-      return redirect('/#get_in_touch_section')
-  else:
-      return render(request, 'index.html')
+#       #return render(request, "home/index.html")
+#       return redirect('/#get_in_touch_section')
+#   else:
+#       return render(request, 'index.html')
 
 def udarshodhak(request):
   template = loader.get_template('udarshodhak.html')
