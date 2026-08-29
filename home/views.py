@@ -34,8 +34,11 @@ def contact_us(request):
     return contact(request)
 
 def contact(request):
-  template = loader.get_template('contact.html')
-  return HttpResponse(template.render())
+  context ={}
+  context['form']= ContactUsForm()
+  return render(request, "contact.html", context)
+  # template = loader.get_template('contact.html')
+  # return HttpResponse(template.render())
 
 def contact_us_email(request):
 
@@ -44,7 +47,6 @@ def contact_us_email(request):
         form = ContactUsForm(request.POST)
 
         if not form.is_valid():
-            print("Inside =================================")
             return render(
                 request,
                 'index.html',

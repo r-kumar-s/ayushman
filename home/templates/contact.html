@@ -40,34 +40,51 @@
         <div class="message_content">
           <h5>Get in Touch.</h5>
           <h2>Send us a Message</h2>
-          <p>Guia voluptas sit aspernatur aut odit aut fugit, sed quia exercitationem ullam corporis laboriosam</p>
-          <form id="contactpage" method="POST" action="./contact-form.php">
+          <form method="POST" action="{% url 'contact_us_email' %}">
+            {% csrf_token %} 
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group mb-0">
-                  <input type="text" name="firstname" id="fname" class="form-control" placeholder="First Name">
+                  <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name">
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group mb-0">
-                  <input type="text" name="lastname" id="lname" class="form-control form_style" placeholder="Last Name">
+                  <input type="text" name="lname" id="lname" class="form-control form_style" placeholder="Last Name">
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group mb-0">
-                  <input type="tel" name="phone" id="phonenum" class="form-control" placeholder="Phone">
+                  <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone">
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group mb-0">
-                  <input type="email" name="emailaddress" id="emailaddrs" class="form-control form_style" placeholder="Email">
+                  <input type="email" name="sender" id="sender" class="form-control form_style" placeholder="Email">
                 </div>
+
+              
+
               </div>
             </div>
             <div class="row">
               <div class="col-lg-12">
                 <div class=" form-group mb-0">
-                  <textarea rows="3" name="msg" id="comment" class="form-control" placeholder="Message"></textarea>
+                  <textarea rows="3" name="message" id="message" class="form-control" placeholder="Message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group mb-3">
+                  {{ form.captcha }}
+                  {% if form.captcha.errors %}
+                  <div class="text-danger mt-2">
+                    {% for error in form.captcha.errors %}
+                    <div>{{ error }}</div>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
                 </div>
               </div>
             </div>
@@ -135,5 +152,4 @@
 </div>
 {% include 'blog.html' %}
 <!-- FOOTER SECTION -->
-
 {% endblock %}
