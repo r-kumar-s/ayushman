@@ -1,115 +1,61 @@
-{% extends "master.html" %}
+{% extends "master.html"%}
 
 {% block title %}
 Panchakarma Treatment in Ahmedabad | Ayurvedic Panchakarma | Ayushmaan Bhavah
 {% endblock %}
 
 {% block meta %}
-
-<meta name="description"
-      content="Explore personalized Panchakarma treatment in Ahmedabad at Ayushmaan Bhavah. Ayurvedic consultation, traditional therapies and holistic care based on individual health needs.">
-
-<meta name="keywords"
-      content="Panchakarma Treatment Ahmedabad, Panchakarma Ahmedabad, Ayurvedic Panchakarma, Panchakarma Therapy Ahmedabad, Ayurvedic Treatment Ahmedabad">
-
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-<meta name="author" content="Ayushmaan Bhavah">
-
-<link rel="canonical"
-      href="https://www.ayushmaanbhavah.com/panchakarma/">
-
-<meta property="og:title"
-      content="Panchakarma Treatment in Ahmedabad | Ayushmaan Bhavah">
-
-<meta property="og:description"
-      content="Personalized Panchakarma consultation and traditional Ayurvedic therapies in Ahmedabad at Ayushmaan Bhavah.">
-
-<meta property="og:type" content="website">
-
-<meta property="og:url"
-      content="https://www.ayushmaanbhavah.com/panchakarma/">
-
+<meta name="description" content="Looking for Panchakarma treatment in Ahmedabad? Ayushmaan Bhavah provides personalized Ayurvedic Panchakarma consultation and traditional therapies based on individual health requirements." />
+<meta name="keywords" content="Panchakarma Treatment Ahmedabad, Panchakarma Centre Ahmedabad, Ayurvedic Panchakarma Ahmedabad, Panchakarma Therapy Ahmedabad, Ayurvedic Treatment Ahmedabad, Panchakarma Doctor Ahmedabad" />
+<link rel="canonical" href="https://www.ayushmaanbhavah.com/panchakarma/" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="author" content="Ayushmaan Bhavah" />
+<meta property="og:title" content="Panchakarma Treatment in Ahmedabad | Ayushmaan Bhavah" />
+<meta property="og:description" content="Personalized Panchakarma consultation and traditional Ayurvedic therapies in Ahmedabad." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.ayushmaanbhavah.com/panchakarma/" />
 {% endblock %}
-
-
-{% block content %}
 
 {% load static %}
 
-<div class="banner-section-outer">
+{% block content %}
+
+<div class="sub-banner-section">
 
   {% include 'header.html' %}
 
-
-  <!-- =========================
-       BREADCRUMB
-  ========================== -->
-
-  <section class="breadcrumb-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-
-              <li class="breadcrumb-item active"
-                  aria-current="page">
-                Panchakarma
-              </li>
-            </ol>
-          </nav>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       HERO SECTION
-  ========================== -->
-
   <section class="banner-section">
+
     <div class="container">
 
-      <div class="row align-items-center">
+      <div class="row">
 
-        <div class="col-lg-7 col-md-7 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
           <div class="banner-section-content">
 
-            <h5>
-              Traditional Ayurvedic Therapy
-            </h5>
-
-            <h1>
+            <h1 data-aos="fade-up">
               Panchakarma Treatment in Ahmedabad
             </h1>
 
-            <p>
+            <p data-aos="fade-right">
               Panchakarma is a traditional Ayurvedic therapeutic approach
-              involving carefully selected therapies based on an individual's
-              health condition, constitution and treatment requirements.
-            </p>
-
-            <p>
-              At Ayushmaan Bhavah, Panchakarma is planned after an Ayurvedic
-              consultation and individual assessment rather than following a
-              single treatment protocol for everyone.
+              involving selected procedures planned according to an
+              individual's health condition and Ayurvedic assessment.
             </p>
 
             <div class="btn_wrapper">
 
-              <a href="/#get_in_touch_section"
-                 class="text-decoration-none getstarted_btn"
-                 aria-label="Book Panchakarma consultation in Ahmedabad">
-                Book Ayurvedic Consultation
-              </a>
+              <span class="sub_home_span">
+                Treatments
+              </span>
+
+              <i class="fa-solid fa-angles-right" aria-hidden="true"></i>
+
+              <span class="sub_span">
+                Panchakarma
+              </span>
 
             </div>
 
@@ -117,643 +63,280 @@ Panchakarma Treatment in Ahmedabad | Ayurvedic Panchakarma | Ayushmaan Bhavah
 
         </div>
 
-
-        <div class="col-lg-5 col-md-5 col-sm-12">
-
-          <div class="banner-section-image">
-
-            <figure class="mb-0">
-
-              <img src="{% static 'images/panchakarma.jpg' %}"
-                   alt="Panchakarma treatment in Ahmedabad"
-                   class="img-fluid"
-                   loading="eager">
-
-            </figure>
-
-          </div>
-
-        </div>
-
       </div>
 
+      <figure class="banner_left_top_shape left_shape mb-0">
+        <img src="{% static 'images/banner_left_top_shape.png' %}" alt="" class="img-fluid">
+      </figure>
+
+      <figure class="banner_left_bottom_shape left_shape mb-0">
+        <img src="{% static 'images/banner_left_bottom_shape.png' %}" alt="" class="img-fluid">
+      </figure>
+
+      <figure class="banner_right_top_shape right_shape mb-0">
+        <img src="{% static 'images/banner_right_top_shape.png' %}" alt="" class="img-fluid">
+      </figure>
+
+      <figure class="banner_right_bottom_shape right_shape mb-0">
+        <img src="{% static 'images/banner_right_bottom_shape.png' %}" alt="" class="img-fluid">
+      </figure>
+
     </div>
+
   </section>
 
 </div>
 
 
-<!-- =========================
-     INTRODUCTION
-========================== -->
-
-<section class="aboutus_section">
+<section class="services_section">
 
   <div class="container">
 
     <div class="row">
 
-      <div class="col-lg-12">
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 
-        <div class="aboutus_content">
+        <figure class="mb-0">
 
-          <h2>
-            Personalized Panchakarma Care in Ahmedabad
-          </h2>
-
-          <p>
-            Panchakarma is one of the important therapeutic approaches
-            described in classical Ayurveda. It involves a planned sequence
-            of therapies selected according to an individual's health status,
-            Ayurvedic constitution and treatment needs.
-          </p>
-
-          <p>
-            At Ayushmaan Bhavah in Ahmedabad, Panchakarma is not treated as a
-            one-size-fits-all procedure. The treatment plan is developed after
-            understanding the person's health concerns, lifestyle, diet,
-            previous medical history and suitability for specific therapies.
-          </p>
-
-          <p>
-            Depending on the individual assessment, Panchakarma may be
-            incorporated with other traditional Ayurvedic therapies and
-            lifestyle recommendations.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     WHAT IS PANCHAKARMA
-========================== -->
-
-<section class="specialties_section">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-12 text-center">
-
-        <h2>
-          What is Panchakarma?
-        </h2>
-
-        <p>
-          Panchakarma is a classical Ayurvedic therapeutic approach that
-          uses selected procedures to support balance and wellbeing.
-          The therapies used depend on the individual's condition and
-          Ayurvedic assessment.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="row mt-4">
-
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            Abhyanga
-          </h3>
-
-          <p>
-            A traditional Ayurvedic oil therapy involving the application
-            and massage of selected oils according to individual needs.
-          </p>
-
-          <a href="/abhyanga/">
-            Learn About Abhyanga
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            Swedana
-          </h3>
-
-          <p>
-            A traditional Ayurvedic sudation therapy that may be used as
-            part of an individualized treatment plan.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            Shirodhara
-          </h3>
-
-          <p>
-            A traditional Ayurvedic therapy involving a controlled,
-            continuous flow of selected liquid over the forehead.
-          </p>
-
-          <a href="/shirodhara/">
-            Learn About Shirodhara
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            Basti
-          </h3>
-
-          <p>
-            A specialized Ayurvedic procedure that may be recommended
-            for selected individuals when considered appropriate by
-            the Ayurvedic practitioner.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            Nasya
-          </h3>
-
-          <p>
-            A traditional Ayurvedic therapy involving the administration
-            of selected preparations through the nasal route when
-            clinically appropriate.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            Individualized Therapies
-          </h3>
-
-          <p>
-            Additional Ayurvedic therapies may be incorporated according
-            to the individual's health requirements and treatment plan.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     WHO MAY CONSIDER
-========================== -->
-
-<section class="aboutus_section">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-7">
-
-        <h2>
-          Who May Consider Panchakarma?
-        </h2>
-
-        <p>
-          Panchakarma may be considered as part of an individualized
-          Ayurvedic care plan for people seeking support for various
-          health and wellness concerns.
-        </p>
-
-        <ul>
-
-          <li>
-            Digestive and gastrointestinal health concerns
-          </li>
-
-          <li>
-            Musculoskeletal discomfort
-          </li>
-
-          <li>
-            Stress and mental fatigue
-          </li>
-
-          <li>
-            Lifestyle-related health concerns
-          </li>
-
-          <li>
-            General wellness and rejuvenation programs
-          </li>
-
-          <li>
-            Selected chronic health concerns where Ayurvedic care is
-            considered appropriate
-          </li>
-
-        </ul>
-
-        <p>
-          Panchakarma is not automatically suitable for every person.
-          A consultation and individual assessment should be completed
-          before beginning treatment.
-        </p>
-
-      </div>
-
-
-      <div class="col-lg-5">
-
-        <figure>
-
-          <img src="{% static 'images/panchakarma-treatment.jpg' %}"
-               alt="Ayurvedic Panchakarma therapy in Ahmedabad"
+          <img src="{% static 'images/treatments/panchakarma.jpg' %}"
+               alt="Panchakarma Ayurvedic treatment in Ahmedabad"
                class="img-fluid"
-               loading="lazy">
+               style="border-radius:150px 0 150px 0;margin-top:75px;height:250px;">
 
         </figure>
 
       </div>
 
-    </div>
 
-  </div>
+      <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12"
+           data-aos="fade-right">
 
-</section>
+        <div class="aboutpage_aboutus_content pt-4">
 
 
-<!-- =========================
-     HOW IT WORKS
-========================== -->
-
-<section class="specialties_section">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-12 text-center">
-
-        <h2>
-          How Panchakarma Treatment Works at Ayushmaan Bhavah
-        </h2>
-
-        <p>
-          Your Panchakarma program begins with an Ayurvedic consultation.
-          The treatment is then planned according to your individual
-          requirements.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="row mt-4">
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            01. Consultation
-          </h3>
-
-          <p>
-            Discuss your health concerns, symptoms, lifestyle and
-            treatment expectations with the practitioner.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            02. Assessment
-          </h3>
-
-          <p>
-            Your health history, Ayurvedic constitution, diet, lifestyle
-            and available medical reports are considered.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            03. Treatment Plan
-          </h3>
-
-          <p>
-            Appropriate Ayurvedic therapies are selected according to
-            your individual requirements.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-
-        <div class="specialties_content">
-
-          <h3>
-            04. Follow-up
-          </h3>
-
-          <p>
-            Your progress can be reviewed and recommendations adjusted
-            according to your response and ongoing needs.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     WHY AYUSHMAAN BHAVAH
-========================== -->
-
-<section class="aboutus_section">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-12">
-
-        <h2>
-          Why Choose Ayushmaan Bhavah for Panchakarma in Ahmedabad?
-        </h2>
-
-        <p>
-          Ayushmaan Bhavah focuses on personalized Ayurvedic consultation
-          and traditional therapies based on individual health requirements.
-        </p>
-
-        <p>
-          Rather than applying the same Panchakarma protocol to every
-          individual, the treatment approach is planned after understanding
-          the person's health concerns, lifestyle and Ayurvedic assessment.
-        </p>
-
-        <div class="row mt-4">
-
-          <div class="col-lg-4 col-md-6 mb-4">
-
-            <h3>
-              Personalized Consultation
-            </h3>
-
-            <p>
-              Your treatment plan is based on your individual health
-              requirements.
-            </p>
-
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 mb-4">
-
-            <h3>
-              Traditional Ayurvedic Approach
-            </h3>
-
-            <p>
-              Traditional Ayurvedic principles are incorporated into
-              your care plan where appropriate.
-            </p>
-
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 mb-4">
-
-            <h3>
-              Ahmedabad Ayurvedic Care
-            </h3>
-
-            <p>
-              Consult an Ayurvedic practitioner at Ayushmaan Bhavah
-              in Ahmedabad.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     RELATED SERVICES
-========================== -->
-
-<section class="specialties_section">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-12 text-center">
-
-        <h2>
-          Related Ayurvedic Treatments
-        </h2>
-
-        <p>
-          Depending on your individual needs, other Ayurvedic therapies
-          may also be considered as part of your care plan.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="row mt-4">
-
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-
-        <a href="/shirodhara/"
-           class="text-decoration-none">
-
-          <h3>
-            Shirodhara Treatment
-          </h3>
-
-        </a>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-
-        <a href="/abhyanga/"
-           class="text-decoration-none">
-
-          <h3>
-            Abhyanga Ayurvedic Therapy
-          </h3>
-
-        </a>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-
-        <a href="/gastrointestinal/"
-           class="text-decoration-none">
-
-          <h3>
-            Ayurvedic Digestive Care
-          </h3>
-
-        </a>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-
-        <a href="/arthritis/"
-           class="text-decoration-none">
-
-          <h3>
-            Ayurvedic Arthritis Care
-          </h3>
-
-        </a>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-
-        <a href="/thyroid/"
-           class="text-decoration-none">
-
-          <h3>
-            Ayurvedic Thyroid Care
-          </h3>
-
-        </a>
-
-      </div>
-
-
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-
-        <a href="/skin/"
-           class="text-decoration-none">
-
-          <h3>
-            Ayurvedic Skin Care
-          </h3>
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FAQ
-========================== -->
-
-<section class="aboutus_section">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-12">
-
-        <h2>
-          Frequently Asked Questions About Panchakarma
-        </h2>
-
-
-        <div class="faq_item">
-
-          <h3>
+          <h2>
             What is Panchakarma?
-          </h3>
+          </h2>
+
+          <p>
+            Panchakarma is a classical Ayurvedic therapeutic approach
+            involving selected procedures intended to support balance
+            and wellbeing.
+          </p>
+
+          <p>
+            Panchakarma is not a single treatment or identical procedure
+            for every person. The therapies used, sequence and duration
+            can vary according to individual assessment.
+          </p>
+
+
+          <h2>
+            Who May Consider Panchakarma?
+          </h2>
+
+          <p>
+            Panchakarma may be considered as part of an individualized
+            Ayurvedic care plan for selected digestive, musculoskeletal,
+            lifestyle-related and general wellness concerns.
+          </p>
+
+          <p>
+            Whether Panchakarma is appropriate depends on the individual's
+            health condition and should be determined by a qualified
+            Ayurvedic practitioner.
+          </p>
+
+
+          <h2>
+            How Panchakarma Treatment Works
+          </h2>
+
+          <p>
+            A Panchakarma program begins with an Ayurvedic consultation
+            and assessment. Health concerns, medical history, lifestyle,
+            diet, Ayurvedic constitution and existing treatment may be
+            considered before a treatment plan is discussed.
+          </p>
+
+
+          <br />
+
+          <h5>
+            What a Personalized Panchakarma Program May Include
+          </h5>
+
+
+          <div class="box_wrapper">
+
+            <div class="box">
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span>
+                Ayurvedic consultation and assessment
+              </span>
+
+            </div>
+
+            <div class="box mr-0">
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span>
+                Individualized therapy selection
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="box_wrapper">
+
+            <div class="box">
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span>
+                Traditional Ayurvedic procedures
+              </span>
+
+            </div>
+
+            <div class="box mr-0">
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span>
+                Diet and lifestyle guidance
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="box_wrapper">
+
+            <div class="box">
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span>
+                Individual treatment planning
+              </span>
+
+            </div>
+
+            <div class="box mr-0">
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span>
+                Follow-up guidance
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="services_section">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="aboutpage_aboutus_content">
+
+
+          <h2>
+            Traditional Therapies Used in Panchakarma
+          </h2>
+
+          <p>
+            Depending on individual assessment, an Ayurvedic program
+            may include therapies such as Abhyanga, Swedana, Basti,
+            Nasya and other selected procedures.
+          </p>
+
+          <p>
+            The exact therapies and sequence vary by individual.
+            Panchakarma should be planned and supervised appropriately
+            rather than undertaken as a generic detox program.
+          </p>
+
+
+          <h2>
+            Panchakarma and Personalized Ayurvedic Care
+          </h2>
+
+          <p>
+            The goal of individualized Ayurvedic care is to select
+            therapies that are appropriate for the person's current
+            health needs rather than applying the same protocol to everyone.
+          </p>
+
+          <p>
+            Your practitioner may review previous medical reports,
+            medicines, lifestyle and other relevant health information
+            before recommending a treatment approach.
+          </p>
+
+
+          <h2>
+            Is Panchakarma Suitable for Everyone?
+          </h2>
+
+          <p>
+            No. Panchakarma is not automatically appropriate for every
+            person or every health condition. Proper assessment is
+            important before beginning treatment.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="services_section">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="aboutpage_aboutus_content">
+
+          <h2>
+            Frequently Asked Questions About Panchakarma
+          </h2>
+
+
+          <h5>
+            What is Panchakarma?
+          </h5>
 
           <p>
             Panchakarma is a classical Ayurvedic therapeutic approach
@@ -761,14 +344,10 @@ Panchakarma Treatment in Ahmedabad | Ayurvedic Panchakarma | Ayushmaan Bhavah
             individual's health condition and Ayurvedic assessment.
           </p>
 
-        </div>
 
-
-        <div class="faq_item">
-
-          <h3>
+          <h5>
             Is Panchakarma suitable for everyone?
-          </h3>
+          </h5>
 
           <p>
             No. Panchakarma is not automatically suitable for everyone.
@@ -776,43 +355,30 @@ Panchakarma Treatment in Ahmedabad | Ayurvedic Panchakarma | Ayushmaan Bhavah
             determine whether specific therapies are appropriate.
           </p>
 
-        </div>
 
-
-        <div class="faq_item">
-
-          <h3>
+          <h5>
             How long does Panchakarma treatment take?
-          </h3>
+          </h5>
 
           <p>
-            The duration varies depending on the individual's health
-            concerns, treatment plan and therapies selected.
+            Duration varies depending on the individual's health concerns,
+            treatment plan and therapies selected.
           </p>
 
-        </div>
 
-
-        <div class="faq_item">
-
-          <h3>
-            Can Panchakarma be done with other Ayurvedic therapies?
-          </h3>
+          <h5>
+            Can Panchakarma be combined with Abhyanga?
+          </h5>
 
           <p>
-            Yes. Therapies such as Abhyanga and Shirodhara may be included
-            in an individualized Ayurvedic treatment program when considered
-            appropriate by the practitioner.
+            Abhyanga may be included in selected Ayurvedic treatment
+            programs when considered appropriate.
           </p>
 
-        </div>
 
-
-        <div class="faq_item">
-
-          <h3>
-            Can I undergo Panchakarma while taking medicines?
-          </h3>
+          <h5>
+            Can Panchakarma be done while taking medicines?
+          </h5>
 
           <p>
             Inform the Ayurvedic practitioner about all medicines and
@@ -821,19 +387,131 @@ Panchakarma Treatment in Ahmedabad | Ayurvedic Panchakarma | Ayushmaan Bhavah
             professional.
           </p>
 
-        </div>
 
-
-        <div class="faq_item">
-
-          <h3>
-            Where can I get Panchakarma treatment in Ahmedabad?
-          </h3>
+          <h5>
+            Is Panchakarma the same as a detox program?
+          </h5>
 
           <p>
-            Ayushmaan Bhavah provides personalized Ayurvedic consultation
-            and Panchakarma therapies in Ahmedabad. A consultation is
-            recommended before beginning treatment.
+            Panchakarma is a traditional Ayurvedic therapeutic approach
+            and should not be reduced to a generic detox program.
+            Treatment is individualized and practitioner-guided.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="services_section">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="aboutpage_aboutus_content">
+
+          <h2>
+            Related Ayurvedic Treatments
+          </h2>
+
+
+          <div class="box_wrapper">
+
+            <div class="box">
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+              <a href="/abhyanga/">
+                Abhyanga Treatment
+              </a>
+
+            </div>
+
+
+            <div class="box mr-0">
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+              <a href="/shirodhara/">
+                Shirodhara Treatment
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="box_wrapper">
+
+            <div class="box">
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+              <a href="/gastrointestinal/">
+                Digestive Health
+              </a>
+
+            </div>
+
+
+            <div class="box mr-0">
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+              <a href="/arthritis/">
+                Ayurvedic Arthritis Care
+              </a>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="services_section">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="aboutpage_aboutus_content">
+
+          <h2>
+            Medical Disclaimer
+          </h2>
+
+          <p>
+            The information provided on this page is intended for general
+            educational purposes and should not be considered a substitute
+            for diagnosis or treatment by a qualified healthcare professional.
+            Individual treatment approaches and results may vary.
+          </p>
+
+          <p>
+            Do not stop prescribed medicines or medical treatment without
+            consulting your treating healthcare professional.
           </p>
 
         </div>
@@ -846,93 +524,6 @@ Panchakarma Treatment in Ahmedabad | Ayurvedic Panchakarma | Ayushmaan Bhavah
 
 </section>
 
-
-<!-- =========================
-     CTA
-========================== -->
-
-<section class="get_in_touch_section"
-         id="panchakarma-consultation">
-
-  <div class="container">
-
-    <div class="row align-items-center">
-
-      <div class="col-lg-8">
-
-        <h2>
-          Looking for Panchakarma Treatment in Ahmedabad?
-        </h2>
-
-        <p>
-          Speak with Ayushmaan Bhavah about your health concerns and
-          understand whether Panchakarma may be appropriate for you.
-        </p>
-
-      </div>
-
-
-      <div class="col-lg-4 text-lg-right">
-
-        <a href="/#get_in_touch_section"
-           class="getstarted_btn"
-           aria-label="Book Ayurvedic consultation">
-
-          Book Consultation
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     MEDICAL DISCLAIMER
-========================== -->
-
-<section class="aboutus_section">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-12">
-
-        <h2>
-          Medical Disclaimer
-        </h2>
-
-        <p>
-          The information provided on this page is intended for general
-          educational purposes and should not be considered a substitute
-          for diagnosis or treatment by a qualified healthcare professional.
-          Individual treatment plans and results may vary.
-        </p>
-
-        <p>
-          If you have a serious, acute or worsening medical condition,
-          seek appropriate medical attention. Do not stop prescribed
-          medicines or medical treatment without consulting your treating
-          healthcare professional.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FAQ STRUCTURED DATA
-========================== -->
 
 <script type="application/ld+json">
 {
@@ -960,36 +551,22 @@ Panchakarma Treatment in Ahmedabad | Ayurvedic Panchakarma | Ayushmaan Bhavah
       "name": "How long does Panchakarma treatment take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The duration varies depending on the individual's health concerns, treatment plan and therapies selected."
+        "text": "Duration varies depending on the individual's health concerns, treatment plan and therapies selected."
       }
     },
     {
       "@type": "Question",
-      "name": "Can Panchakarma be done with other Ayurvedic therapies?",
+      "name": "Can Panchakarma be combined with Abhyanga?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Therapies such as Abhyanga and Shirodhara may be included in an individualized Ayurvedic treatment program when considered appropriate by the practitioner."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I undergo Panchakarma while taking medicines?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Inform the Ayurvedic practitioner about all medicines and treatments you are currently taking. Do not stop prescribed medication without consulting your treating healthcare professional."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I get Panchakarma treatment in Ahmedabad?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ayushmaan Bhavah provides personalized Ayurvedic consultation and Panchakarma therapies in Ahmedabad. A consultation is recommended before beginning treatment."
+        "text": "Abhyanga may be included in selected Ayurvedic treatment programs when considered appropriate."
       }
     }
   ]
 }
 </script>
 
+
+{% include 'blog.html' %}
 
 {% endblock %}

@@ -29,5 +29,7 @@ urlpatterns = [
     path('abhyanga/', views.abhyanga, name='abhyanga'),
     path('pcod/', views.pcod, name='pcod'),
     path('panchakarma/', views.panchakarma, name='panchakarma'),
+    path('infertility/', views.infertility, name='infertility'),
+    
     path("robots.txt", robots_txt, name="robots_txt"), 
 ]

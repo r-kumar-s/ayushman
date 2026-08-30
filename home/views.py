@@ -196,6 +196,10 @@ def panchakarma(request):
   template = loader.get_template('treatments/panchakarma.html')
   return HttpResponse(template.render())
   
+def infertility(request):
+  template = loader.get_template('treatments/infertility.html')
+  return HttpResponse(template.render())
+  
 
 def robots_txt(request):
   content = """User-agent: *
