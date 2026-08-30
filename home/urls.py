@@ -27,5 +27,7 @@ urlpatterns = [
     path('udarshodhak/', views.udarshodhak, name='udarshodhak'),
     path('shirodhara/', views.shirodhara, name='shirodhara'),
     path('abhyanga/', views.abhyanga, name='abhyanga'),
+    path('pcod/', views.pcod, name='pcod'),
+    path('panchakarma/', views.panchakarma, name='panchakarma'),
     path("robots.txt", robots_txt, name="robots_txt"), 
 ]

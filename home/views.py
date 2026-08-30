@@ -188,6 +188,15 @@ def abhyanga(request):
   template = loader.get_template('treatments/abhyanga.html')
   return HttpResponse(template.render())
 
+def pcod(request):
+  template = loader.get_template('treatments/pcod.html')
+  return HttpResponse(template.render())
+
+def panchakarma(request):
+  template = loader.get_template('treatments/panchakarma.html')
+  return HttpResponse(template.render())
+  
+
 def robots_txt(request):
   content = """User-agent: *
 Allow: /
