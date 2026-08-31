@@ -29,6 +29,9 @@ class StaticViewSitemap(Sitemap):
             'dr_sushma_tiwary',
             'shirodhara',
             'abhyanga',
+            'pcod',
+            'panchakarma',
+            'infertility',
         ]
 
     def location(self, item):
