@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'tracker',
     'campaigns',
     'captcha',
+    'blog',
 ]
 
 SITE_ID = 3

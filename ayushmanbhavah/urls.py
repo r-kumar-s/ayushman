@@ -121,6 +121,7 @@ urlpatterns = [
 
     path("", include("campaigns.urls")),
     path('captcha/', include('captcha.urls')),
+    path("blog/",include("blog.urls", namespace="blog"),),
 ]
 
 
