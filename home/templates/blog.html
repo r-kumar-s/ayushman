@@ -1,655 +1,2292 @@
 {% load static %}
 
+<section id="ayurveda-blog" class="ayurveda-blog-section">
+
+    <div class="ayurveda-blog-container">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <div class="blog-heading">
+
+            <span class="blog-eyebrow">
+                AYURVEDA HEALTH BLOG
+            </span>
+
+            <h2>
+                Ayurvedic Insights for Better Health
+            </h2>
+
+            <p>
+                Helpful Ayurvedic information on common health concerns,
+                lifestyle, diet and holistic wellness.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDER
+        ========================== -->
+
+        <div class="blog-slider-wrapper">
+
+            <!-- PREVIOUS -->
+
+            <button
+                type="button"
+                class="blog-arrow blog-prev"
+                aria-label="Previous blog topic"
+                onclick="changeBlogSlide(-1)"
+            >
+                <span>&lsaquo;</span>
+            </button>
+
+
+            <!-- SLIDES -->
+
+            <div class="blog-slider">
+
+
+                <!-- =====================================================
+                     SLIDE 1 — PCOD / PCOS
+                ====================================================== -->
+
+                <div class="blog-slide active">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                1 / 9
+                            </span>
+
+                            <h3>
+                                PCOD / PCOS Health & Ayurveda
+                            </h3>
+
+                            <p>
+                                Ayurvedic insights and natural approaches
+                                for PCOD, PCOS, hormones, fertility and
+                                overall women's wellness.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+
+                        <!-- CARD 1 -->
+
+                        <a
+                            href="{% url 'blog_article' 'pcod-pcos' 'ayurvedic-approach-pcod-pcos' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+
+                                <img
+                                    src="{% static 'images/blog/pcod-pcos-1.jpg' %}"
+                                    alt="Ayurvedic approach to PCOD and PCOS"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    PCOD / PCOS
+                                </span>
+
+                            </div>
+
+                            <div class="blog-card-content">
+
+                                <h4>
+                                    Ayurvedic Approach to PCOD/PCOS:
+                                    What to Know
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- CARD 2 -->
+
+                        <a
+                            href="{% url 'blog_article' 'pcod-pcos' 'pcod-irregular-periods' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+
+                                <img
+                                    src="{% static 'images/blog/pcod-pcos-2.jpg' %}"
+                                    alt="PCOD irregular periods Ayurvedic perspective"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    PCOD / PCOS
+                                </span>
+
+                            </div>
+
+                            <div class="blog-card-content">
+
+                                <h4>
+                                    PCOD and Irregular Periods:
+                                    Ayurvedic Perspective
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- CARD 3 -->
+
+                        <a
+                            href="{% url 'blog_article' 'pcod-pcos' 'pcod-weight-management' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+
+                                <img
+                                    src="{% static 'images/blog/pcod-pcos-3.jpg' %}"
+                                    alt="PCOD weight management Ayurvedic approach"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    PCOD / PCOS
+                                </span>
+
+                            </div>
+
+                            <div class="blog-card-content">
+
+                                <h4>
+                                    PCOD and Weight Management:
+                                    Ayurvedic Approach
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- CARD 4 -->
+
+                        <a
+                            href="{% url 'blog_article' 'pcod-pcos' 'pcod-fertility' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+
+                                <img
+                                    src="{% static 'images/blog/pcod-pcos-4.jpg' %}"
+                                    alt="PCOD fertility Ayurvedic perspective"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    PCOD / PCOS
+                                </span>
+
+                            </div>
+
+                            <div class="blog-card-content">
+
+                                <h4>
+                                    PCOD and Fertility:
+                                    What Should You Know?
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- CARD 5 -->
+
+                        <a
+                            href="{% url 'blog_article' 'pcod-pcos' 'panchakarma-for-pcod' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+
+                                <img
+                                    src="{% static 'images/blog/pcod-pcos-5.jpg' %}"
+                                    alt="Panchakarma for PCOD"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    PCOD / PCOS
+                                </span>
+
+                            </div>
+
+                            <div class="blog-card-content">
+
+                                <h4>
+                                    Panchakarma for PCOD:
+                                    When May It Be Considered?
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="blog-topic-button">
+
+                        <a href="/pcod/">
+                            Explore Ayurvedic PCOD/PCOS Treatment
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================================
+                     SLIDE 2 — THYROID
+                ====================================================== -->
+
+                <div class="blog-slide">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                2 / 9
+                            </span>
+
+                            <h3>
+                                Thyroid Health & Ayurveda
+                            </h3>
+
+                            <p>
+                                Ayurvedic understanding of thyroid health,
+                                lifestyle, diet and holistic wellness.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+
+                        <a
+                            href="{% url 'blog_article' 'thyroid' 'ayurveda-thyroid-health' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/thyroid-1.jpg' %}"
+                                    alt="Ayurveda and thyroid health"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    THYROID
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurveda and Thyroid Health:
+                                    What to Know
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'thyroid' 'thyroid-symptoms-ayurvedic-perspective' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/thyroid-2.jpg' %}"
+                                    alt="Thyroid symptoms Ayurvedic perspective"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    THYROID
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Thyroid Symptoms and
+                                    Ayurvedic Perspective
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'thyroid' 'thyroid-diet-lifestyle' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/thyroid-3.jpg' %}"
+                                    alt="Thyroid diet and lifestyle Ayurveda"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    THYROID
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Thyroid, Diet and Lifestyle:
+                                    Ayurvedic Guidance
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'thyroid' 'ayurveda-hypothyroidism' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/thyroid-4.jpg' %}"
+                                    alt="Ayurveda for hypothyroidism"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    THYROID
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurveda for Hypothyroidism:
+                                    An Overview
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'thyroid' 'panchakarma-thyroid-care' %}"
+                            class="blog-card"
+                        >
+
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/thyroid-5.jpg' %}"
+                                    alt="Panchakarma and thyroid care"
+                                    loading="lazy"
+                                >
+
+                                <span class="blog-category">
+                                    THYROID
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Panchakarma and Thyroid Care:
+                                    When May It Be Considered?
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="blog-topic-button">
+
+                        <a href="/thyroid/">
+                            Explore Ayurvedic Thyroid Treatment
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================================
+                     SLIDE 3 — ARTHRITIS
+                ====================================================== -->
+
+                <div class="blog-slide">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                3 / 9
+                            </span>
+
+                            <h3>
+                                Arthritis & Joint Health
+                            </h3>
+
+                            <p>
+                                Ayurvedic perspectives on joint stiffness,
+                                arthritis, knee pain and healthy movement.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+
+                        <a
+                            href="{% url 'blog_article' 'arthritis' 'ayurvedic-approach-arthritis' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/arthritis-1.jpg' %}"
+                                    alt="Ayurvedic approach to arthritis"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">
+                                    ARTHRITIS
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Approach to Arthritis:
+                                    What to Know
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'arthritis' 'arthritis-joint-stiffness' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/arthritis-2.jpg' %}"
+                                    alt="Arthritis and joint stiffness"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">
+                                    ARTHRITIS
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Arthritis and Joint Stiffness:
+                                    Ayurvedic Perspective
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'arthritis' 'ayurveda-knee-joint-pain' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/arthritis-3.jpg' %}"
+                                    alt="Ayurveda for knee and joint pain"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">
+                                    JOINT HEALTH
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurveda for Knee and Joint Pain:
+                                    An Overview
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'arthritis' 'diet-lifestyle-joint-health' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/arthritis-4.jpg' %}"
+                                    alt="Diet and lifestyle for joint health"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">
+                                    JOINT HEALTH
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Diet and Lifestyle for Joint Health:
+                                    Ayurvedic View
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'arthritis' 'panchakarma-arthritis' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/arthritis-5.jpg' %}"
+                                    alt="Panchakarma for arthritis"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">
+                                    PANCHAKARMA
+                                </span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Panchakarma for Arthritis:
+                                    When May It Be Considered?
+                                </h4>
+
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="blog-topic-button">
+                        <a href="/arthritis/">
+                            Explore Ayurvedic Arthritis Treatment
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================================
+                     SLIDE 4 — ACIDITY / GASTRITIS
+                ====================================================== -->
+
+                <div class="blog-slide">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                4 / 9
+                            </span>
+
+                            <h3>
+                                Acidity & Gastritis
+                            </h3>
+
+                            <p>
+                                Ayurvedic understanding of acidity,
+                                gastritis, heartburn and digestive health.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+
+                        <a
+                            href="{% url 'blog_article' 'acidity-gastritis' 'ayurvedic-approach-acidity' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/acidity-gastritis-1.jpg' %}"
+                                    alt="Ayurvedic approach to acidity"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">ACIDITY</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Approach to Acidity:
+                                    What to Know
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'acidity-gastritis' 'gastritis-digestive-health' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/acidity-gastritis-2.jpg' %}"
+                                    alt="Gastritis and digestive health"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">GASTRITIS</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Gastritis and Digestive Health:
+                                    Ayurvedic Perspective
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'acidity-gastritis' 'acidity-diet-lifestyle' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/acidity-gastritis-3.jpg' %}"
+                                    alt="Acidity diet and lifestyle"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">DIGESTION</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Acidity, Diet and Lifestyle:
+                                    Ayurvedic Guidance
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'acidity-gastritis' 'heartburn-indigestion-ayurveda' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/acidity-gastritis-4.jpg' %}"
+                                    alt="Heartburn and indigestion Ayurveda"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">DIGESTION</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Heartburn and Indigestion:
+                                    An Ayurvedic Overview
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'acidity-gastritis' 'panchakarma-digestive-concerns' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/acidity-gastritis-5.jpg' %}"
+                                    alt="Panchakarma for digestive concerns"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">PANCHAKARMA</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Panchakarma for Digestive Concerns:
+                                    When May It Be Considered?
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="blog-topic-button">
+                        <a href="/gastrointestinal/">
+                            Explore Ayurvedic Digestive Treatment
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================================
+                     SLIDE 5 — IBS / CONSTIPATION
+                ====================================================== -->
+
+                <div class="blog-slide">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                5 / 9
+                            </span>
+
+                            <h3>
+                                IBS & Constipation
+                            </h3>
+
+                            <p>
+                                Ayurvedic insights into gut health,
+                                constipation, bloating and irregular bowel habits.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+
+                        <a
+                            href="{% url 'blog_article' 'ibs-constipation' 'ayurvedic-approach-ibs' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/ibs-constipation-1.jpg' %}"
+                                    alt="Ayurvedic approach to IBS"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">IBS</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Approach to IBS:
+                                    What to Know
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'ibs-constipation' 'constipation-gut-health' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/ibs-constipation-2.jpg' %}"
+                                    alt="Constipation and gut health"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">CONSTIPATION</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Constipation and Gut Health:
+                                    Ayurvedic Perspective
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'ibs-constipation' 'ibs-diet-lifestyle' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/ibs-constipation-3.jpg' %}"
+                                    alt="IBS diet and lifestyle Ayurveda"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">IBS</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    IBS, Diet and Lifestyle:
+                                    Ayurvedic Guidance
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'ibs-constipation' 'bloating-irregular-bowel' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/ibs-constipation-4.jpg' %}"
+                                    alt="Bloating and irregular bowel habits"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">GUT HEALTH</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Bloating and Irregular Bowel Habits:
+                                    An Ayurvedic Overview
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'ibs-constipation' 'ayurvedic-digestive-care' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/ibs-constipation-5.jpg' %}"
+                                    alt="Ayurvedic digestive care"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">PANCHAKARMA</span>
+                            </div>
+
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Digestive Care:
+                                    When May Panchakarma Be Considered?
+                                </h4>
+                                <span class="blog-read">
+                                    Read Article →
+                                </span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="blog-topic-button">
+                        <a href="/gastrointestinal/">
+                            Explore Ayurvedic Digestive Treatment
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================================
+                     SLIDE 6 — PILES
+                ====================================================== -->
+
+                <div class="blog-slide">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                6 / 9
+                            </span>
+
+                            <h3>
+                                Piles / Hemorrhoids
+                            </h3>
+
+                            <p>
+                                Ayurvedic perspectives on piles,
+                                constipation, diet and bowel health.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+                        <a
+                            href="{% url 'blog_article' 'piles' 'ayurvedic-approach-piles' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/piles-1.jpg' %}"
+                                    alt="Ayurvedic approach to piles"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">PILES</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Approach to Piles:
+                                    What to Know
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'piles' 'piles-constipation-ayurveda' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/piles-2.jpg' %}"
+                                    alt="Piles and constipation Ayurveda"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">PILES</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Piles and Constipation:
+                                    Ayurvedic Perspective
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'piles' 'diet-lifestyle-piles' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/piles-3.jpg' %}"
+                                    alt="Diet and lifestyle for piles"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">LIFESTYLE</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Diet and Lifestyle for Piles:
+                                    Ayurvedic Guidance
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'piles' 'bleeding-pain-bowel-movements' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/piles-4.jpg' %}"
+                                    alt="Pain and bleeding during bowel movements"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">BOWEL HEALTH</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Bleeding or Pain with Bowel
+                                    Movements: What to Know
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'piles' 'ayurvedic-care-piles' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/piles-5.jpg' %}"
+                                    alt="Ayurvedic care for piles"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">PILES</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Care for Piles:
+                                    When to Seek Professional Advice
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="blog-topic-button">
+                        <a href="/gastrointestinal/">
+                            Explore Ayurvedic Digestive Care
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================================
+                     SLIDE 7 — KIDNEY STONES
+                ====================================================== -->
+
+                <div class="blog-slide">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                7 / 9
+                            </span>
+
+                            <h3>
+                                Kidney Stones & Urinary Health
+                            </h3>
+
+                            <p>
+                                Ayurvedic information about kidney stones,
+                                hydration, diet and healthy lifestyle.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+
+                        <a
+                            href="{% url 'blog_article' 'kidney-stone' 'ayurvedic-approach-kidney-stones' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/kidney-stone-1.jpg' %}"
+                                    alt="Ayurvedic approach to kidney stones"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">KIDNEY STONES</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Approach to Kidney Stones:
+                                    What to Know
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'kidney-stone' 'kidney-stone-symptoms' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/kidney-stone-2.jpg' %}"
+                                    alt="Kidney stone symptoms"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">KIDNEY STONES</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Kidney Stone Symptoms:
+                                    An Ayurvedic Perspective
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'kidney-stone' 'hydration-diet-kidney-stones' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/kidney-stone-3.jpg' %}"
+                                    alt="Hydration diet kidney stone prevention"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">PREVENTION</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Hydration, Diet and Kidney
+                                    Stone Prevention
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'kidney-stone' 'kidney-stones-lifestyle' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/kidney-stone-4.jpg' %}"
+                                    alt="Kidney stones lifestyle Ayurveda"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">LIFESTYLE</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Kidney Stones and Lifestyle:
+                                    Ayurvedic Guidance
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'kidney-stone' 'ayurveda-kidney-stone-care' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/kidney-stone-5.jpg' %}"
+                                    alt="Ayurveda kidney stone care"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">KIDNEY HEALTH</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurveda and Kidney Stone Care:
+                                    Important Considerations
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="blog-topic-button">
+                        <a href="/stone/">
+                            Explore Ayurvedic Kidney Stone Treatment
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================================
+                     SLIDE 8 — MIGRAINE
+                ====================================================== -->
+
+                <div class="blog-slide">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                8 / 9
+                            </span>
+
+                            <h3>
+                                Migraine & Headache
+                            </h3>
+
+                            <p>
+                                Ayurvedic insights into migraine,
+                                triggers, sleep, diet and lifestyle.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+
+                        <a
+                            href="{% url 'blog_article' 'migraine' 'ayurvedic-approach-migraine' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/migraine-1.jpg' %}"
+                                    alt="Ayurvedic approach to migraine"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">MIGRAINE</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Approach to Migraine:
+                                    What to Know
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'migraine' 'migraine-triggers-ayurveda' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/migraine-2.jpg' %}"
+                                    alt="Migraine triggers Ayurvedic perspective"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">MIGRAINE</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Migraine Triggers and
+                                    Ayurvedic Perspective
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'migraine' 'migraine-sleep-lifestyle' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/migraine-3.jpg' %}"
+                                    alt="Migraine sleep and lifestyle"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">LIFESTYLE</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Migraine, Sleep and Lifestyle:
+                                    Ayurvedic Guidance
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'migraine' 'diet-headache-patterns' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/migraine-4.jpg' %}"
+                                    alt="Diet and headache patterns"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">HEADACHE</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Diet and Headache Patterns:
+                                    An Ayurvedic Overview
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'migraine' 'shirodhara-migraine' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/migraine-5.jpg' %}"
+                                    alt="Shirodhara and migraine"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">SHIRODHARA</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Shirodhara and Migraine:
+                                    When May It Be Considered?
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="blog-topic-button">
+                        <a href="/panchakarma/">
+                            Explore Ayurvedic Wellness Treatments
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================================
+                     SLIDE 9 — SKIN
+                ====================================================== -->
+
+                <div class="blog-slide">
+
+                    <div class="blog-topic-header">
+
+                        <div>
+                            <span class="blog-topic-number">
+                                9 / 9
+                            </span>
+
+                            <h3>
+                                Skin Health & Ayurveda
+                            </h3>
+
+                            <p>
+                                Ayurvedic perspectives on eczema, psoriasis,
+                                skin health, diet and lifestyle.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-cards">
+
+
+                        <a
+                            href="{% url 'blog_article' 'skin-disease' 'ayurvedic-approach-skin-health' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/skin-disease-1.jpg' %}"
+                                    alt="Ayurvedic approach to skin health"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">SKIN HEALTH</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Ayurvedic Approach to Skin Health:
+                                    What to Know
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'skin-disease' 'eczema-ayurvedic-perspective' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/skin-disease-2.jpg' %}"
+                                    alt="Eczema Ayurvedic perspective"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">ECZEMA</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Eczema and Ayurvedic Perspective
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'skin-disease' 'psoriasis-ayurvedic-lifestyle' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/skin-disease-3.jpg' %}"
+                                    alt="Psoriasis Ayurvedic lifestyle guidance"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">PSORIASIS</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Psoriasis and Ayurvedic
+                                    Lifestyle Guidance
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'skin-disease' 'skin-diet-digestion' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/skin-disease-4.jpg' %}"
+                                    alt="Skin diet and digestion Ayurveda"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">SKIN HEALTH</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Skin, Diet and Digestion:
+                                    An Ayurvedic View
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+
+                        <a
+                            href="{% url 'blog_article' 'skin-disease' 'panchakarma-skin-concerns' %}"
+                            class="blog-card"
+                        >
+                            <div class="blog-image">
+                                <img
+                                    src="{% static 'images/blog/skin-disease-5.jpg' %}"
+                                    alt="Panchakarma for skin concerns"
+                                    loading="lazy"
+                                >
+                                <span class="blog-category">PANCHAKARMA</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h4>
+                                    Panchakarma for Skin Concerns:
+                                    When May It Be Considered?
+                                </h4>
+                                <span class="blog-read">Read Article →</span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="blog-topic-button">
+                        <a href="/panchakarma/">
+                            Explore Ayurvedic Wellness Treatments
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- NEXT -->
+
+            <button
+                type="button"
+                class="blog-arrow blog-next"
+                aria-label="Next blog topic"
+                onclick="changeBlogSlide(1)"
+            >
+                <span>&rsaquo;</span>
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             DOTS
+        ========================== -->
+
+        <div class="blog-dots" aria-label="Blog topics">
+
+            <button onclick="goToBlogSlide(0)" class="active"></button>
+            <button onclick="goToBlogSlide(1)"></button>
+            <button onclick="goToBlogSlide(2)"></button>
+            <button onclick="goToBlogSlide(3)"></button>
+            <button onclick="goToBlogSlide(4)"></button>
+            <button onclick="goToBlogSlide(5)"></button>
+            <button onclick="goToBlogSlide(6)"></button>
+            <button onclick="goToBlogSlide(7)"></button>
+            <button onclick="goToBlogSlide(8)"></button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
 <style>
-    /* =========================================================
-       AYUSHMAAN BHAVAH - PCOD BLOG
-       Completely isolated from existing blog CSS
-       ========================================================= */
 
-    .pcod-blog-section {
-        position: relative;
-        padding: 80px 0 90px;
-        overflow: hidden;
-        background: #fff;
+/* =========================================================
+   AYURVEDA BLOG
+========================================================= */
+
+.ayurveda-blog-section {
+    background: #fffdf8;
+    padding: 80px 20px;
+}
+
+.ayurveda-blog-container {
+    max-width: 1280px;
+    margin: auto;
+}
+
+
+/* HEADER */
+
+.blog-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-eyebrow {
+    display: inline-block;
+    color: #b51d1d;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.blog-heading h2 {
+    margin: 0;
+    color: #173d24;
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.blog-heading p {
+    max-width: 700px;
+    margin: 12px auto 0;
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* SLIDER */
+
+.blog-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.blog-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.blog-slide {
+    display: none;
+    animation: blogFade .45s ease;
+}
+
+.blog-slide.active {
+    display: block;
+}
+
+@keyframes blogFade {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
     }
 
-    .pcod-blog-section .pcod-blog-header {
-        text-align: center;
-        max-width: 850px;
-        margin: 0 auto 45px;
-        position: relative;
-        z-index: 2;
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
-
-    .pcod-blog-section .pcod-blog-kicker {
-        display: block;
-        margin-bottom: 12px;
-        font-size: 18px;
-        line-height: 1.4;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        color: #b21f1f;
-        font-weight: 500;
-    }
-
-    .pcod-blog-section .pcod-blog-title {
-        margin: 0 0 12px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 48px;
-        line-height: 1.15;
-        font-weight: 600;
-        color: #222;
-    }
-
-    .pcod-blog-section .pcod-blog-description {
-        margin: 0 auto;
-        max-width: 760px;
-        font-size: 17px;
-        line-height: 1.7;
-        color: #777;
-    }
+}
 
 
-    /* =========================================================
-       GRID
-       ========================================================= */
+/* TOPIC HEADER */
 
-    .pcod-blog-grid {
-        max-width: 1080px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 30px;
-        position: relative;
-        z-index: 2;
-    }
+.blog-topic-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
+.blog-topic-number {
+    display: inline-block;
+    background: #b51d1d;
+    color: #fff;
+    padding: 5px 13px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+}
 
-    /* =========================================================
-       CARD
-       ========================================================= */
+.blog-topic-header h3 {
+    color: #173d24;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin: 12px 0 5px;
+}
 
-    .pcod-blog-card {
-        position: relative;
-        min-width: 0;
-    }
-
-    .pcod-blog-card-large {
-        grid-column: span 3;
-    }
-
-    .pcod-blog-card-small {
-        grid-column: span 2;
-    }
-
-
-    /* =========================================================
-       IMAGE
-       ========================================================= */
-
-    .pcod-blog-card-image {
-        position: relative;
-        width: 100%;
-        height: 330px;
-        overflow: hidden;
-        border-radius: 70px 0 70px 0;
-        background: #f4f4f4;
-    }
-
-    .pcod-blog-card-small .pcod-blog-card-image {
-        height: 275px;
-        border-radius: 55px 0 55px 0;
-    }
-
-    .pcod-blog-card-image img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.5s ease;
-    }
-
-    .pcod-blog-card:hover .pcod-blog-card-image img {
-        transform: scale(1.04);
-    }
+.blog-topic-header p {
+    color: #777;
+    max-width: 720px;
+    margin: auto;
+    font-size: 14px;
+}
 
 
-    /* =========================================================
-       DARK IMAGE OVERLAY
-       ========================================================= */
+/* CARDS */
 
-    .pcod-blog-card-image::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 58%;
-        background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.72),
-            rgba(0, 0, 0, 0)
+.blog-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+
+.blog-card {
+    display: block;
+    background: #fff;
+    border: 1px solid #eee6d8;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all .25s ease;
+    box-shadow: 0 4px 16px rgba(0,0,0,.04);
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.10);
+}
+
+
+/* IMAGE */
+
+.blog-image {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+
+/* CATEGORY */
+
+.blog-category {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #b51d1d;
+    color: #fff;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* CARD CONTENT */
+
+.blog-card-content {
+    padding: 17px 15px 18px;
+}
+
+.blog-card-content h4 {
+    margin: 0;
+    color: #222;
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 700;
+    min-height: 70px;
+}
+
+.blog-read {
+    display: inline-block;
+    margin-top: 13px;
+    color: #b51d1d;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ARROWS */
+
+.blog-arrow {
+    position: absolute;
+    z-index: 5;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f5c542;
+    color: #173d24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+
+    transition: all .2s ease;
+}
+
+.blog-arrow:hover {
+    transform: scale(1.08);
+    background: #eab82f;
+}
+
+.blog-arrow span {
+    font-size: 34px;
+    line-height: 1;
+}
+
+.blog-prev {
+    left: 18px;
+}
+
+.blog-next {
+    right: 18px;
+}
+
+
+/* CTA */
+
+.blog-topic-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.blog-topic-button a {
+    display: inline-block;
+    background: #f5c542;
+    color: #173d24;
+    padding: 13px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all .2s ease;
+}
+
+.blog-topic-button a:hover {
+    background: #eab82f;
+    transform: translateY(-2px);
+}
+
+
+/* DOTS */
+
+.blog-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 35px;
+}
+
+.blog-dots button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.blog-dots button.active {
+    background: #b51d1d;
+    transform: scale(1.25);
+}
+
+
+/* =========================================================
+   BLOG CARDS — EXACT EARLIER 2 + 3 DESIGN
+   Row 1: 2 large cards
+   Row 2: 3 smaller cards filling the same container
+========================================================= */
+
+.blog-cards {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.blog-card {
+    position: relative;
+    display: block;
+
+    grid-column: span 4;
+
+    height: 228px;
+
+    text-decoration: none;
+    color: #fff;
+
+    overflow: hidden;
+
+    border: 0;
+    border-radius: 0 0 38px 0;
+
+    background: #eee;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   FIRST ROW — 2 LARGE CARDS
+--------------------------------------------------------- */
+
+.blog-card:nth-child(1),
+.blog-card:nth-child(2) {
+    grid-column: span 6;
+    height: 275px;
+}
+
+
+/* ---------------------------------------------------------
+   SECOND ROW — 3 SMALL CARDS
+--------------------------------------------------------- */
+
+.blog-card:nth-child(3),
+.blog-card:nth-child(4),
+.blog-card:nth-child(5) {
+    grid-column: span 4;
+    height: 228px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.blog-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    transition: transform .5s ease;
+}
+
+
+/* =========================================================
+   DARK GRADIENT
+========================================================= */
+
+.blog-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.02) 25%,
+            rgba(0, 0, 0, 0.18) 45%,
+            rgba(0, 0, 0, 0.82) 100%
         );
-        pointer-events: none;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.blog-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.14);
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.blog-category {
+    position: absolute;
+    z-index: 3;
+
+    left: 18px;
+    bottom: 76px;
+
+    background: #b51d1d;
+    color: #fff;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.blog-card-content {
+    position: absolute;
+    z-index: 3;
+
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+
+    padding: 0;
+}
+
+.blog-card-content h4 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 700;
+
+    min-height: auto;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, .3);
+}
+
+
+/* =========================================================
+   READ ARTICLE
+========================================================= */
+
+.blog-read {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    opacity: .95;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .blog-cards {
+        max-width: 900px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-
-    /* =========================================================
-       CARD CONTENT
-       ========================================================= */
-
-    .pcod-blog-card-content {
-        position: absolute;
-        left: 28px;
-        right: 28px;
-        bottom: 24px;
-        z-index: 3;
+    .blog-card:nth-child(1),
+    .blog-card:nth-child(2),
+    .blog-card:nth-child(3),
+    .blog-card:nth-child(4),
+    .blog-card:nth-child(5) {
+        grid-column: span 1;
+        height: 250px;
     }
 
-    .pcod-blog-card-small .pcod-blog-card-content {
-        left: 22px;
-        right: 22px;
-        bottom: 20px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .ayurveda-blog-section {
+        padding: 55px 15px;
     }
 
-    .pcod-blog-category {
-        display: inline-block;
-        margin-bottom: 10px;
-        padding: 5px 14px;
-        border-radius: 0 0 14px 14px;
-        background: #b21f1f;
-        color: #fff;
-        font-size: 12px;
-        line-height: 1.4;
-        font-weight: 500;
-        letter-spacing: 0.4px;
+    .blog-heading h2 {
+        font-size: 29px;
     }
 
-    .pcod-blog-card-title {
-        display: block;
-        margin: 0;
-        color: #fff;
-        font-family: Georgia, "Times New Roman", serif;
+    .blog-topic-header h3 {
         font-size: 24px;
-        line-height: 1.25;
-        font-weight: 600;
     }
 
-    .pcod-blog-card-small .pcod-blog-card-title {
-        font-size: 19px;
-    }
-
-
-    /* =========================================================
-       READ MORE ARROW
-       ========================================================= */
-
-    .pcod-blog-read {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 34px;
-        height: 34px;
-        margin-top: 10px;
-        color: #fff;
-        font-size: 18px;
-        text-decoration: none;
-        transition: transform 0.25s ease;
-    }
-
-    .pcod-blog-read:hover {
-        color: #fff;
-        transform: translateX(5px);
-    }
-
-
-    /* =========================================================
-       MAIN PCOD BUTTON
-       ========================================================= */
-
-    .pcod-blog-button-wrapper {
+    .blog-cards {
         display: flex;
-        justify-content: center;
-        margin-top: 45px;
-        position: relative;
-        z-index: 2;
+
+        overflow-x: auto;
+
+        gap: 14px;
+
+        scroll-snap-type: x mandatory;
+
+        padding-bottom: 10px;
+
+        max-width: none;
     }
 
-    .pcod-blog-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 58px;
-        padding: 0 42px;
-        border-radius: 0 0 45px 45px;
-        background: #f8d55a;
-        color: #333;
-        font-size: 17px;
-        font-weight: 500;
-        text-decoration: none;
-        transition: all 0.25s ease;
+    .blog-card,
+    .blog-card:nth-child(1),
+    .blog-card:nth-child(2),
+    .blog-card:nth-child(3),
+    .blog-card:nth-child(4),
+    .blog-card:nth-child(5) {
+        min-width: 260px;
+        width: 260px;
+        height: 220px;
+
+        flex: 0 0 260px;
+
+        grid-column: auto;
+
+        scroll-snap-align: start;
     }
 
-    .pcod-blog-button:hover {
-        color: #333;
-        transform: translateY(-2px);
+    .blog-arrow {
+        width: 40px;
+        height: 40px;
     }
 
-
-    /* =========================================================
-       DECORATIVE SHAPES
-       ========================================================= */
-
-    .pcod-blog-left-shape,
-    .pcod-blog-right-shape {
-        position: absolute;
-        z-index: 1;
-        pointer-events: none;
-        opacity: 0.45;
+    .blog-prev {
+        left: -8px;
     }
 
-    .pcod-blog-left-shape {
-        left: -25px;
-        bottom: 45px;
+    .blog-next {
+        right: -8px;
     }
 
-    .pcod-blog-right-shape {
-        right: -25px;
-        top: 180px;
-    }
-
-    .pcod-blog-left-shape img,
-    .pcod-blog-right-shape img {
-        max-width: 90px;
-        height: auto;
-    }
+}
 
 
-    /* =========================================================
-       TABLET
-       ========================================================= */
-
-    @media (max-width: 991px) {
-
-        .pcod-blog-section {
-            padding: 65px 20px 75px;
-        }
-
-        .pcod-blog-section .pcod-blog-title {
-            font-size: 40px;
-        }
-
-        .pcod-blog-grid {
-            max-width: 760px;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .pcod-blog-card-large,
-        .pcod-blog-card-small {
-            grid-column: span 1;
-        }
-
-        .pcod-blog-card-image,
-        .pcod-blog-card-small .pcod-blog-card-image {
-            height: 300px;
-            border-radius: 55px 0 55px 0;
-        }
-
-        .pcod-blog-card-title,
-        .pcod-blog-card-small .pcod-blog-card-title {
-            font-size: 21px;
-        }
-    }
-
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 575px) {
-
-        .pcod-blog-section {
-            padding: 55px 15px 65px;
-        }
-
-        .pcod-blog-section .pcod-blog-kicker {
-            font-size: 14px;
-            letter-spacing: 3px;
-        }
-
-        .pcod-blog-section .pcod-blog-title {
-            font-size: 31px;
-        }
-
-        .pcod-blog-section .pcod-blog-description {
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .pcod-blog-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 22px;
-        }
-
-        .pcod-blog-card-large,
-        .pcod-blog-card-small {
-            grid-column: span 1;
-        }
-
-        .pcod-blog-card-image,
-        .pcod-blog-card-small .pcod-blog-card-image {
-            height: 300px;
-            border-radius: 45px 0 45px 0;
-        }
-
-        .pcod-blog-card-content,
-        .pcod-blog-card-small .pcod-blog-card-content {
-            left: 22px;
-            right: 22px;
-            bottom: 20px;
-        }
-
-        .pcod-blog-card-title,
-        .pcod-blog-card-small .pcod-blog-card-title {
-            font-size: 20px;
-        }
-
-        .pcod-blog-button {
-            width: 100%;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .pcod-blog-left-shape,
-        .pcod-blog-right-shape {
-            display: none;
-        }
-    }
 </style>
 
 
-<!-- =========================================================
-     PCOD / PCOS BLOG SECTION
-     ========================================================= -->
 
-<section class="pcod-blog-section">
+<script>
 
-    <!-- HEADER -->
+/* =========================================================
+   BLOG SLIDER
+========================================================= */
 
-    <div class="pcod-blog-header">
+let currentBlogSlide = 0;
 
-        <span class="pcod-blog-kicker">
-            Ayurveda Health Blog
-        </span>
+const blogSlides = document.querySelectorAll(".blog-slide");
+const blogDots = document.querySelectorAll(".blog-dots button");
 
-        <h2 class="pcod-blog-title">
-            PCOD / PCOS Health &amp; Ayurveda
-        </h2>
 
-        <p class="pcod-blog-description">
-            Helpful information about PCOD, PCOS, fertility,
-            lifestyle and Ayurvedic approaches to personalized care.
-        </p>
+function showBlogSlide(index) {
 
-    </div>
+    if (!blogSlides.length) {
+        return;
+    }
 
+    if (index >= blogSlides.length) {
+        index = 0;
+    }
 
-    <!-- BLOG GRID -->
+    if (index < 0) {
+        index = blogSlides.length - 1;
+    }
 
-    <div class="pcod-blog-grid">
+    blogSlides.forEach(function(slide) {
+        slide.classList.remove("active");
+    });
 
+    blogDots.forEach(function(dot) {
+        dot.classList.remove("active");
+    });
 
-        <!-- =====================================================
-             1. AYURVEDIC APPROACH TO PCOD / PCOS
-             ===================================================== -->
+    blogSlides[index].classList.add("active");
 
-        <article class="pcod-blog-card pcod-blog-card-large">
+    if (blogDots[index]) {
+        blogDots[index].classList.add("active");
+    }
 
-            <a
-                href="{% url 'blog:ayurvedic_approach_pcod_pcos' %}"
-                class="text-decoration-none"
-            >
+    currentBlogSlide = index;
+}
 
-                <div class="pcod-blog-card-image">
 
-                    <img
-                        src="{% static 'images/blog/pcod_blog_images/blog_pcod.jpg' %}"
-                        alt="Ayurvedic approach to PCOD and PCOS"
-                        loading="lazy"
-                    >
+function changeBlogSlide(direction) {
 
-                    <div class="pcod-blog-card-content">
+    showBlogSlide(currentBlogSlide + direction);
 
-                        <span class="pcod-blog-category">
-                            PCOD / PCOS
-                        </span>
+}
 
-                        <h3 class="pcod-blog-card-title">
-                            Ayurvedic Approach to PCOD/PCOS:
-                            What to Know
-                        </h3>
 
-                        <span class="pcod-blog-read">
-                            →
-                        </span>
+function goToBlogSlide(index) {
 
-                    </div>
+    showBlogSlide(index);
 
-                </div>
+}
 
-            </a>
 
-        </article>
+/* INITIALIZE */
 
+document.addEventListener("DOMContentLoaded", function() {
 
-        <!-- =====================================================
-             2. PCOD AND IRREGULAR PERIODS
-             ===================================================== -->
+    showBlogSlide(0);
 
-        <article class="pcod-blog-card pcod-blog-card-large">
+});
 
-            <a
-                href="{% url 'blog:pcod_irregular_periods' %}"
-                class="text-decoration-none"
-            >
-
-                <div class="pcod-blog-card-image">
-
-                    <img
-                        src="{% static 'images/blog/pcod_blog_images/blog_pcod_periods.jpg' %}"
-                        alt="PCOD and irregular periods Ayurvedic perspective"
-                        loading="lazy"
-                    >
-
-                    <div class="pcod-blog-card-content">
-
-                        <span class="pcod-blog-category">
-                            PCOD / PCOS
-                        </span>
-
-                        <h3 class="pcod-blog-card-title">
-                            PCOD and Irregular Periods:
-                            Ayurvedic Perspective
-                        </h3>
-
-                        <span class="pcod-blog-read">
-                            →
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </article>
-
-
-        <!-- =====================================================
-             3. PCOD AND WEIGHT MANAGEMENT
-             ===================================================== -->
-
-        <article class="pcod-blog-card pcod-blog-card-small">
-
-            <a
-                href="{% url 'blog:pcod_weight_management' %}"
-                class="text-decoration-none"
-            >
-
-                <div class="pcod-blog-card-image">
-
-                    <img
-                        src="{% static 'images/blog/pcod_blog_images/blog_pcod_weight.jpg' %}"
-                        alt="PCOD and weight management Ayurvedic approach"
-                        loading="lazy"
-                    >
-
-                    <div class="pcod-blog-card-content">
-
-                        <span class="pcod-blog-category">
-                            PCOD / PCOS
-                        </span>
-
-                        <h3 class="pcod-blog-card-title">
-                            PCOD and Weight Management:
-                            Ayurvedic Approach
-                        </h3>
-
-                        <span class="pcod-blog-read">
-                            →
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </article>
-
-
-        <!-- =====================================================
-             4. PCOD AND FERTILITY
-             ===================================================== -->
-
-        <article class="pcod-blog-card pcod-blog-card-small">
-
-            <a
-                href="{% url 'blog:pcod_fertility' %}"
-                class="text-decoration-none"
-            >
-
-                <div class="pcod-blog-card-image">
-
-                    <img
-                        src="{% static 'images/blog/pcod_blog_images/blog_pcod_fertility.jpg' %}"
-                        alt="PCOD and fertility"
-                        loading="lazy"
-                    >
-
-                    <div class="pcod-blog-card-content">
-
-                        <span class="pcod-blog-category">
-                            PCOD / FERTILITY
-                        </span>
-
-                        <h3 class="pcod-blog-card-title">
-                            PCOD and Fertility:
-                            What Should You Know?
-                        </h3>
-
-                        <span class="pcod-blog-read">
-                            →
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </article>
-
-
-        <!-- =====================================================
-             5. PANCHAKARMA FOR PCOD
-             ===================================================== -->
-
-        <article class="pcod-blog-card pcod-blog-card-small">
-
-            <a
-                href="{% url 'blog:panchakarma_for_pcod' %}"
-                class="text-decoration-none"
-            >
-
-                <div class="pcod-blog-card-image">
-
-                    <img
-                        src="{% static 'images/blog/pcod_blog_images/blog_panchakarma_pcod.jpg' %}"
-                        alt="Panchakarma for PCOD"
-                        loading="lazy"
-                    >
-
-                    <div class="pcod-blog-card-content">
-
-                        <span class="pcod-blog-category">
-                            PANCHAKARMA
-                        </span>
-
-                        <h3 class="pcod-blog-card-title">
-                            Panchakarma for PCOD:
-                            When May It Be Considered?
-                        </h3>
-
-                        <span class="pcod-blog-read">
-                            →
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </article>
-
-
-    </div>
-
-
-    <!-- MAIN PCOD PAGE -->
-
-    <div class="pcod-blog-button-wrapper">
-
-        <a
-            href="/pcod/"
-            class="pcod-blog-button"
-        >
-            Explore Ayurvedic PCOD/PCOS Treatment
-        </a>
-
-    </div>
-
-
-    <!-- DECORATIVE SHAPES -->
-
-    <figure class="pcod-blog-left-shape">
-        <img
-            src="{% static 'images/blog_posts_left_shape.png' %}"
-            alt=""
-            loading="lazy"
-        >
-    </figure>
-
-    <figure class="pcod-blog-right-shape">
-        <img
-            src="{% static 'images/blog_posts_right_shape.png' %}"
-            alt=""
-            loading="lazy"
-        >
-    </figure>
-
-</section>
+</script>
