@@ -7,76 +7,76 @@ BLOG_ARTICLES = {
     "pcod-pcos": {
 
         "ayurvedic-approach-pcod-pcos":
-            "ayurvedic-approach-pcod-pcos.html",
+            "pcod-pcos/ayurvedic-approach-pcod-pcos.html",
 
         "pcod-irregular-periods":
-            "pcod-irregular-periods.html",
+            "pcod-pcos/pcod-irregular-periods.html",
 
         "pcod-weight-management":
-            "pcod-weight-management.html",
+            "pcod-pcos/pcod-weight-management.html",
 
         "pcod-fertility":
-            "pcod-fertility.html",
+            "pcod-pcos/pcod-fertility.html",
 
         "panchakarma-for-pcod":
-            "panchakarma-for-pcod.html",
+            "pcod-pcos/panchakarma-for-pcod.html",
     },
 
 
     "thyroid": {
 
         "ayurveda-thyroid-health":
-            "ayurveda-thyroid-health.html",
+            "thyroid/ayurveda-thyroid-health.html",
 
         "thyroid-symptoms-ayurvedic-perspective":
-            "thyroid-symptoms-ayurvedic-perspective.html",
+            "thyroid/thyroid-symptoms-ayurvedic-perspective.html",
 
         "thyroid-diet-lifestyle":
-            "thyroid-diet-lifestyle.html",
+            "thyroid/thyroid-diet-lifestyle.html",
 
         "ayurveda-hypothyroidism":
-            "ayurveda-hypothyroidism.html",
+            "thyroid/ayurveda-hypothyroidism.html",
 
         "panchakarma-thyroid-care":
-            "panchakarma-thyroid-care.html",
+            "thyroid/panchakarma-thyroid-care.html",
     },
 
 
     "arthritis": {
 
         "ayurvedic-approach-arthritis":
-            "ayurvedic-approach-arthritis.html",
+            "arthritis/ayurvedic-approach-arthritis.html",
 
         "arthritis-joint-stiffness":
-            "arthritis-joint-stiffness.html",
+            "arthritis/arthritis-joint-stiffness.html",
 
         "ayurveda-knee-joint-pain":
-            "ayurveda-knee-joint-pain.html",
+            "arthritis/ayurveda-knee-joint-pain.html",
 
         "diet-lifestyle-joint-health":
-            "diet-lifestyle-joint-health.html",
+            "arthritis/diet-lifestyle-joint-health.html",
 
         "panchakarma-arthritis":
-            "panchakarma-arthritis.html",
+            "arthritis/panchakarma-arthritis.html",
     },
 
 
     "acidity-gastritis": {
 
         "ayurvedic-approach-acidity":
-            "ayurvedic-approach-acidity.html",
+            "acidity-gastritis/ayurvedic-approach-acidity.html",
 
         "gastritis-digestive-health":
-            "gastritis-digestive-health.html",
+            "acidity-gastritis/gastritis-digestive-health.html",
 
         "acidity-diet-lifestyle":
-            "acidity-diet-lifestyle.html",
+            "acidity-gastritis/acidity-diet-lifestyle.html",
 
         "heartburn-indigestion-ayurveda":
-            "heartburn-indigestion-ayurveda.html",
+            "acidity-gastritis/heartburn-indigestion-ayurveda.html",
 
         "panchakarma-digestive-concerns":
-            "panchakarma-digestive-concerns.html",
+            "acidity-gastritis/panchakarma-digestive-concerns.html",
     },
 
 
