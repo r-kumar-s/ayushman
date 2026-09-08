@@ -1,0 +1,231 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %}
+Eczema: An Ayurvedic Perspective on Skin Wellness | Ayushmaan Bhavah
+{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Understand eczema and explore how an individualized Ayurvedic perspective may consider skin care, diet, lifestyle, digestion and daily routines." />
+<meta name="keywords" content="eczema Ayurveda, Ayurvedic eczema care Ahmedabad, eczema skin care Ayurveda, eczema diet Ayurveda, Ayurvedic skin treatment Ahmedabad" />
+<link rel="canonical" href="https://www.ayushmaanbhavah.com/blog/skin-disease/eczema-ayurvedic-perspective/" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Ayushmaan Bhavah" />
+
+<meta property="og:title" content="Eczema: An Ayurvedic Perspective on Skin Wellness" />
+<meta property="og:description" content="Understand eczema and explore how an individualized Ayurvedic perspective may consider skin care, diet, lifestyle, digestion and daily routines." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.ayushmaanbhavah.com/blog/skin-disease/eczema-ayurvedic-perspective/" />
+<meta property="og:image" content="https://www.ayushmaanbhavah.com/static/images/blog/skin-disease-2.jpg" />
+{% endblock %}
+
+{% block content %}
+
+<div class="sub-banner-section">
+    {% include 'header.html' %}
+
+    <section class="banner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-section-content">
+                        <h1>Eczema: An Ayurvedic Perspective on Skin Wellness</h1>
+
+                        <p>
+                            Understanding skin health through individualized
+                            lifestyle and Ayurvedic wellness guidance.
+                        </p>
+
+                        <div class="btn_wrapper">
+                            <span class="sub_home_span">Blog</span>
+                            <i class="fa-solid fa-angles-right"></i>
+                            <span class="sub_span">Skin Disease</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+.thyroid-article {
+    padding: 70px 0;
+}
+
+.article-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.article-image {
+    overflow: hidden;
+    border-radius: 14px;
+    margin-bottom: 35px;
+}
+
+.article-image img {
+    width: 100%;
+    display: block;
+}
+
+.thyroid-article h2 {
+    font-family: Georgia, serif;
+    color: #333;
+    font-size: 30px;
+    margin: 38px 0 15px;
+}
+
+.thyroid-article p,
+.thyroid-article li {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.thyroid-article ul {
+    padding-left: 25px;
+}
+
+.intro {
+    font-size: 19px !important;
+}
+
+.info-box {
+    background: #f7f3eb;
+    border-left: 4px solid #b51d1d;
+    padding: 22px 25px;
+    margin: 30px 0;
+}
+
+.article-navigation {
+    display: flex;
+    gap: 20px;
+    margin-top: 55px;
+}
+
+.article-navigation a {
+    flex: 1;
+    padding: 18px 22px;
+    background: #f6f2eb;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.article-navigation a:last-child {
+    text-align: right;
+}
+
+@media(max-width:767px) {
+    .thyroid-article {
+        padding: 45px 15px;
+    }
+
+    .thyroid-article h2 {
+        font-size: 26px;
+    }
+
+    .thyroid-article p,
+    .thyroid-article li {
+        font-size: 16px;
+    }
+
+    .article-navigation {
+        flex-direction: column;
+    }
+
+    .article-navigation a:last-child {
+        text-align: left;
+    }
+}
+</style>
+
+<section class="thyroid-article">
+    <div class="container article-container">
+
+        <div class="article-image">
+            <img src="{% static 'images/blog/skin-disease-2.jpg' %}"
+                 alt="Eczema and Ayurvedic skin wellness"
+                 loading="eager">
+        </div>
+
+        <p class="intro">
+            Eczema is a group of conditions that can cause dry, itchy and inflamed skin. Management often involves appropriate skin care and medical guidance. Ayurveda may be considered as complementary individualized wellness care, without assuming that every eczema pattern has the same cause or treatment.
+        </p>
+
+        <h2>What Is Eczema?</h2>
+        <p>Eczema can involve dryness, itching, redness and irritation, with symptoms that may come and go. Different forms of eczema can have different triggers and presentations.</p>
+
+        <h2>Ayurvedic Individualization</h2>
+        <p>Traditional Ayurveda emphasizes assessment of the person's overall constitution, symptoms, digestion, routine and lifestyle. Any Ayurvedic plan should therefore be individualized rather than based on a single remedy for everyone.</p>
+
+        <h2>Supporting the Skin Barrier</h2>
+        <p>Gentle cleansing, regular use of an appropriate moisturizer and avoidance of known irritants can be important for people with dry or eczema-prone skin. Fragrances and harsh products may aggravate symptoms in some individuals.</p>
+
+        <h2>Lifestyle Factors</h2>
+        <p>Sleep, stress, climate, clothing and exposure to irritants can all be relevant to a person's experience of eczema. Keeping a record of flare patterns may help identify practical triggers.</p>
+
+        <h2>When to Seek Medical Advice</h2>
+        <p>Seek medical evaluation if symptoms are severe, rapidly worsening, associated with significant pain or fever, or if the skin appears infected. Do not delay prescribed treatment while trying complementary approaches.</p>
+
+        <div class="info-box">
+            <strong>Important:</strong> This article is for educational purposes only.
+            Skin conditions can have different causes and may require professional
+            diagnosis and treatment. Do not delay medical evaluation or stop
+            prescribed treatment based only on information in this article.
+        </div>
+
+        <div class="article-navigation">
+            <a href="{% url 'blog_article' 'skin-disease' 'ayurvedic-approach-skin-health' %}">← Ayurvedic Approach to Skin Health</a>
+            <a href="{% url 'blog_article' 'skin-disease' 'psoriasis-ayurvedic-lifestyle' %}">Psoriasis & Lifestyle →</a>
+        </div>
+    </div>
+</section>
+
+<section class="services_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="services_content">
+                    <h2>Medical Disclaimer</h2>
+                    <p>
+                        The information provided on this page is intended for general
+                        educational purposes and is not a substitute for diagnosis,
+                        treatment or emergency medical care. Ayurvedic care should be
+                        individualized after appropriate assessment. Seek qualified
+                        medical advice for severe, rapidly changing, infected-looking
+                        or otherwise concerning skin symptoms.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Eczema: An Ayurvedic Perspective on Skin Wellness",
+  "description": "Understand eczema and explore how an individualized Ayurvedic perspective may consider skin care, diet, lifestyle, digestion and daily routines.",
+  "author": {
+    "@type": "Organization",
+    "name": "Ayushmaan Bhavah"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ayushmaan Bhavah"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ayushmaanbhavah.com/blog/skin-disease/eczema-ayurvedic-perspective/"
+  },
+  "image": "https://www.ayushmaanbhavah.com/static/images/blog/skin-disease-2.jpg"
+}
+</script>
+
+{% include 'blog.html' %}
+
+{% endblock %}

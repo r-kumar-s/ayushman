@@ -2,302 +2,122 @@
 {% load static %}
 
 {% block title %}
-Ayurvedic Approach to PCOD/PCOS: What to Know | Ayushmaan Bhavah
+PCOD / PCOS and Irregular Periods: Understanding the Pattern | Ayushmaan Bhavah
 {% endblock %}
 
-{% block meta_description %}
-Learn about PCOD/PCOS from an Ayurvedic perspective, including lifestyle, diet, menstrual health and personalized Ayurvedic care.
+{% block meta %}
+<meta name="description" content="Learn why irregular periods can occur with PCOS and how an individualized Ayurvedic perspective may consider menstrual health, lifestyle, nutrition and overall wellbeing." />
+<meta name="keywords" content="PCOS irregular periods Ayurveda, PCOD periods Ahmedabad, irregular menstruation Ayurveda, PCOS menstrual health, Ayurvedic doctor Ahmedabad" />
+<link rel="canonical" href="https://www.ayushmaanbhavah.com/blog/pcod-pcos/pcod-irregular-periods/" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Ayushmaan Bhavah" />
+<meta property="og:title" content="PCOD / PCOS and Irregular Periods: Understanding the Pattern" />
+<meta property="og:description" content="Learn why irregular periods can occur with PCOS and how an individualized Ayurvedic perspective may consider menstrual health, lifestyle, nutrition and overall wellbeing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.ayushmaanbhavah.com/blog/pcod-pcos/pcod-irregular-periods/" />
+<meta property="og:image" content="https://www.ayushmaanbhavah.com/static/images/blog/pcod-2.jpg" />
 {% endblock %}
 
 {% block content %}
+<div class="sub-banner-section">
+    {% include 'header.html' %}
+    <section class="banner-section">
+        <div class="container">
+            <div class="row"><div class="col-lg-12"><div class="banner-section-content">
+                <h1>PCOD / PCOS and Irregular Periods: Understanding the Pattern</h1>
+                <p>Understanding PCOD / PCOS through individualized lifestyle and Ayurvedic wellness guidance.</p>
+                <div class="btn_wrapper">
+                    <span class="sub_home_span">Blog</span>
+                    <i class="fa-solid fa-angles-right"></i>
+                    <span class="sub_span">PCOD / PCOS</span>
+                </div>
+            </div></div></div>
+        </div>
+    </section>
+</div>
 
 <style>
-    .blog-article-page {
-        padding: 70px 0;
-        background: #fff;
-    }
-
-    .blog-article-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .blog-breadcrumb {
-        font-size: 14px;
-        margin-bottom: 20px;
-        color: #777;
-    }
-
-    .blog-breadcrumb a {
-        color: #a32020;
-        text-decoration: none;
-    }
-
-    .blog-category {
-        display: inline-block;
-        background: #a32020;
-        color: #fff;
-        padding: 7px 15px;
-        border-radius: 4px;
-        font-size: 13px;
-        margin-bottom: 15px;
-    }
-
-    .blog-article-title {
-        font-size: 42px;
-        line-height: 1.2;
-        color: #222;
-        margin-bottom: 15px;
-    }
-
-    .blog-meta {
-        color: #777;
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
-
-    .blog-hero {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-
-    .blog-hero img {
-        width: 100%;
-        max-height: 520px;
-        object-fit: cover;
-        border-radius: 8px;
-        display: block;
-    }
-
-    .blog-content {
-        max-width: 850px;
-        font-size: 17px;
-        line-height: 1.8;
-        color: #444;
-    }
-
-    .blog-content h2 {
-        margin-top: 35px;
-        margin-bottom: 15px;
-        color: #8f1d1d;
-        font-size: 28px;
-    }
-
-    .blog-content h3 {
-        margin-top: 25px;
-        color: #333;
-        font-size: 22px;
-    }
-
-    .blog-content p {
-        margin-bottom: 18px;
-    }
-
-    .blog-content ul {
-        margin-bottom: 20px;
-    }
-
-    .blog-content li {
-        margin-bottom: 8px;
-    }
-
-    .blog-navigation {
-        display: flex;
-        justify-content: space-between;
-        gap: 15px;
-        margin-top: 45px;
-        padding-top: 25px;
-        border-top: 1px solid #ddd;
-    }
-
-    .blog-navigation a,
-    .back-link {
-        color: #a32020;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .blog-cta {
-        margin-top: 40px;
-        padding: 30px;
-        background: #f8f1eb;
-        border-radius: 8px;
-        text-align: center;
-    }
-
-    .blog-cta h3 {
-        margin-top: 0;
-        color: #8f1d1d;
-    }
-
-    .blog-cta-btn {
-        display: inline-block;
-        margin-top: 12px;
-        padding: 12px 25px;
-        background: #a32020;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 4px;
-    }
-
-    .blog-disclaimer {
-        margin-top: 35px;
-        padding: 18px;
-        background: #f7f7f7;
-        border-left: 4px solid #a32020;
-        font-size: 14px;
-        color: #666;
-    }
-
-    @media (max-width: 768px) {
-        .blog-article-title {
-            font-size: 30px;
-        }
-
-        .blog-content {
-            font-size: 16px;
-        }
-
-        .blog-navigation {
-            flex-direction: column;
-        }
-    }
+.thyroid-article { padding:70px 0; }
+.article-container { max-width:1000px; margin:auto; }
+.article-image { overflow:hidden; border-radius:14px; margin-bottom:35px; }
+.article-image img { width:100%; display:block; }
+.thyroid-article h2 { font-family:Georgia,serif; color:#333; font-size:30px; margin:38px 0 15px; }
+.thyroid-article p,.thyroid-article li { color:#555; font-size:17px; line-height:1.8; }
+.intro { font-size:19px !important; }
+.info-box { background:#f7f3eb; border-left:4px solid #b51d1d; padding:22px 25px; margin:30px 0; }
+.article-navigation { display:flex; gap:20px; margin-top:55px; }
+.article-navigation a { flex:1; padding:18px 22px; background:#f6f2eb; color:#333; text-decoration:none; border-radius:8px; font-weight:600; }
+.article-navigation a:last-child { text-align:right; }
+@media(max-width:767px) {
+    .thyroid-article { padding:45px 15px; }
+    .thyroid-article h2 { font-size:26px; }
+    .thyroid-article p,.thyroid-article li { font-size:16px; }
+    .article-navigation { flex-direction:column; }
+    .article-navigation a:last-child { text-align:left; }
+}
 </style>
 
-<section class="blog-article-page">
+<section class="thyroid-article">
+    <div class="container article-container">
+        <div class="article-image">
+            <img src="{% static 'images/blog/pcod-2.jpg' %}" alt="PCOD PCOS and irregular periods" loading="eager">
+        </div>
+        <p class="intro">Irregular or infrequent periods are a common reason people seek evaluation for PCOS. Understanding the menstrual pattern and associated symptoms is important because irregular bleeding can have several possible causes.</p>
 
-    <div class="blog-article-container">
+        <h2>Why Periods May Become Irregular</h2>
+        <p>Changes in ovulation can lead to longer or unpredictable menstrual cycles. PCOS is one possible cause, but thyroid disorders, pregnancy, significant weight changes and other conditions can also affect cycles.</p>
 
-        <div class="blog-breadcrumb">
-            <a href="/">Home</a>
-            &nbsp;›&nbsp;
-            <a href="/pcod/">PCOD / PCOS</a>
-            &nbsp;›&nbsp;
-            Ayurvedic Approach to PCOD/PCOS
+        <h2>Tracking the Menstrual Cycle</h2>
+        <p>Recording the first day of each period, cycle length, bleeding pattern and associated symptoms can provide useful information for both medical and Ayurvedic consultations.</p>
+
+        <h2>Ayurvedic Lifestyle Perspective</h2>
+        <p>An individualized Ayurvedic approach may review meal timing, digestion, sleep, stress, physical activity and daily routine. These factors may be addressed as part of broader wellness support.</p>
+
+        <h2>Nutrition and Daily Routine</h2>
+        <p>Balanced nutrition and regular meals can support general health. Extreme diets or prolonged fasting should not be adopted without appropriate professional guidance.</p>
+
+        <h2>When to Seek Medical Advice</h2>
+        <p>Very heavy bleeding, severe pain, pregnancy concerns, prolonged absence of periods or a sudden major change in menstrual pattern warrants appropriate medical evaluation.</p>
+
+        <div class="info-box">
+            <strong>Important:</strong> This article is for educational purposes only.
+            PCOD / PCOS may require medical assessment and ongoing care. Do not stop
+            prescribed medicines or delay professional treatment based only on this article.
         </div>
 
-        <a href="/pcod/" class="back-link">
-            ← Back to PCOD / PCOS
-        </a>
-
-        <div style="margin-top:25px;">
-            <span class="blog-category">PCOD / PCOS</span>
-
-            <h1 class="blog-article-title">
-                Ayurvedic Approach to PCOD/PCOS: What to Know
-            </h1>
-
-            <div class="blog-meta">
-                Ayurveda · PCOD / PCOS · Women's Health
-            </div>
+        <div class="article-navigation">
+            <a href="{% url 'blog_article' 'pcod-pcos' 'ayurvedic-approach-pcod-pcos' %}">← Ayurvedic Approach to PCOD / PCOS</a>
+            <a href="{% url 'blog_article' 'pcod-pcos' 'pcod-weight-management' %}">PCOD / PCOS and Weight Management →</a>
         </div>
-
-        <div class="blog-hero">
-            <img
-                src="{% static 'images/blog/pcod-pcos-1.jpg' %}"
-                alt="Ayurvedic approach to PCOD and PCOS"
-                loading="eager"
-            >
-        </div>
-
-        <article class="blog-content">
-
-            <p>
-                PCOD and PCOS are commonly associated with irregular menstrual
-                cycles, hormonal changes, acne, weight changes and difficulties
-                with ovulation. Ayurveda approaches these concerns by looking
-                at the individual's overall health, digestion, lifestyle,
-                menstrual pattern and other contributing factors.
-            </p>
-
-            <h2>Understanding PCOD and PCOS</h2>
-
-            <p>
-                PCOD and PCOS are often used interchangeably, although they are
-                not exactly the same. The symptoms and underlying factors can
-                vary significantly from one person to another.
-            </p>
-
-            <p>
-                Common concerns may include irregular periods, unwanted hair
-                growth, acne, weight changes and challenges related to
-                fertility.
-            </p>
-
-            <h2>How Ayurveda Looks at PCOD/PCOS</h2>
-
-            <p>
-                Ayurveda considers menstrual health as part of overall
-                physiological balance. An Ayurvedic assessment may consider
-                digestion, daily routine, sleep, stress, physical activity,
-                diet and individual constitution.
-            </p>
-
-            <h2>Lifestyle and Diet</h2>
-
-            <p>
-                Regular daily routines can be an important part of supportive
-                care. Depending on the individual, an Ayurvedic practitioner
-                may recommend improvements in meal timing, physical activity,
-                sleep and stress management.
-            </p>
-
-            <ul>
-                <li>Maintain regular meal timings.</li>
-                <li>Prefer fresh and balanced meals.</li>
-                <li>Include appropriate physical activity.</li>
-                <li>Maintain a consistent sleep routine.</li>
-                <li>Work on stress management and relaxation.</li>
-            </ul>
-
-            <h2>Personalized Ayurvedic Care</h2>
-
-            <p>
-                Ayurveda emphasizes individualized care rather than applying
-                the same treatment approach to every person. An Ayurvedic
-                consultation can help understand the person's symptoms,
-                lifestyle and health history before suggesting an appropriate
-                plan.
-            </p>
-
-            <div class="blog-cta">
-                <h3>Looking for Ayurvedic Guidance for PCOD / PCOS?</h3>
-
-                <p>
-                    Consult an Ayurvedic practitioner for an individualized
-                    assessment and treatment plan.
-                </p>
-
-                <a href="/pcod/" class="blog-cta-btn">
-                    Explore PCOD / PCOS Treatment
-                </a>
-            </div>
-
-            <div class="blog-disclaimer">
-                <strong>Disclaimer:</strong>
-                This article is intended for general educational purposes only.
-                It does not replace medical diagnosis or professional medical
-                advice. Treatment should be planned according to individual
-                health conditions.
-            </div>
-
-        </article>
-
-        <div class="blog-navigation">
-
-            <a href="/pcod/">
-                ← Back to PCOD / PCOS
-            </a>
-
-            <a href="{% url 'blog_article' 'pcod-pcos' 'pcod-irregular-periods' %}">
-                Next Article →
-            </a>
-
-        </div>
-
     </div>
-
 </section>
 
+<section class="services_section">
+    <div class="container">
+        <div class="row"><div class="col-lg-12"><div class="services_content">
+            <h2>Medical Disclaimer</h2>
+            <p>
+                The information provided on this page is for general educational
+                purposes and is not a substitute for diagnosis, treatment or
+                emergency medical care. Ayurvedic care should be individualized
+                after appropriate assessment.
+            </p>
+        </div></div></div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"PCOD / PCOS and Irregular Periods: Understanding the Pattern",
+  "description":"Learn why irregular periods can occur with PCOS and how an individualized Ayurvedic perspective may consider menstrual health, lifestyle, nutrition and overall wellbeing.",
+  "author":{"@type":"Organization","name":"Ayushmaan Bhavah"},
+  "publisher":{"@type":"Organization","name":"Ayushmaan Bhavah"},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ayushmaanbhavah.com/blog/pcod-pcos/pcod-irregular-periods/"},
+  "image":"https://www.ayushmaanbhavah.com/static/images/blog/pcod-2.jpg"
+}
+</script>
+
+{% include 'blog.html' %}
 {% endblock %}

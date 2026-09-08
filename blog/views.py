@@ -83,95 +83,95 @@ BLOG_ARTICLES = {
     "ibs-constipation": {
 
         "ayurvedic-approach-ibs":
-            "ayurvedic-approach-ibs.html",
+            "ibs-constipation/ayurvedic-approach-ibs.html",
 
         "constipation-gut-health":
-            "constipation-gut-health.html",
+            "ibs-constipation/constipation-gut-health.html",
 
         "ibs-diet-lifestyle":
-            "ibs-diet-lifestyle.html",
+            "ibs-constipation/ibs-diet-lifestyle.html",
 
         "bloating-irregular-bowel":
-            "bloating-irregular-bowel.html",
+            "ibs-constipation/bloating-irregular-bowel.html",
 
         "ayurvedic-digestive-care":
-            "ayurvedic-digestive-care.html",
+            "ibs-constipation/ayurvedic-digestive-care.html",
     },
 
 
     "piles": {
 
         "ayurvedic-approach-piles":
-            "ayurvedic-approach-piles.html",
+            "piles/ayurvedic-approach-piles.html",
 
         "piles-constipation-ayurveda":
-            "piles-constipation-ayurveda.html",
+            "piles/piles-constipation-ayurveda.html",
 
         "diet-lifestyle-piles":
-            "diet-lifestyle-piles.html",
+            "piles/diet-lifestyle-piles.html",
 
         "bleeding-pain-bowel-movements":
-            "bleeding-pain-bowel-movements.html",
+            "piles/bleeding-pain-bowel-movements.html",
 
         "ayurvedic-care-piles":
-            "ayurvedic-care-piles.html",
+            "piles/ayurvedic-care-piles.html",
     },
 
 
     "kidney-stone": {
 
         "ayurvedic-approach-kidney-stones":
-            "ayurvedic-approach-kidney-stones.html",
+            "kidney-stone/ayurvedic-approach-kidney-stones.html",
 
         "kidney-stone-symptoms":
-            "kidney-stone-symptoms.html",
+            "kidney-stone/kidney-stone-symptoms.html",
 
         "hydration-diet-kidney-stones":
-            "hydration-diet-kidney-stones.html",
+            "kidney-stone/hydration-diet-kidney-stones.html",
 
         "kidney-stones-lifestyle":
-            "kidney-stones-lifestyle.html",
+            "kidney-stone/kidney-stones-lifestyle.html",
 
         "ayurveda-kidney-stone-care":
-            "ayurveda-kidney-stone-care.html",
+            "kidney-stone/ayurveda-kidney-stone-care.html",
     },
 
 
     "migraine": {
 
         "ayurvedic-approach-migraine":
-            "ayurvedic-approach-migraine.html",
+            "migraine/ayurvedic-approach-migraine.html",
 
         "migraine-triggers-ayurveda":
-            "migraine-triggers-ayurveda.html",
+            "migraine/migraine-triggers-ayurveda.html",
 
         "migraine-sleep-lifestyle":
-            "migraine-sleep-lifestyle.html",
+            "migraine/migraine-sleep-lifestyle.html",
 
         "diet-headache-patterns":
-            "diet-headache-patterns.html",
+            "migraine/diet-headache-patterns.html",
 
         "shirodhara-migraine":
-            "shirodhara-migraine.html",
+            "migraine/shirodhara-migraine.html",
     },
 
 
     "skin-disease": {
 
         "ayurvedic-approach-skin-health":
-            "ayurvedic-approach-skin-health.html",
+            "skin-disease/ayurvedic-approach-skin-health.html",
 
         "eczema-ayurvedic-perspective":
-            "eczema-ayurvedic-perspective.html",
+            "skin-disease/eczema-ayurvedic-perspective.html",
 
         "psoriasis-ayurvedic-lifestyle":
-            "psoriasis-ayurvedic-lifestyle.html",
+            "skin-disease/psoriasis-ayurvedic-lifestyle.html",
 
         "skin-diet-digestion":
-            "skin-diet-digestion.html",
+            "skin-disease/skin-diet-digestion.html",
 
         "panchakarma-skin-concerns":
-            "panchakarma-skin-concerns.html",
+            "skin-disease/panchakarma-skin-concerns.html",
     },
 }
 
