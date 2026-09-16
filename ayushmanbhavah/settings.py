@@ -72,7 +72,7 @@ INSTALLED_APPS = [
     'campaigns',
     'captcha',
     'blog',
-]
+    'invoices',]
 
 SITE_ID = 3
 
