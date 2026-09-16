@@ -290,8 +290,10 @@ def generate_invoice_pdf(invoice):
 
     # Exact logo path requested for this installation.
     logo_path = (
-        Path("/home/rohit/Python_App/ayushman/staticfiles/images/"
-             "logo_transparent_300_100.png")
+        Path(settings.BASE_DIR)
+        / "staticfiles"
+        / "images"
+        / "logo_transparent_300_100.png"
     )
 
     if logo_path:
