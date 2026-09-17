@@ -485,46 +485,6 @@
 
 
     // =========================================================
-    // AUTO NUMBER INVOICE ITEM SERIAL NUMBERS
-    // =========================================================
-
-    function updateSerialNumbers() {
-
-        var rows = getInvoiceRows();
-        var serial = 1;
-
-        rows.forEach(function (row) {
-
-            // Skip Django empty/template rows
-            if (
-                row.classList.contains("empty-form") ||
-                row.querySelector('[name*="__prefix__"]')
-            ) {
-                return;
-            }
-
-            // Skip rows marked for deletion
-            var deleteCheckbox = row.querySelector(
-                'input[name$="-DELETE"]'
-            );
-
-            if (deleteCheckbox && deleteCheckbox.checked) {
-                return;
-            }
-
-            var serialInput = row.querySelector(
-                'input[name$="-serial_no"]'
-            );
-
-            if (serialInput) {
-                serialInput.value = serial;
-                serial += 1;
-            }
-        });
-    }
-
-
-    // =========================================================
     // UPDATE INLINE ROW CALCULATED CELL
     // =========================================================
 
@@ -820,9 +780,6 @@
 
     function calculateInvoice() {
 
-        // Keep invoice item serial numbers sequential: 1, 2, 3, ...
-        updateSerialNumbers();
-
         var taxableTotal = 0;
 
         var taxTotal = 0;
@@ -1036,6 +993,490 @@
     );
 
 
+
+
+    // =========================================================
+    // PURCHASE ORDER PDF IMPORT
+    // =========================================================
+
+    function getReadPoUrl() {
+
+        var path = window.location.pathname;
+
+        return path.replace(
+            /add\/?$/,
+            "read-po/"
+        );
+    }
+
+
+    function getCsrfToken() {
+
+        var input = document.querySelector(
+            'input[name="csrfmiddlewaretoken"]'
+        );
+
+        return input ? input.value : "";
+    }
+
+
+    function showPoStatus(message, isError) {
+
+        var status = document.getElementById(
+            "po-read-status"
+        );
+
+        if (!status) {
+            return;
+        }
+
+        status.textContent = message || "";
+        status.style.fontWeight = "600";
+        status.style.marginTop = "6px";
+        status.style.display = message ? "block" : "none";
+
+        if (isError) {
+            status.style.color = "#ba2121";
+        } else {
+            status.style.color = "#417690";
+        }
+    }
+
+
+    function setInputValue(fieldId, value) {
+
+        var field = document.getElementById(fieldId);
+
+        if (!field) {
+            console.warn(
+                "PO import field not found:",
+                fieldId
+            );
+            return;
+        }
+
+        field.value = value == null ? "" : value;
+
+        field.dispatchEvent(
+            new Event("change", { bubbles: true })
+        );
+    }
+
+
+    function setCustomerFromPo(data) {
+
+        var customerSelect = document.getElementById(
+            "id_customer"
+        );
+
+        if (customerSelect && data.customer_id) {
+
+            var option = customerSelect.querySelector(
+                'option[value="' + data.customer_id + '"]'
+            );
+
+            if (option) {
+                customerSelect.value = String(
+                    data.customer_id
+                );
+
+                // Populate from master first, then overwrite with the
+                // PO snapshot values below. The PO is the source for
+                // this invoice; Customer Master is not modified.
+                customerSelect.dispatchEvent(
+                    new Event("change", { bubbles: true })
+                );
+            }
+        }
+
+        var customer = data.customer || {};
+
+        setInputValue(
+            "id_customer_name",
+            customer.customer_name
+        );
+        setInputValue(
+            "id_customer_phone",
+            customer.customer_phone
+        );
+        setInputValue(
+            "id_customer_gstin",
+            (customer.customer_gstin || "").toUpperCase()
+        );
+        setInputValue(
+            "id_billing_address",
+            customer.billing_address
+        );
+        setInputValue(
+            "id_shipping_address",
+            customer.shipping_address
+        );
+        setInputValue(
+            "id_country",
+            customer.country
+        );
+        setInputValue(
+            "id_place_of_supply",
+            customer.place_of_supply
+        );
+    }
+
+
+    function getEditableInvoiceRows() {
+
+        return Array.prototype.filter.call(
+            document.querySelectorAll(
+                ".inline-group tr.form-row"
+            ),
+            function (row) {
+                return !row.classList.contains("empty-form") &&
+                    !row.querySelector(
+                        '[name*="__prefix__"]'
+                    );
+            }
+        );
+    }
+
+
+    function clearInvoiceRow(row) {
+
+        var fields = row.querySelectorAll(
+            "input, select, textarea"
+        );
+
+        fields.forEach(function (field) {
+
+            if (
+                field.name.endsWith("-DELETE") ||
+                field.name.endsWith("-id")
+            ) {
+                return;
+            }
+
+            if (field.type === "checkbox") {
+                field.checked = false;
+            } else if (field.tagName === "SELECT") {
+                field.selectedIndex = 0;
+            } else {
+                field.value = "";
+            }
+        });
+    }
+
+
+    function ensureInvoiceRows(requiredCount) {
+
+        var rows = getEditableInvoiceRows();
+
+        var attempts = 0;
+
+        while (
+            rows.length < requiredCount &&
+            attempts < 100
+        ) {
+
+            var addLink = document.querySelector(
+                ".inline-group .add-row a"
+            );
+
+            if (!addLink) {
+                console.error(
+                    "Django inline Add another link not found."
+                );
+                break;
+            }
+
+            addLink.click();
+            rows = getEditableInvoiceRows();
+            attempts += 1;
+        }
+
+        return rows;
+    }
+
+
+    function setInlineField(row, suffix, value) {
+
+        var field = row.querySelector(
+            'input[name$="-' + suffix + '"], ' +
+            'select[name$="-' + suffix + '"], ' +
+            'textarea[name$="-' + suffix + '"]'
+        );
+
+        if (!field) {
+            console.warn(
+                "PO item field not found:",
+                suffix
+            );
+            return;
+        }
+
+        field.value = value == null ? "" : value;
+
+        field.dispatchEvent(
+            new Event("input", { bubbles: true })
+        );
+        field.dispatchEvent(
+            new Event("change", { bubbles: true })
+        );
+    }
+
+
+    function populateInvoiceItems(items) {
+
+        var rows = ensureInvoiceRows(items.length);
+
+        var i;
+
+        for (i = 0; i < rows.length; i += 1) {
+            clearInvoiceRow(rows[i]);
+        }
+
+        for (i = 0; i < items.length; i += 1) {
+
+            var row = rows[i];
+            var item = items[i];
+
+            setInlineField(
+                row,
+                "serial_no",
+                item.serial_no || (i + 1)
+            );
+
+            setInlineField(
+                row,
+                "product_description",
+                item.product_description || ""
+            );
+
+            setInlineField(
+                row,
+                "hsn_code",
+                item.hsn_code || ""
+            );
+
+            setInlineField(
+                row,
+                "quantity",
+                item.quantity || ""
+            );
+
+            setInlineField(
+                row,
+                "rate",
+                item.rate || ""
+            );
+
+            setInlineField(
+                row,
+                "uom",
+                item.uom || "Kgs"
+            );
+
+            setInlineField(
+                row,
+                "tax_type",
+                item.tax_type || "IGST"
+            );
+
+            setInlineField(
+                row,
+                "tax_rate",
+                item.tax_rate || "5.00"
+            );
+        }
+
+        calculateInvoice();
+    }
+
+
+    function populateInvoiceFromPo(data) {
+
+        // Invoice date remains today's default. The PO date goes into
+        // PO Date, which is the correct accounting distinction.
+        setInputValue(
+            "id_po_no",
+            data.po_no
+        );
+
+        setInputValue(
+            "id_po_date",
+            data.po_date
+        );
+
+        setInputValue(
+            "id_delivery_date",
+            data.delivery_date
+        );
+
+        // The POs supplied by Emami and Virgo do not specify a
+        // transporter, so this remains blank.
+        setInputValue(
+            "id_transporter",
+            data.transporter || ""
+        );
+
+        setCustomerFromPo(data);
+
+        setInputValue(
+            "id_supplier_state",
+            data.supplier_state || "West Bengal"
+        );
+
+        setInputValue(
+            "id_supplier_state_code",
+            data.supplier_state_code || "19"
+        );
+
+        populateInvoiceItems(
+            data.items || []
+        );
+
+        // Totals are calculated from the invoice line items rather than
+        // blindly copying the PO total, so the existing invoice rules
+        // remain authoritative.
+        calculateInvoice();
+    }
+
+
+    function initializePoImporter() {
+
+        var fileInput = document.getElementById(
+            "id_po_file"
+        );
+
+        if (!fileInput) {
+            return;
+        }
+
+        if (document.getElementById("read-po-button")) {
+            return;
+        }
+
+        var wrapper = document.createElement("div");
+        wrapper.style.marginTop = "6px";
+
+        var button = document.createElement("button");
+        button.type = "button";
+        button.id = "read-po-button";
+        button.className = "button";
+        button.textContent = "Read PO & Autofill";
+        button.style.marginRight = "8px";
+
+        var status = document.createElement("div");
+        status.id = "po-read-status";
+        status.style.display = "none";
+
+        wrapper.appendChild(button);
+        wrapper.appendChild(status);
+
+        fileInput.parentNode.appendChild(wrapper);
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                var file = fileInput.files &&
+                    fileInput.files[0];
+
+                if (!file) {
+                    showPoStatus(
+                        "Please select a PO PDF first.",
+                        true
+                    );
+                    return;
+                }
+
+                if (
+                    file.type !== "application/pdf" &&
+                    !file.name.toLowerCase().endsWith(".pdf")
+                ) {
+                    showPoStatus(
+                        "Please select a PDF purchase order.",
+                        true
+                    );
+                    return;
+                }
+
+                var formData = new FormData();
+                formData.append("po_file", file);
+
+                button.disabled = true;
+                button.textContent = "Reading PO...";
+                showPoStatus(
+                    "Reading purchase order...",
+                    false
+                );
+
+                fetch(
+                    getReadPoUrl(),
+                    {
+                        method: "POST",
+                        headers: {
+                            "X-CSRFToken": getCsrfToken(),
+                            "X-Requested-With": "XMLHttpRequest"
+                        },
+                        body: formData,
+                        credentials: "same-origin"
+                    }
+                )
+                    .then(function (response) {
+
+                        return response.json()
+                            .then(function (json) {
+
+                                if (!response.ok || !json.success) {
+                                    throw new Error(
+                                        json.error ||
+                                        "Could not read the PO."
+                                    );
+                                }
+
+                                return json;
+                            });
+                    })
+                    .then(function (result) {
+
+                        populateInvoiceFromPo(
+                            result.data
+                        );
+
+                        var customerStatus =
+                            result.data.customer_found_in_master
+                                ? "Customer matched in Customer Master."
+                                : "Customer not found in Customer Master; invoice customer fields were filled from the PO.";
+
+                        showPoStatus(
+                            "PO read successfully (" +
+                            result.data.source +
+                            "). " +
+                            customerStatus,
+                            false
+                        );
+                    })
+                    .catch(function (error) {
+
+                        console.error(
+                            "PO import error:",
+                            error
+                        );
+
+                        showPoStatus(
+                            error.message ||
+                            "Could not read the PO.",
+                            true
+                        );
+                    })
+                    .finally(function () {
+
+                        button.disabled = false;
+                        button.textContent = "Read PO & Autofill";
+                    });
+            }
+        );
+    }
+
+
     // =========================================================
     // PAGE LOAD
     // =========================================================
@@ -1050,6 +1491,11 @@
         // Customer auto-fill
 
         initializeCustomerAutoFill();
+
+
+        // Purchase Order importer
+
+        initializePoImporter();
 
 
         // Invoice calculations
