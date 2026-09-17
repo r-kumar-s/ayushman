@@ -1,4 +1,5 @@
 from decimal import Decimal, ROUND_HALF_UP
+import re
 
 from django.db import models
 from django.utils import timezone
@@ -98,6 +99,16 @@ class Invoice(models.Model):
 
     invoice_no = models.AutoField(
         primary_key=True,
+        editable=False
+    )
+
+    # Public invoice number shown on the invoice, Admin and PDF.
+    # invoice_no remains the internal database ID for backward compatibility.
+    invoice_number = models.CharField(
+        max_length=255,
+        unique=True,
+        blank=True,
+        null=True,
         editable=False
     )
 
@@ -246,6 +257,31 @@ class Invoice(models.Model):
     # SAVE
     # -----------------------------------------------------
 
+    def build_invoice_number(self):
+        """Build the permanent public invoice number.
+
+        Format:
+            #AB_customername_mm_yyyy_id
+
+        The database AutoField (invoice_no) is used as the final ID.
+        Customer name is normalized only for the invoice-number text.
+        """
+        customer_name = (self.customer_name or "CUSTOMER").strip().upper()
+        customer_name = re.sub(r"[^A-Z0-9]+", "_", customer_name)
+        customer_name = customer_name.strip("_") or "CUSTOMER"
+
+        date_value = self.invoice_date or timezone.localdate()
+        prefix = f"#AB_{customer_name}_{date_value:%m_%Y}_{self.invoice_no}"
+
+        # Keep within the database field limit while preserving the ID.
+        if len(prefix) > 255:
+            suffix = f"_{date_value:%m_%Y}_{self.invoice_no}"
+            customer_part = max(1, 255 - len("#AB_") - len(suffix))
+            customer_name = customer_name[:customer_part].rstrip("_")
+            prefix = f"#AB_{customer_name}{suffix}"
+
+        return prefix
+
     def save(self, *args, **kwargs):
         """
         Save the invoice exactly as entered.
@@ -253,14 +289,20 @@ class Invoice(models.Model):
         IMPORTANT:
         Customer snapshot fields are NOT overwritten here.
 
-        This allows an existing invoice to retain manually
-        edited billing/shipping/customer snapshot information.
+        The public invoice number is generated only when it does not
+        already exist, so editing an invoice never changes its number.
         """
 
         super().save(
             *args,
             **kwargs
         )
+
+        if not self.invoice_number:
+            self.invoice_number = self.build_invoice_number()
+            type(self).objects.filter(pk=self.pk).update(
+                invoice_number=self.invoice_number
+            )
 
     # -----------------------------------------------------
     # CALCULATE INVOICE TOTALS
@@ -307,7 +349,7 @@ class Invoice(models.Model):
 
     def __str__(self):
         return (
-            f"Invoice #{self.invoice_no} - "
+            f"{self.invoice_number or self.invoice_no} - "
             f"{self.customer_name}"
         )
 
@@ -352,13 +394,8 @@ class InvoiceItem(models.Model):
     )
 
     uom = models.CharField(
-        max_length=10,
-        choices=[
-            ("KG", "KG"),
-            ("Gram", "Gram"),
-            ("MGram", "MGram"),
-        ],
-        default="KG"
+        max_length=30,
+        default="Kgs"
     )
 
     taxable_value = models.DecimalField(

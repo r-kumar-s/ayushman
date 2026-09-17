@@ -1,15 +1,18 @@
 from pathlib import Path
+import re
 from io import BytesIO
 from decimal import Decimal
 from datetime import datetime
 
 from django.contrib import admin
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.urls import path, reverse
 from django.utils.html import format_html
 
 from .models import Customer, Invoice, InvoiceItem
 from .forms import InvoiceAdminForm
+from .po_parser import parse_purchase_order
+
 
 
 # =========================================================
@@ -180,6 +183,101 @@ def number_to_words(number):
     return "Rupees " + " ".join(words) + " Only"
 
 
+
+# =========================================================
+# INVOICE PDF FILENAME
+# =========================================================
+
+def get_invoice_filename(invoice):
+    """
+    Generate the standard invoice PDF filename.
+
+    Format:
+        AB_customername_invoiceid_ddmmyyyy.pdf
+
+    Example:
+        AB_EMAMI_LIMITED_123_17092026.pdf
+    """
+
+    # -----------------------------------------------------
+    # Customer name
+    # -----------------------------------------------------
+
+    customer_name = (
+        invoice.customer_name
+        or (
+            invoice.customer.name
+            if invoice.customer
+            else ""
+        )
+        or "CUSTOMER"
+    )
+
+    # -----------------------------------------------------
+    # Clean customer name for a safe filename
+    # -----------------------------------------------------
+
+    customer_name = customer_name.strip().upper()
+
+    # Replace & with AND
+    customer_name = customer_name.replace("&", " AND ")
+
+    # Replace any non-alphanumeric characters with _
+    customer_name = re.sub(
+        r"[^A-Z0-9]+",
+        "_",
+        customer_name,
+    )
+
+    # Remove leading/trailing underscores
+    customer_name = customer_name.strip("_")
+
+    if not customer_name:
+        customer_name = "CUSTOMER"
+
+    # -----------------------------------------------------
+    # Invoice ID
+    # -----------------------------------------------------
+
+    # invoice_number is the public invoice number stored in the database.
+    # Its final numeric component is the invoice ID used by the existing
+    # filename convention AB_customername_invoiceid_ddmmyyyy.pdf.
+    public_invoice_number = (
+        getattr(invoice, "invoice_number", None) or ""
+    ).strip()
+
+    match = re.search(r"(\d+)$", public_invoice_number)
+
+    invoice_id = (
+        match.group(1)
+        if match
+        else str(invoice.invoice_no or invoice.pk or "0")
+    )
+
+    # -----------------------------------------------------
+    # Invoice date
+    # -----------------------------------------------------
+
+    if invoice.invoice_date:
+        invoice_date = invoice.invoice_date.strftime(
+            "%d%m%Y"
+        )
+    else:
+        invoice_date = datetime.today().strftime(
+            "%d%m%Y"
+        )
+
+    # -----------------------------------------------------
+    # Final filename
+    # -----------------------------------------------------
+
+    return (
+        f"AB_{customer_name}_"
+        f"{invoice_id}_"
+        f"{invoice_date}.pdf"
+    )
+
+    
 # =========================================================
 # PDF GENERATOR
 # =========================================================
@@ -240,7 +338,7 @@ def generate_invoice_pdf(invoice):
     # SUPPLIER HEADER
     # =====================================================
 
-    top = page_height - 12 * mm
+    top = page_height - 20 * mm
 
     pdf.setFont(
         "Helvetica-Bold",
@@ -308,7 +406,7 @@ def generate_invoice_pdf(invoice):
 
         logo_y = (
             page_height
-            - 24 * mm
+            - 25 * mm
         )
 
         pdf.drawImage(
@@ -330,7 +428,7 @@ def generate_invoice_pdf(invoice):
     # TAX INVOICE TITLE BETWEEN ORANGE LINES
     # =====================================================
 
-    line_y = page_height - 33.5 * mm
+    line_y = page_height - 41.5 * mm
 
     pdf.setFillColor(orange)
     pdf.setStrokeColor(orange)
@@ -412,7 +510,7 @@ def generate_invoice_pdf(invoice):
 
     details = [
         ("Invoice Date :", invoice_date),
-        ("Invoice No. :", str(invoice.invoice_no)),
+        ("Invoice No. :", str(invoice.invoice_number or invoice.invoice_no)),
         ("Purchase Order No.", invoice.po_no or ""),
         ("Purchase Order Date", po_date),
         ("Delivery Date", delivery_date),
@@ -1065,7 +1163,7 @@ def generate_invoice_pdf(invoice):
     )
 
     pdf.drawString(
-        table_x + 28 * mm,
+        table_x + 40 * mm,
         transporter_y,
         invoice.transporter or "",
     )
@@ -1119,32 +1217,7 @@ def generate_invoice_pdf(invoice):
     pdf.drawString(
         table_x + 28 * mm,
         account_y,
-        "57960200000018",
-    )
-
-    # IFSC on a separate line
-    ifsc_y = account_y - 5 * mm
-
-    pdf.setFont(
-        "Helvetica-Bold",
-        7.5,
-    )
-
-    pdf.drawString(
-        table_x,
-        ifsc_y,
-        "IFSC Code :",
-    )
-
-    pdf.setFont(
-        "Helvetica",
-        7.5,
-    )
-
-    pdf.drawString(
-        table_x + 28 * mm,
-        ifsc_y,
-        "BARB0TRIBEN",
+        "57960200000018, IFSC : BARB0TRIBEN",
     )
 
     # =====================================================
@@ -1183,7 +1256,7 @@ def generate_invoice_pdf(invoice):
     # Terms now follow Account No. dynamically.
     # =====================================================
 
-    terms_y = ifsc_y - 8 * mm
+    terms_y = account_y - 8 * mm
 
     pdf.setFont(
         "Helvetica-Bold",
@@ -1249,10 +1322,12 @@ def generate_invoice_pdf(invoice):
         content_type="application/pdf",
     )
 
+    filename = get_invoice_filename(invoice)
+
     response[
         "Content-Disposition"
     ] = (
-        f'inline; filename="Invoice_{invoice.invoice_no}.pdf"'
+        f'inline; filename="{filename}"'
     )
 
     return response
@@ -1282,7 +1357,7 @@ class InvoiceAdmin(admin.ModelAdmin):
     # =====================================================
 
     list_display = (
-        "invoice_no",
+        "invoice_number",
         "invoice_date",
         "customer",
         "grand_total",
@@ -1296,6 +1371,7 @@ class InvoiceAdmin(admin.ModelAdmin):
     )
 
     search_fields = (
+        "invoice_number",
         "customer__name",
         "customer_name",
         "customer_gstin",
@@ -1355,6 +1431,13 @@ class InvoiceAdmin(admin.ModelAdmin):
 
         custom_urls = [
             path(
+                "read-po/",
+                self.admin_site.admin_view(
+                    self.read_po_view
+                ),
+                name="invoices_invoice_read_po",
+            ),
+            path(
                 "<path:object_id>/pdf/",
                 self.admin_site.admin_view(
                     self.invoice_pdf_view
@@ -1364,6 +1447,92 @@ class InvoiceAdmin(admin.ModelAdmin):
         ]
 
         return custom_urls + urls
+
+    # =====================================================
+    # READ PURCHASE ORDER
+    # =====================================================
+
+    def read_po_view(self, request):
+        """Read a temporary PO upload and return structured JSON."""
+
+        if request.method != "POST":
+            return JsonResponse(
+                {"success": False, "error": "POST required."},
+                status=405,
+            )
+
+        po_file = request.FILES.get("po_file")
+
+        if not po_file:
+            return JsonResponse(
+                {
+                    "success": False,
+                    "error": "Please select a PO PDF first.",
+                },
+                status=400,
+            )
+
+        if not (po_file.name or "").lower().endswith(".pdf"):
+            return JsonResponse(
+                {
+                    "success": False,
+                    "error": "Only PDF purchase orders are supported.",
+                },
+                status=400,
+            )
+
+        if po_file.size > 10 * 1024 * 1024:
+            return JsonResponse(
+                {
+                    "success": False,
+                    "error": "PO PDF must be smaller than 10 MB.",
+                },
+                status=400,
+            )
+
+        try:
+            data = parse_purchase_order(po_file)
+
+            customer_data = data.get("customer", {})
+            gstin = (
+                customer_data.get("customer_gstin") or ""
+            ).strip()
+            name = (
+                customer_data.get("customer_name") or ""
+            ).strip()
+
+            # Customer Master is READ ONLY for PO import.
+            # We only find an existing record; we never update it.
+            customer = None
+
+            if gstin:
+                customer = Customer.objects.filter(
+                    gstin__iexact=gstin
+                ).first()
+
+            if customer is None and name:
+                customer = Customer.objects.filter(
+                    name__iexact=name
+                ).first()
+
+            data["customer_id"] = customer.pk if customer else None
+            data["customer_found_in_master"] = bool(customer)
+
+            return JsonResponse(
+                {
+                    "success": True,
+                    "data": data,
+                }
+            )
+
+        except Exception as exc:
+            return JsonResponse(
+                {
+                    "success": False,
+                    "error": str(exc),
+                },
+                status=422,
+            )
 
     # =====================================================
     # PDF VIEW
@@ -1398,6 +1567,7 @@ class InvoiceAdmin(admin.ModelAdmin):
 
     readonly_fields = (
         "invoice_no",
+        "invoice_number",
         "taxable_total",
         "tax_total",
         "grand_total",
@@ -1407,33 +1577,69 @@ class InvoiceAdmin(admin.ModelAdmin):
     # FORM FIELD ORDER
     # =====================================================
 
-    fields = (
-        "invoice_no",
-        "invoice_date",
+    def get_fields(self, request, obj=None):
 
-        "po_no",
-        "po_date",
-        "delivery_date",
-        "transporter",
+        fields = (
+            "invoice_number",
+            "invoice_date",
 
-        "customer",
+            "po_no",
+            "po_date",
+            "delivery_date",
+            "transporter",
 
-        "customer_name",
-        "customer_phone",
-        "customer_gstin",
-        "billing_address",
-        "shipping_address",
-        "country",
-        "place_of_supply",
+            "customer",
 
-        "supplier_state",
-        "supplier_state_code",
+            "customer_name",
+            "customer_phone",
+            "customer_gstin",
+            "billing_address",
+            "shipping_address",
+            "country",
+            "place_of_supply",
 
-        "taxable_total",
-        "tax_total",
-        "grand_total",
-        "amount_in_words",
-    )
+            "supplier_state",
+            "supplier_state_code",
+
+            "taxable_total",
+            "tax_total",
+            "grand_total",
+            "amount_in_words",
+        )
+
+        # The PO uploader is only needed when creating a NEW invoice.
+        # It is a temporary form field and is not stored in the database.
+        if obj is None:
+            fields = (
+                "invoice_number",
+                "invoice_date",
+                "po_file",
+
+                "po_no",
+                "po_date",
+                "delivery_date",
+                "transporter",
+
+                "customer",
+
+                "customer_name",
+                "customer_phone",
+                "customer_gstin",
+                "billing_address",
+                "shipping_address",
+                "country",
+                "place_of_supply",
+
+                "supplier_state",
+                "supplier_state_code",
+
+                "taxable_total",
+                "tax_total",
+                "grand_total",
+                "amount_in_words",
+            )
+
+        return fields
 
     # =====================================================
     # PRODUCT ITEMS
