@@ -1360,15 +1360,14 @@ class InvoiceAdmin(admin.ModelAdmin):
     )
 
     search_fields = (
-        "invoice_number",
-        "customer__name",
+                "customer__name",
         "customer_name",
         "customer_gstin",
         "po_no",
     )
 
     ordering = (
-        "-invoice_no",
+        "-id",
     )
 
     # =====================================================
@@ -1564,11 +1563,11 @@ class InvoiceAdmin(admin.ModelAdmin):
     # =====================================================
 
     readonly_fields = (
-        "invoice_no",
-        "invoice_number",
+        "id",
         "taxable_total",
         "tax_total",
         "grand_total",
+        "amount_in_words",
     )
 
     # =====================================================
@@ -1578,7 +1577,7 @@ class InvoiceAdmin(admin.ModelAdmin):
     def get_fields(self, request, obj=None):
 
         fields = (
-            "invoice_number",
+            "id",
             "invoice_date",
 
             "po_no",
@@ -1609,7 +1608,7 @@ class InvoiceAdmin(admin.ModelAdmin):
         # It is a temporary form field and is not stored in the database.
         if obj is None:
             fields = (
-                "invoice_number",
+                "id",
                 "invoice_date",
                 "po_file",
 

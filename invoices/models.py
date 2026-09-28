@@ -97,22 +97,6 @@ class Invoice(models.Model):
     are NOT overwritten when the invoice is edited.
     """
 
-    invoice_no = models.PositiveIntegerField(
-        editable=False,
-        null=True,
-        blank=True
-    )
-
-    # Public invoice number shown on the invoice, Admin and PDF.
-    # invoice_no remains the internal database ID for backward compatibility.
-    invoice_number = models.CharField(
-        max_length=255,
-        unique=True,
-        blank=True,
-        null=True,
-        editable=False
-    )
-
     invoice_date = models.DateField(
         default=timezone.localdate
     )
@@ -252,64 +236,7 @@ class Invoice(models.Model):
 
     class Meta:
         db_table = "invoices_invoice"
-        ordering = ["-invoice_no"]
-
-    # -----------------------------------------------------
-    # SAVE
-    # -----------------------------------------------------
-
-    def build_invoice_number(self):
-        """Build the permanent public invoice number.
-
-        Format:
-            #AB_customername_mm_yyyy_id
-
-        The database AutoField (invoice_no) is used as the final ID.
-        Customer name is normalized only for the invoice-number text.
-        """
-        customer_name = (self.customer_name or "CUSTOMER").strip().upper()
-        customer_name = re.sub(r"[^A-Z0-9]+", "_", customer_name)
-        customer_name = customer_name.strip("_") or "CUSTOMER"
-
-        date_value = self.invoice_date or timezone.localdate()
-        prefix = f"#AB_{customer_name}_{date_value:%m_%Y}_{self.invoice_no}"
-
-        # Keep within the database field limit while preserving the ID.
-        if len(prefix) > 255:
-            suffix = f"_{date_value:%m_%Y}_{self.invoice_no}"
-            customer_part = max(1, 255 - len("#AB_") - len(suffix))
-            customer_name = customer_name[:customer_part].rstrip("_")
-            prefix = f"#AB_{customer_name}{suffix}"
-
-        return prefix
-
-    def save(self, *args, **kwargs):
-        """
-        Save the invoice.
-
-        The database-generated primary key (id) is used as the
-        numeric invoice number. The public invoice_number is generated
-        only once and never changes when the invoice is edited.
-        """
-
-        # First save creates the database primary key.
-        super().save(*args, **kwargs)
-
-        updates = {}
-
-        # Use the database ID as the numeric invoice number.
-        if self.invoice_no != self.pk:
-            self.invoice_no = self.pk
-            updates["invoice_no"] = self.invoice_no
-
-        # Generate the permanent public invoice number only once.
-        if not self.invoice_number:
-            self.invoice_number = self.build_invoice_number()
-            updates["invoice_number"] = self.invoice_number
-
-        # Write generated values without calling save() recursively.
-        if updates:
-            type(self).objects.filter(pk=self.pk).update(**updates)
+        ordering = ["-id"]
 
     # -----------------------------------------------------
     # CALCULATE INVOICE TOTALS
@@ -355,10 +282,7 @@ class Invoice(models.Model):
         )
 
     def __str__(self):
-        return (
-            f"{self.invoice_number or self.invoice_no} - "
-            f"{self.customer_name}"
-        )
+        return f"#{self.id} - {self.customer_name}"
 
 
 # =========================================================
