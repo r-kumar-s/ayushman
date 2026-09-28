@@ -239,20 +239,9 @@ def get_invoice_filename(invoice):
     # Invoice ID
     # -----------------------------------------------------
 
-    # invoice_number is the public invoice number stored in the database.
-    # Its final numeric component is the invoice ID used by the existing
-    # filename convention AB_customername_invoiceid_ddmmyyyy.pdf.
-    public_invoice_number = (
-        getattr(invoice, "invoice_number", None) or ""
-    ).strip()
-
-    match = re.search(r"(\d+)$", public_invoice_number)
-
-    invoice_id = (
-        match.group(1)
-        if match
-        else str(invoice.invoice_no or invoice.pk or "0")
-    )
+    # The invoice number is ALWAYS the primary-key ID of invoices_invoice.
+    # Do not use invoice_number or invoice_no for the PDF filename.
+    invoice_id = str(invoice.pk or "0")
 
     # -----------------------------------------------------
     # Invoice date
@@ -510,7 +499,7 @@ def generate_invoice_pdf(invoice):
 
     details = [
         ("Invoice Date :", invoice_date),
-        ("Invoice No. :", str(invoice.invoice_number or invoice.invoice_no)),
+        ("Invoice No. :", f"#{invoice.pk}"),
         ("Purchase Order No.", invoice.po_no or ""),
         ("Purchase Order Date", po_date),
         ("Delivery Date", delivery_date),
@@ -1357,7 +1346,7 @@ class InvoiceAdmin(admin.ModelAdmin):
     # =====================================================
 
     list_display = (
-        "invoice_number",
+        "invoice_id_number",
         "invoice_date",
         "customer",
         "grand_total",
@@ -1381,6 +1370,15 @@ class InvoiceAdmin(admin.ModelAdmin):
     ordering = (
         "-invoice_no",
     )
+
+    # =====================================================
+    # INVOICE NUMBER DISPLAY
+    # =====================================================
+
+    @admin.display(description="Invoice Number", ordering="id")
+    def invoice_id_number(self, obj):
+        # Invoice number shown in Admin is the database primary-key ID.
+        return f"#{obj.pk}"
 
     # =====================================================
     # LIST ACTION BUTTONS

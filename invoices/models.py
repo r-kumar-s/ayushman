@@ -97,9 +97,10 @@ class Invoice(models.Model):
     are NOT overwritten when the invoice is edited.
     """
 
-    invoice_no = models.AutoField(
-        primary_key=True,
-        editable=False
+    invoice_no = models.PositiveIntegerField(
+        editable=False,
+        null=True,
+        blank=True
     )
 
     # Public invoice number shown on the invoice, Admin and PDF.
@@ -284,25 +285,31 @@ class Invoice(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Save the invoice exactly as entered.
+        Save the invoice.
 
-        IMPORTANT:
-        Customer snapshot fields are NOT overwritten here.
-
-        The public invoice number is generated only when it does not
-        already exist, so editing an invoice never changes its number.
+        The database-generated primary key (id) is used as the
+        numeric invoice number. The public invoice_number is generated
+        only once and never changes when the invoice is edited.
         """
 
-        super().save(
-            *args,
-            **kwargs
-        )
+        # First save creates the database primary key.
+        super().save(*args, **kwargs)
 
+        updates = {}
+
+        # Use the database ID as the numeric invoice number.
+        if self.invoice_no != self.pk:
+            self.invoice_no = self.pk
+            updates["invoice_no"] = self.invoice_no
+
+        # Generate the permanent public invoice number only once.
         if not self.invoice_number:
             self.invoice_number = self.build_invoice_number()
-            type(self).objects.filter(pk=self.pk).update(
-                invoice_number=self.invoice_number
-            )
+            updates["invoice_number"] = self.invoice_number
+
+        # Write generated values without calling save() recursively.
+        if updates:
+            type(self).objects.filter(pk=self.pk).update(**updates)
 
     # -----------------------------------------------------
     # CALCULATE INVOICE TOTALS
@@ -513,12 +520,24 @@ class InvoiceItem(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Calculate this invoice item's values before saving.
+        Calculate the line totals and save the invoice item.
+
+        The invoice header totals are then recalculated from all
+        saved invoice items.
         """
 
+        # Calculate quantity × rate, tax and line total first.
         self.calculate_totals()
 
-        super().save(
-            *args,
-            **kwargs
+        # Save the invoice item.
+        super().save(*args, **kwargs)
+
+        # Recalculate and persist invoice-level totals.
+        invoice = self.invoice
+        invoice.calculate_totals()
+
+        type(invoice).objects.filter(pk=invoice.pk).update(
+            taxable_total=invoice.taxable_total,
+            tax_total=invoice.tax_total,
+            grand_total=invoice.grand_total,
         )
