@@ -22,6 +22,7 @@ from django.contrib.sitemaps.views import sitemap
 from home.sitemaps import StaticViewSitemap
 from django.conf import settings
 from django.conf.urls.static import static
+from whatsapps.views import book_consultation_whatsapp
 
 sitemaps = {
     'static': StaticViewSitemap(),
@@ -124,6 +125,15 @@ urlpatterns = [
     path(
         "blog/",
         include("blog.urls")
+    ),
+    path(
+    "whatsapps/",
+    include("whatsapps.urls"),),
+
+    path(
+        "book-consultation-whatsapp/",
+        book_consultation_whatsapp,
+        name="book_consultation_whatsapp",
     ),]
 
 

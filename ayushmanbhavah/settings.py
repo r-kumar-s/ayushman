@@ -72,7 +72,8 @@ INSTALLED_APPS = [
     'campaigns',
     'captcha',
     'blog',
-    'invoices',]
+    'invoices',
+    'whatsapps',]
 
 SITE_ID = 3
 
@@ -251,3 +252,38 @@ CASHFREE = {
 #         },
 # }
 # ============================================
+
+
+# ============================================================
+# WhatsApp Cloud API
+# ============================================================
+
+WHATSAPP_API_VERSION = os.environ.get(
+    "WHATSAPP_API_VERSION",
+    "v26.0"
+)
+
+WHATSAPP_ACCESS_TOKEN = os.environ.get(
+    "WHATSAPP_ACCESS_TOKEN",
+    ""
+)
+
+WHATSAPP_PHONE_NUMBER_ID = os.environ.get(
+    "WHATSAPP_PHONE_NUMBER_ID",
+    "1019005524639076"
+)
+
+WHATSAPP_BUSINESS_ACCOUNT_ID = os.environ.get(
+    "WHATSAPP_BUSINESS_ACCOUNT_ID",
+    "1266411799029761"
+)
+
+WHATSAPP_APP_SECRET = os.environ.get(
+    "WHATSAPP_APP_SECRET",
+    ""
+)
+
+WHATSAPP_WEBHOOK_VERIFY_TOKEN = os.environ.get(
+    "WHATSAPP_WEBHOOK_VERIFY_TOKEN",
+    ""
+)
