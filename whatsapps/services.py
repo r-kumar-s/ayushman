@@ -157,6 +157,28 @@ def send_doctor_consultation_template(phone_number):
     )
 
 
+def send_doctor_consultation_to_users(phone_numbers):
+    results = []
+
+    for phone_number in phone_numbers:
+        try:
+            result = send_doctor_consultation_template(phone_number)
+
+            results.append({
+                "phone": phone_number,
+                "success": True,
+                "response": result,
+            })
+
+        except Exception as e:
+            results.append({
+                "phone": phone_number,
+                "success": False,
+                "error": str(e),
+            })
+
+    return results
+
 def send_whatsapp_template(
     phone_number,
     template_name,

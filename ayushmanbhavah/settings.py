@@ -42,7 +42,7 @@ CAPTCHA_LETTER_ROTATION = (-15, 15)
 CAPTCHA_BACKGROUND_COLOR = "#ffffff"
 CAPTCHA_FOREGROUND_COLOR = "#000000"
 
-ALLOWED_HOSTS = ['ayushmaanbhavah.com', 'www.ayushmaanbhavah.com','127.0.0.1']
+ALLOWED_HOSTS = ['ayushmaanbhavah.com', 'www.ayushmaanbhavah.com','127.0.0.1',"blabber-overpass-slackness.ngrok-free.dev",]
 
 
 CSRF_TRUSTED_ORIGINS = [
@@ -263,10 +263,13 @@ WHATSAPP_API_VERSION = os.environ.get(
     "v26.0"
 )
 
-WHATSAPP_ACCESS_TOKEN = os.environ.get(
-    "WHATSAPP_ACCESS_TOKEN",
-    ""
-)
+WHATSAPP_ACCESS_TOKEN = "EAAubSXIgcCIBSq1br9ZCQbSXHzWFaAkgr8hg3uNVL74Hn24dwe2qeqguMn8pawTbTSJnJ4Wf6nRxC1rDZArYgJJSiZAleAZAtTckTM12f3qApZAUijL6VozPNy1cr2FIzZBohiZCYeJ537zUjZBsJBILKLTBxCcdEkKveoNs1WXRwB07TtI4Wg38CPvirt7DcwZDZD"
+# WHATSAPP_ACCESS_TOKEN = os.environ.get(
+#     "WHATSAPP_ACCESS_TOKEN",
+#     ""
+# )
+
+
 
 WHATSAPP_PHONE_NUMBER_ID = os.environ.get(
     "WHATSAPP_PHONE_NUMBER_ID",
@@ -278,12 +281,15 @@ WHATSAPP_BUSINESS_ACCOUNT_ID = os.environ.get(
     "1266411799029761"
 )
 
-WHATSAPP_APP_SECRET = os.environ.get(
-    "WHATSAPP_APP_SECRET",
-    ""
-)
+WHATSAPP_APP_SECRET = "357c37aad95eeb2004a08fe0854b544f"
+# WHATSAPP_APP_SECRET = os.environ.get(
+#     "WHATSAPP_APP_SECRET",
+#     ""
+# )
 
-WHATSAPP_WEBHOOK_VERIFY_TOKEN = os.environ.get(
-    "WHATSAPP_WEBHOOK_VERIFY_TOKEN",
-    ""
-)
+
+WHATSAPP_WEBHOOK_VERIFY_TOKEN = "H-MosFECdayRrabT2OaTFPVDuqNhuifV"
+# WHATSAPP_WEBHOOK_VERIFY_TOKEN = os.environ.get(
+#     "WHATSAPP_WEBHOOK_VERIFY_TOKEN",
+#     "H-MosFECdayRrabT2OaTFPVDuqNhuifV"
+# )

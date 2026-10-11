@@ -12,6 +12,7 @@ from django.utils.html import format_html
 from .models import Customer, Invoice, InvoiceItem
 from .forms import InvoiceAdminForm
 from .po_parser import parse_purchase_order
+from .portrait_invoice import generate_invoice_pdf_portrait
 
 
 
@@ -1403,6 +1404,11 @@ class InvoiceAdmin(admin.ModelAdmin):
             args=[obj.pk],
         )
 
+        portrait_pdf_url = reverse(
+            "admin:invoices_invoice_portrait_pdf",
+            args=[obj.pk],
+        )
+
         return format_html(
             '<a class="button" '
             'href="{}" '
@@ -1412,10 +1418,15 @@ class InvoiceAdmin(admin.ModelAdmin):
             'style="margin-right:4px; color:#ba2121;">Delete</a> '
             '<a class="button" '
             'href="{}" '
-            'target="_blank">PDF</a>',
+            'target="_blank">PDF</a> '
+            '<a class="button" '
+            'href="{}" '
+            'target="_blank" '
+            'style="margin-left:4px;">Portrait PDF</a>',
             edit_url,
             delete_url,
             pdf_url,
+            portrait_pdf_url,
         )
 
     # =====================================================
@@ -1440,6 +1451,13 @@ class InvoiceAdmin(admin.ModelAdmin):
                     self.invoice_pdf_view
                 ),
                 name="invoices_invoice_pdf",
+            ),
+            path(
+                "<path:object_id>/portrait-pdf/",
+                self.admin_site.admin_view(
+                    self.invoice_portrait_pdf_view
+                ),
+                name="invoices_invoice_portrait_pdf",
             ),
         ]
 
@@ -1555,6 +1573,33 @@ class InvoiceAdmin(admin.ModelAdmin):
             )
 
         return generate_invoice_pdf(
+            invoice
+        )
+
+    # =====================================================
+    # PORTRAIT PDF VIEW
+    # =====================================================
+
+    def invoice_portrait_pdf_view(
+        self,
+        request,
+        object_id,
+    ):
+
+        invoice = self.get_object(
+            request,
+            object_id,
+        )
+
+        if invoice is None:
+
+            from django.http import Http404
+
+            raise Http404(
+                "Invoice does not exist."
+            )
+
+        return generate_invoice_pdf_portrait(
             invoice
         )
 
