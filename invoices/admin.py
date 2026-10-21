@@ -24,6 +24,7 @@ from .portrait_invoice import generate_invoice_pdf_portrait
 class CustomerAdmin(admin.ModelAdmin):
 
     list_display = (
+        "nickname",
         "name",
         "phone",
         "gstin",
@@ -38,13 +39,28 @@ class CustomerAdmin(admin.ModelAdmin):
     )
 
     search_fields = (
+        "nickname",
         "name",
         "phone",
         "gstin",
     )
 
     ordering = (
+        "nickname",
         "name",
+    )
+
+    fields = (
+        "name",
+        "nickname",
+        "phone",
+        "gstin",
+        "billing_address",
+        "shipping_address",
+        "country",
+        "place_of_supply",
+        "user",
+        "active",
     )
 
 
@@ -205,13 +221,9 @@ def get_invoice_filename(invoice):
     # -----------------------------------------------------
 
     customer_name = (
-        invoice.customer_name
-        or (
-            invoice.customer.name
-            if invoice.customer
-            else ""
-        )
-        or "CUSTOMER"
+        (invoice.customer.nickname or "").strip()
+        if invoice.customer and (invoice.customer.nickname or "").strip()
+        else (invoice.customer_name or (invoice.customer.name if invoice.customer else "") or "CUSTOMER")
     )
 
     # -----------------------------------------------------
@@ -574,7 +586,8 @@ def generate_invoice_pdf(invoice):
 
     customer_y = customer_top - 5 * mm
 
-    customer_name = invoice.customer_name or ""
+    customer_nickname = (invoice.customer.nickname or "").strip() if invoice.customer else ""
+    customer_name = customer_nickname or invoice.customer_name or ""
 
     customer_phone = invoice.customer_phone or ""
 
@@ -590,15 +603,17 @@ def generate_invoice_pdf(invoice):
         customer_name,
     )
 
+    phone_y = customer_y - 4 * mm
+
     pdf.drawString(
         col1,
-        customer_y - 4 * mm,
+        phone_y,
         "Phone : " + customer_phone,
     )
 
     pdf.drawString(
         col1,
-        customer_y - 8 * mm,
+        phone_y - 4 * mm,
         "GSTIN : " + customer_gstin,
     )
 
@@ -1339,7 +1354,7 @@ class InvoiceAdmin(admin.ModelAdmin):
     class Media:
 
         js = (
-            "invoices/js/invoice_admin.js",
+            "invoices/js/invoice_admin_nickname.js",
         )
 
     # =====================================================
@@ -1361,7 +1376,8 @@ class InvoiceAdmin(admin.ModelAdmin):
     )
 
     search_fields = (
-                "customer__name",
+        "customer__nickname",
+        "customer__name",
         "customer_name",
         "customer_gstin",
         "po_no",
