@@ -202,13 +202,15 @@ def generate_invoice_pdf_portrait(invoice):
         pdf.setFillColor(dark)
         pdf.setFont("DejaVuSans", 7.2)
 
+        customer_nickname = (invoice.customer.nickname or "").strip() if invoice.customer else ""
+        displayed_customer_name = customer_nickname or invoice.customer_name or (invoice.customer.name if invoice.customer else "")
         bill_lines = [
-            invoice.customer_name or "",
+            displayed_customer_name,
             f"Phone : {invoice.customer_phone or ''}" if invoice.customer_phone else "",
             f"GSTIN : {invoice.customer_gstin or ''}" if invoice.customer_gstin else "",
         ] + [x for x in (invoice.billing_address or "").splitlines() if x.strip()]
         ship_lines = [
-            invoice.customer_name or "",
+            displayed_customer_name,
             f"GSTIN : {invoice.customer_gstin or ''}" if invoice.customer_gstin else "",
             f"MB NO- {invoice.customer_phone or ''}" if invoice.customer_phone else "",
         ] + [x for x in (invoice.shipping_address or "").splitlines() if x.strip()]
@@ -371,8 +373,10 @@ def generate_invoice_pdf_portrait(invoice):
     buffer.seek(0)
 
     response = HttpResponse(buffer.getvalue(), content_type="application/pdf")
-    customer_name = (invoice.customer_name or "CUSTOMER").strip().upper()
+    preferred_name = (invoice.customer.nickname or "").strip() if invoice.customer else ""
+    customer_name = (preferred_name or invoice.customer_name or (invoice.customer.name if invoice.customer else "CUSTOMER")).strip().upper()
     import re
+    customer_name = customer_name.replace("&", " AND ")
     customer_name = re.sub(r"[^A-Z0-9]+", "_", customer_name).strip("_") or "CUSTOMER"
     date_part = invoice.invoice_date.strftime("%d%m%Y") if invoice.invoice_date else datetime.today().strftime("%d%m%Y")
     response["Content-Disposition"] = f'inline; filename="AB_{customer_name}_{invoice.pk}_{date_part}.pdf"'

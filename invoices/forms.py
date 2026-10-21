@@ -33,7 +33,9 @@ class CustomerSelect(forms.Select):
             try:
                 customer = Customer.objects.get(pk=str(value))
 
-                option["attrs"]["data-name"] = customer.name or ""
+                option["attrs"]["data-name"] = (customer.nickname or "").strip() or customer.name or ""
+                option["attrs"]["data-nickname"] = customer.nickname or ""
+                option["attrs"]["data-display-name"] = (customer.nickname or "").strip() or customer.name or ""
                 option["attrs"]["data-phone"] = customer.phone or ""
                 option["attrs"]["data-gstin"] = customer.gstin or ""
                 option["attrs"]["data-billing-address"] = (
@@ -195,6 +197,14 @@ class InvoiceAdminForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        # On invoice edit, immediately display the linked customer's nickname.
+        if self.instance and self.instance.pk and self.instance.customer_id:
+            linked_customer = self.instance.customer
+            linked_nickname = (linked_customer.nickname or "").strip()
+            if linked_nickname:
+                self.initial["customer_name"] = linked_nickname
+                self.fields["customer_name"].initial = linked_nickname
+
         # =====================================================
         # CUSTOMER AUTO-FILL DATA
         # =====================================================
@@ -203,7 +213,9 @@ class InvoiceAdminForm(forms.ModelForm):
 
         customer_widget.customer_data = {
             str(customer.pk): {
-                "name": customer.name or "",
+                "name": (customer.nickname or "").strip() or customer.name or "",
+                "nickname": customer.nickname or "",
+                "display_name": (customer.nickname or "").strip() or customer.name or "",
                 "phone": customer.phone or "",
                 "gstin": customer.gstin or "",
                 "billing_address": (
@@ -295,6 +307,16 @@ class InvoiceAdminForm(forms.ModelForm):
             self.initial["invoice_date"] = (
                 timezone.localdate().strftime("%d-%m-%Y")
             )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        customer = cleaned_data.get("customer")
+        if customer:
+            nickname = (customer.nickname or "").strip()
+            if nickname:
+                # Invoice customer_name snapshot must contain nickname only.
+                cleaned_data["customer_name"] = nickname
+        return cleaned_data
 
     # =========================================================
     # VALIDATE DATE FORMAT

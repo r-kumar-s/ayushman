@@ -19,8 +19,20 @@ class Customer(models.Model):
     """
 
     name = models.CharField(
-        max_length=255
+        max_length=255,
+        help_text='Official/legal customer name used for tax records.',
     )
+
+    nickname = models.CharField(
+        max_length=100,
+        default='',
+        help_text='Short display name used to identify this customer throughout the admin and invoice workflow.',
+    )
+
+    @property
+    def display_name(self):
+        """Nickname used in invoice customer-name fields and PDFs."""
+        return (self.nickname or "").strip() or (self.name or "").strip()
 
     phone = models.CharField(
         max_length=30,
@@ -81,6 +93,7 @@ class Customer(models.Model):
         ordering = ["name"]
 
     def __str__(self):
+        # The customer dropdown should show the official customer name.
         return self.name
 
 
