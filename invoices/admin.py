@@ -1354,7 +1354,7 @@ class InvoiceAdmin(admin.ModelAdmin):
     class Media:
 
         js = (
-            "invoices/js/invoice_admin_nickname.js",
+            "invoices/js/invoice_admin.js",
         )
 
     # =====================================================
