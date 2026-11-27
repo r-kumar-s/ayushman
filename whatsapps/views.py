@@ -71,7 +71,9 @@ def _timestamp_to_datetime(timestamp):
 
 def book_consultation_whatsapp(request):
     return redirect(
-        "https://wa.me/918469260584"
+        #"https://wa.me/918469260584"
+        "https://www.youtube.com/watch?v=TTp07UX2H2g"
+
     )
 
 

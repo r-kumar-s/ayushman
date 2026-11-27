@@ -1,10 +1,8 @@
 {% extends "master.html" %}
 {% load static %}
-
 {% block title %}
 Panchakarma for PCOD / PCOS: An Individualized Overview | Ayushmaan Bhavah
 {% endblock %}
-
 {% block meta %}
 <meta name="description" content="An educational overview of how Panchakarma may be considered in Ayurvedic care for PCOD / PCOS only after individualized assessment." />
 <meta name="keywords" content="Panchakarma PCOS Ayurveda, Panchakarma PCOD Ahmedabad, Ayurvedic PCOS therapy, PCOS Ayurveda Ahmedabad, Ayurvedic doctor Ahmedabad" />
@@ -17,27 +15,29 @@ Panchakarma for PCOD / PCOS: An Individualized Overview | Ayushmaan Bhavah
 <meta property="og:url" content="https://www.ayushmaanbhavah.com/blog/pcod-pcos/panchakarma-for-pcod/" />
 <meta property="og:image" content="https://www.ayushmaanbhavah.com/static/images/blog/pcod-5.jpg" />
 {% endblock %}
-
 {% block content %}
 <div class="sub-banner-section">
-    {% include 'header.html' %}
-    <section class="banner-section">
-        <div class="container">
-            <div class="row"><div class="col-lg-12"><div class="banner-section-content">
-                <h1>Panchakarma for PCOD / PCOS: An Individualized Overview</h1>
-                <p>Understanding PCOD / PCOS through individualized lifestyle and Ayurvedic wellness guidance.</p>
-                <div class="btn_wrapper">
-                    <span class="sub_home_span">Blog</span>
-                    <i class="fa-solid fa-angles-right"></i>
-                    <span class="sub_span">PCOD / PCOS</span>
-                </div>
-            </div></div></div>
+  {% include 'header.html' %}
+  <section class="banner-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="banner-section-content">
+            <h1>Panchakarma for PCOD / PCOS: An Individualized Overview</h1>
+            <p>Understanding PCOD / PCOS through individualized lifestyle and Ayurvedic wellness guidance.</p>
+            <div class="btn_wrapper">
+              <span class="sub_home_span">Blog</span>
+              <i class="fa-solid fa-angles-right"></i>
+              <span class="sub_span">PCOD / PCOS</span>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </div>
-
 <style>
-.thyroid-article { padding:70px 0; }
+  .thyroid-article { padding:70px 0; }
 .article-container { max-width:1000px; margin:auto; }
 .article-image { overflow:hidden; border-radius:14px; margin-bottom:35px; }
 .article-image img { width:100%; display:block; }
@@ -56,68 +56,61 @@ Panchakarma for PCOD / PCOS: An Individualized Overview | Ayushmaan Bhavah
     .article-navigation a:last-child { text-align:left; }
 }
 </style>
-
 <section class="thyroid-article">
-    <div class="container article-container">
-        <div class="article-image">
-            <img src="{% static 'images/blog/pcod-pcos-5.png' %}" alt="Panchakarma and PCOD PCOS Ayurvedic care" loading="eager">
-        </div>
-        <p class="intro">Panchakarma refers to traditional Ayurvedic therapeutic procedures. Its suitability, timing and components depend on individual assessment, and it should not be presented as a universal treatment or cure for PCOS.</p>
-
-        <h2>What Is Panchakarma?</h2>
-        <p>Panchakarma is a traditional Ayurvedic therapeutic framework that can involve preparatory measures and selected procedures. The approach is individualized and is not suitable for every person.</p>
-
-        <h2>Panchakarma and PCOS</h2>
-        <p>Some Ayurvedic practitioners may consider selected therapies within a broader wellness plan for certain people with PCOS. Evidence for specific Panchakarma procedures as a treatment for PCOS remains limited.</p>
-
-        <h2>Why Assessment Comes First</h2>
-        <p>Age, general health, current medicines, pregnancy status, menstrual pattern and other factors can affect whether a procedure is appropriate. A qualified practitioner should assess these factors first.</p>
-
-        <h2>Complementary Care</h2>
-        <p>Ayurvedic care should not require stopping prescribed medicines or delaying appropriate medical or fertility treatment. PCOS often benefits from coordinated care.</p>
-
-        <h2>When Professional Medical Advice Is Needed</h2>
-        <p>Seek appropriate medical advice for very heavy bleeding, severe pelvic pain, pregnancy concerns, rapidly changing symptoms or other significant health problems.</p>
-
-        <div class="info-box">
-            <strong>Important:</strong> This article is for educational purposes only.
-            PCOD / PCOS may require medical assessment and ongoing care. Do not stop
-            prescribed medicines or delay professional treatment based only on this article.
-        </div>
-
-        <div class="article-navigation">
-            <a href="{% url 'blog_article' 'pcod-pcos' 'pcod-fertility' %}">← PCOD / PCOS and Fertility</a>
-            <a href="/">Home →</a>
-        </div>
+  <div class="container article-container">
+    <div class="article-image">
+      <img src="{% static 'images/blog/pcod-pcos-5.png' %}" alt="Panchakarma and PCOD PCOS Ayurvedic care" loading="eager">
     </div>
+    <p class="intro">Panchakarma refers to traditional Ayurvedic therapeutic procedures. Its suitability, timing and components depend on individual assessment, and it should not be presented as a universal treatment or cure for PCOS.</p>
+    <h2>What Is Panchakarma?</h2>
+    <p>Panchakarma is a traditional Ayurvedic therapeutic framework that can involve preparatory measures and selected procedures. The approach is individualized and is not suitable for every person.</p>
+    <h2>Panchakarma and PCOS</h2>
+    <p>Some Ayurvedic practitioners may consider selected therapies within a broader wellness plan for certain people with PCOS. Evidence for specific Panchakarma procedures as a treatment for PCOS remains limited.</p>
+    <h2>Why Assessment Comes First</h2>
+    <p>Age, general health, current medicines, pregnancy status, menstrual pattern and other factors can affect whether a procedure is appropriate. A qualified practitioner should assess these factors first.</p>
+    <h2>Complementary Care</h2>
+    <p>Ayurvedic care should not require stopping prescribed medicines or delaying appropriate medical or fertility treatment. PCOS often benefits from coordinated care.</p>
+    <h2>When Professional Medical Advice Is Needed</h2>
+    <p>Seek appropriate medical advice for very heavy bleeding, severe pelvic pain, pregnancy concerns, rapidly changing symptoms or other significant health problems.</p>
+    <div class="info-box">
+      <strong>Important:</strong> This article is for educational purposes only.
+      PCOD / PCOS may require medical assessment and ongoing care. Do not stop
+      prescribed medicines or delay professional treatment based only on this article.
+    </div>
+    <div class="article-navigation">
+      <a href="{% url 'blog_article' 'pcod-pcos' 'pcod-fertility' %}">← PCOD / PCOS and Fertility</a>
+      <a href="/">Home →</a>
+    </div>
+  </div>
 </section>
-
 <section class="services_section">
-    <div class="container">
-        <div class="row"><div class="col-lg-12"><div class="services_content">
-            <h2>Medical Disclaimer</h2>
-            <p>
-                The information provided on this page is for general educational
-                purposes and is not a substitute for diagnosis, treatment or
-                emergency medical care. Ayurvedic care should be individualized
-                after appropriate assessment.
-            </p>
-        </div></div></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="services_content">
+          <h2>Medical Disclaimer</h2>
+          <p>
+            The information provided on this page is for general educational
+            purposes and is not a substitute for diagnosis, treatment or
+            emergency medical care. Ayurvedic care should be individualized
+            after appropriate assessment.
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"Panchakarma for PCOD / PCOS: An Individualized Overview",
-  "description":"An educational overview of how Panchakarma may be considered in Ayurvedic care for PCOD / PCOS only after individualized assessment.",
-  "author":{"@type":"Organization","name":"Ayushmaan Bhavah"},
-  "publisher":{"@type":"Organization","name":"Ayushmaan Bhavah"},
-  "mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ayushmaanbhavah.com/blog/pcod-pcos/panchakarma-for-pcod/"},
-  "image":"https://www.ayushmaanbhavah.com/static/images/blog/pcod-5.jpg"
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Panchakarma for PCOD / PCOS: An Individualized Overview",
+  "description": "An educational overview of how Panchakarma may be considered in Ayurvedic care for PCOD / PCOS only after individualized assessment.",
+  "author": { "@type": "Organization", "name": "Ayushmaan Bhavah" },
+  "publisher": { "@type": "Organization", "name": "Ayushmaan Bhavah" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.ayushmaanbhavah.com/blog/pcod-pcos/panchakarma-for-pcod/" },
+  "image": "https://www.ayushmaanbhavah.com/static/images/blog/pcod-5.jpg"
 }
 </script>
-
 {% include 'blog.html' %}
 {% endblock %}
